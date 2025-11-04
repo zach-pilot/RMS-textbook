@@ -1,0 +1,40 @@
+---
+title: "Correlation practice"
+format: html
+---
+
+This book will go over correlational studies using r we will use r to create a data set to practice examing correaltional studies
+
+```{r}
+#| label: Step 1 create data set
+set.seed(123)
+hours_studied <- c(2, 4, 6, 8, 10, 12, 14)
+exam_score <- c(50, 55, 65, 70, 75, 85, 90)
+```
+
+Now we create a data frame to store that data so we can visualize it
+
+```{r}
+#| label: Now we create a data frame
+data <- data.frame(hours_studied, exam_score)
+```
+
+Next we need to load ggplot2 to visualize the data
+
+```{r, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(data, aes(x = hours_studied, y = exam_score)) +
+  geom_point(color = "blue", size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Relation between study hours and exam scores",
+       x = "hours studied",
+       y = "exam score")
+
+```
+
+Now that we can visualize the data we can examine the correlation
+
+```{r}
+cor.test(data$hours_studied, data$exam_score)
+```
