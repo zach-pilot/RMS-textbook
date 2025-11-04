@@ -3,3 +3,49 @@ title: "intro"
 format: html
 ---
 
+# Regression
+
+## What is regression?
+
+Regression is an important test that we can use in order to predict one variable from another. Since we have just tested for correlation we can now use the answers for other means to predict other variables.
+
+## Types of variables
+
+When we test for regression we have two variables the first one is the predictor variable which is what our X will be becasue it is the variable we are using to predict our other variable. That means then that our Criterion varaible is our Y becasue that is why we are testing the X to get this result.
+
+## Example
+
+Lets now use the previous example that used body image and self esteem to practice testing for regression. First we are going to create a new data frame
+
+```{r}
+data2 <- data.frame(
+  self_esteem = c(4, 3, 7, 5, 8, 6),
+  body_image = c(4, 5, 3, 2, 6, 7)
+)
+```
+
+Now that we created the data we can create a model to get a summary of it.
+
+```{r}
+model <- lm(body_image ~ self_esteem, data = data2)
+summary(model)
+```
+
+Now that we have our data we can interpret the output
+
+| Term | Meaning | Interpretation |
+|------------------------|------------------------|------------------------|
+| **Intercept = 3.40** | Predicted body image when self-esteem = 0 | The line starts at 6 when SE = 0 (theoretically) |
+| **R² = 0.04** | Percent of variance in Y explained by X | About 4% of variation in BI is explained by SE |
+| **p = 0.704** | Statistical significance | Not significant at the 0.05 level |
+
+Finally we find the predicted Body image of someone with a self esteem of six
+
+```{r}
+predict(model, newdata = data.frame(self_esteem = 6))
+
+```
+
+## APA Conclusion
+
+A simple linear regression was calculated to predict body image based on self-esteem. The regression equation was not significant, *F*(1, 4) = 0.16, *p* = .704, with an *R²* of .04. Self-esteem did not significantly predict body image scores.
