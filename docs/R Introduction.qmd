@@ -1,0 +1,84 @@
+---
+title: "R Introduction"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+Introduction to Rstudio
+
+Vocab
+
+There is different vocabulary you should know before we discuss
+functions and the use of Rstudio.
+
+The first term is the console where you can run commands for your code
+which can be found in the bottom left pane. Then your source editor
+where you will write and save your code can be found in the top left.
+You have your environment pane where shows variables you created and
+saved data and then you have Your bottom right pane which is used for
+veiwng files and managing your packages.
+
+Using R for calculations
+
+R can be a handy tool for calculating and interpreting data. One of the
+most basic uses for it can be using it as a calculator. Now lets walk
+through some basic calculations for using R. The first thing you want to
+do is to create a new code chunk which is where we will write our code
+you can do this by using the shortcut control + option + i.
+
+```{r, results='hide'}
+2 + 2
+5 * 4
+8 / 2
+3^4
+sqrt(25)
+
+
+```
+
+Practice typing these functions into your own code chunk and try
+changing some numbers around.
+
+Creating variables in R
+
+In R we can create variables in order to save data we need and to easily
+have acess to it later so we can reuse it.
+
+A variable is simply the name we use to store a value
+
+When we want to assign something to a variable we will use the \<- to do
+so.
+
+Now practice creating these variables
+
+```{r, results='hide'}
+x <- 5
+y <- 10
+x + y
+```
+
+Functions and Arguments
+
+Now that we understand some basic math within R we can take a look at
+functions and arguments in order to start dealing with data.
+
+A function is a reusable piece of code that performs a task where an
+argument is information that we need to pass into a function we do this
+by using parentheses to include the information we want the function to
+use.
+
+Now lets practice running some functions
+
+```{r, results='hide'}
+sqrt(16) # this finds the square root
+
+mean(c(1, 2, 3, 4, 5)) # this finds the average
+
+numbers <- c(1, 2, 3, 4, 5) # this combines numbers into a vector
+
+length(numbers) # checks the length of our vector
+
+summary(numbers) # creates a summary of the data
+```
