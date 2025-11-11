@@ -1,0 +1,155 @@
+---
+title: "Descriptive stats"
+format: html
+---
+
+# Descriptive Statistics
+
+## Lesson Outcomes
+
+-   Understand use of descriptive statistics in psychology
+
+-   Practice using measures of central tendency and variance
+
+-   Create simple visualizations of data
+
+-   Summarize and interpret results in APA
+
+## What is a Descriptive Statistic?
+
+Descriptive statistics are used in psychology to help us summarize our data and to understand what a typical score would look like, how spread out scores are or measuring variance, and what the overall distribution of the data is as a whole
+
+For example if you want to measure anxiety levels on a 1-10 scale for 20 people we can use descriptive statistics to learn the average anxiety level how consistent they are and if there were any people that had extreme anxiety compared to everyone else.
+
+### Creating our data-set
+
+Now lets look at different tests that we can use with our data
+
+First we need to create a data set to use so lets use the example from above
+
+First we will create the following data set
+
+```{r, results='hide'}
+anxiety <- c(3, 4, 4, 5, 6, 7, 7, 8, 9, 10)
+```
+
+Here we have created a variable where each number represents a participants anxiety score
+
+## Measures of Central Tendency
+
+Now lets look at some functions that can tell us what a typical value is in our data set.
+
+`mean()` - This gives us the average score from our data
+
+`median()` - This provides the middle value from our data
+
+`table()` - This gives the most common score from the data
+
+Now we can practice running these functions with our `anxiety` data set
+
+```{r, results='hide'}
+mean(anxiety)
+median(anxiety)
+table(anxiety)
+```
+
+What would happen to our mean if we added a much larger score like 20?
+
+## Measures of Variability
+
+`max() - min()` - this provides the range from highest to lowest
+
+`var()` - this gives the average squared deviation
+
+`sd()` - a typical deviation from the mean
+
+Now practice with these functions using our data set
+
+```{r, results='hide'}
+range(anxiety) # use this to find the largest and smallest values
+max(anxiety) - min(anxiety)
+var(anxiety)
+sd(anxiety)
+```
+
+Using summary can also give us a faster broad overview which gives us the minimum and maximum, the median, mean, and quartiles.
+
+```{r, results='hide'}
+summary(anxiety)
+```
+
+## Visualizing data in different ways
+
+There are different ways we can visualize our data based on how we want to view it. The two main ones we can use is a histogram and a box plot.
+
+First lets create a histogram with our data
+
+```{r, results='hide'}
+hist(anxiety,
+     xlab = "Anxiety Level", # x axis label
+     col = "red",
+     border = "black")
+```
+
+Is the distribution for this graph symmetrical or is it skewed?
+
+Are there any outliers in this data?
+
+Now practice making a box plot
+
+```{r, results='hide'}
+boxplot(anxiety,
+        main = "Boxplot of Anxiety", # title of graph
+        ylab = "Anxiety level", # y axis label
+        col = "lightblue")
+```
+
+The box in our box plot shows the middle 50% of our data
+
+The line we see from the graph represents the median
+
+The lines coming out of the box are the minimum and maximum values
+
+## Practice with Data Frames
+
+Now lets go through some practice with a data frame by creating our own
+
+```{r, results='hide'}
+students <- data.frame(
+  name = c("John", "James", "Alex", "Kevin", "Adam"),
+  fear = c(5, 8, 7, 6, 9),
+  sleep = c(8, 5, 6, 7, 4)
+) # create our set of data
+```
+
+```{r, results='hide'}
+students # view our data
+```
+
+```{r, results='hide'}
+mean(students$fear)
+mean(students$sleep)
+# calculate means for the data
+```
+
+```{r, results='hide'}
+summary(students)
+```
+
+Do students with less sleep tend to report more fear?
+
+What way could you test this relationship later?
+
+## APA conclusion
+
+The average anxiety level from the students was 6.3 (SD = 2.3). Stress scores ranged from 3 to 10 suggesting moderate variability. Distribution was slightly skewed toward higher anxiety levels.
+
+## Exercises
+
+1.  Create a new data set for motivation scores on a scale of 1-10 for 10 people
+
+2.  Find: Mean, Median, Mode, Range, Variance, SD
+
+3.  Visualize with a box plot and Histogram
+
+4.  Create an APA style conclusion
