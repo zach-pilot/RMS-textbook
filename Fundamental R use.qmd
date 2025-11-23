@@ -7,7 +7,17 @@ toc: true
 
 ## 2.1 Introduction
 
-This chapter will go over the fundamental tools you will need in order to work in R and to create projects and to experiment with the building blocks of Rstudio. If you have not already gone to chapter one that teaches you how to set up Rstudio do that now. This chapter will go over the following it will introduce Navigating inside Rstudio and the different panes. How to use packages and what you will need to do in order to update them. How to create and manipulate data. How to use functions, objects, and pipes. Common errors and different ways to deal with them. And the main types of data that you will be running into in Rstudio.
+This chapter will go over the fundamental tools you will need in order to work in R and to create projects and to experiment with the building blocks of Rstudio. If you have not already gone to chapter one that teaches you how to set up Rstudio do that now.
+
+-   How to use packages and what you will need to do in order to update them.
+
+-   How to create and manipulate data.
+
+-   How to use functions, objects, and pipes.
+
+-   Common errors and different ways to deal with them.
+
+-   And the main types of data that you will be running into in Rstudio.
 
 ## 2.2 Rstudio Overview
 
@@ -15,27 +25,35 @@ Once you open Rstudio you might notice that there are four different panes on yo
 
 ### 2.2.1 Console Frame
 
-The console frame is the **bottom left frame on your screen**. This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be trouble shooting as well. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The console is intended to run commands that work mainly inside Rstudio itself. The terminal however runs systems commands like something you do on your computer.
+The console frame is the **bottom left frame on your screen**. This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be trouble shooting as well. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. You should make note that the console is like a scrap piece of paper or and etch an sketch its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The console is intended to run commands that work mainly inside Rstudio itself. The terminal however runs systems commands like something you do on your computer.
 
-![](images/Screenshot 2025-11-17 at 3.17.39 PM.png){width="561"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/R_console_screenshot.png")
+```
 
 ### 2.2.2 Source Frame
 
-The source frame or editor frame is **the top left frame** on your screen. This frame is the primary location of where you will be doing your work and typing all of your code. When you create a new code chunk you will do that in the source frame. You should be able to see all the lines and numbers of each code line. You can also save and open new documents and files at the farthest top left corner of this frame.
+The source frame or editor frame is **the top left frame** on your screen. This frame is the primary location of where you will be doing your work and typing all of your code. When you create a new code chunk you will do that in the source frame. You should be able to see all the lines and numbers of each code line. You can also save and open new documents and files at the farthest top left corner of this frame. Opening your Rmarkdown files like you created in **chapter 1** is a great way to practice using the source frame and where you will do this.
 
-![](images/Screenshot 2025-11-17 at 3.07.46 PM-01.png){width="561"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/source_screenshot_example.png")
+```
 
 ### 2.2.3 Environment/History
 
 The environment or history frame can be seen in **the top right frame on your screen.** This is where you can view current objects that you have created which we will discuss further in the chapter as well as data sets and where you can track your steps by viewing the command history that you have run.
 
-![](images/Screenshot 2025-11-17 at 3.11.00 PM.png){width="585"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/Environment_screenshot_example.png")
+```
 
 ### 2.2.4 Files/Packages
 
 The last frame on **the bottom right is your files and packages** frame. This frame is more of a window into your own computer itself in the sense that you are able to view the packages and files that you have on your current computer. You can also use it to check any plots you might have and to read any documents on your computer as well. You only will need to download a package one time but whenever you open Rstudio you will need to load it up every time.
 
-![](images/Screenshot 2025-11-17 at 3.20.06 PM.png){width="581"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/files_screenshot_example.png")
+```
 
 **Suggestion**: If you wish to change the layout of your frames to customize it simply click tools at the top of your computer then global options then to pane layout to customize the layout to whatever is the best for you.
 
@@ -49,17 +67,27 @@ You might be wondering how we are going to be using something that you typically
 
 ### 2.3.2 Installing and finding packages
 
-Whenever you want to install a package you will have to run a command. When you are working in a document you will need to load your packages each time or else **your code will not run because the package has not been reloaded.** You can install packages by going to your console frame in the bottom left. Once you are there you will type the following code.
+Whenever you want to install a package you will have to run a command. When you are working in a document you will need to load your packages each time or else **your code will not run because the package has not been reloaded.** You can install packages by going to your console frame in the bottom left. Once you are there you will type the following code. Do not be afraid if you see a warning in yellow that is perfectly normal.
 
 ```{r, eval=FALSE}
 install.packages("tidyverse")
+install.packages("dplyr")
 ```
 
 Then to load it into your active session the first thing you always want to do is to load it into your session. You will want to do this by running the following in your source frame or the top left. We do this by using the the **library** function which calls up any package that you have installed it will not work if you do not have the package installed.
 
 ```{r, eval=FALSE}
 library(tidyverse)
+library(dplyr)
 ```
+
+Once you have successfully loaded the tidyverse into your current session you should get the following result in your console:
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/Tidyverse_load_example.png")
+```
+
+**THIS IS OK IT MEANS YOU HAVE SUCCESFULLY LOADED YOUR PACKAGE**
 
 Now sometimes you will need to update your packages because if you don't it can cause them to not load and your code will not run. If this happens all you will have to do is run this code.
 
@@ -125,6 +153,16 @@ As you see we created the function `plus_two` Which will take whatever is in our
 
 Whenever we want to assign a value to something we need to use the `<-` symbol. This will then take whatever we assign to the value we create. As you can see in the example above the function we created was assigned to the value `plus_two` because we used the assignment operator to give it that value.
 
+### 2.4.4 Arguments
+
+When we are using functions we must also know that we are dealing with arguments as well. An argument is the information that we put into a function so the function knows what to do with it. So think of the function like a machine and the arguments are the ingredients that we give it.
+
+```{r, eval=FALSE}
+mean(x = c(1, 2, 3, 4, 5))
+```
+
+As you can see here the mean is the function we are using and the argument is everything inside of the parenthesis.
+
 ## 2.5 Creating Data
 
 There are several different ways that we can create data which is important when we want different functions
@@ -183,6 +221,8 @@ When you want to examine the characteristics of your data you can use glimpse to
 glimpse(people)
 ```
 
+Look at the output above you can see next to name the `<chr>` that means the column contains data that is characters. The one below that is the `<dbl>` so you can see that is double data. This shows us that vectors simple a column of names and values that are the same type.
+
 ## 2.6 Objects
 
 In R the only thing we use are objects and a object can be data, a function or even models that we need. In order to assign a object we use the `<-`.
@@ -202,32 +242,40 @@ ls()
 
 ## 2.7 The pipe
 
-Now we will be working with the pipe or `|>`. The pipe is a very important tool because it works kind of like a river with bridges. Usually in R when we run multiple functions we would have to think of the output like a boat going through a river. Normally we would have to manually open each bridge in order for it to pass through to the next part of the river. The pipe makes it easier for us by doing that automatically. So whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the next function without having to do the work ourselves. In the tidyverse the pipe is represented as `%>%` which can be easily created with the shortcut command + shift + m. Now lets look at an example of how the pipe works.
+Now we will be working with the pipe or `|>`. The pipe is a very important tool because it works kind of like a river with bridges. Usually in R when we run multiple functions we would have to think of the output like a boat going through a river. Normally we would have to manually open each bridge in order for it to pass through to the next part of the river. The pipe makes it easier for us by doing that automatically. So whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the next function without having to do the work ourselves. In the tidyverse the pipe is represented as `%>%` which can be easily created with the shortcut ***command + shift + m.*** Now lets look at an example of how the pipe works.
 
 ```{r, eval=FALSE}
 mtcars %>% 
   group_by(cyl) %>% 
-  summarise(mean_mpg = mean(mpg))
+  summarize(mean_mpg = mean(mpg))
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/car_output.png")
 ```
 
 You can see in the output now that in our pipe we took the car data set then funneled in the function of grouping cars by their cylinders then taking that output and funneling it into finding the average miles per gallon which creates our final output.
 
+Now try running the same code without the use of the pipe and see if it still works.
+
 ## 2.8 Types of data
 
-There are different types of data in R and it is important to be able to distinguish the differences because we work with different types in different ways so being able to tell them apart will help us better interpret data
+There are different types of data in R and it is important to be able to distinguish the differences because we work with different types in different ways so being able to tell them apart will help us better interpret data.
 
 ### 2.8.1 Numeric data
 
-Numeric data is the type of data that we see that represents whole numbers. These are pretty common and are just regular numbers that can be represented differently. When looking at an output in R we can see if the data we are looking at is numeric by looking for how it is abbreviated which is by `num`. Whenever we see a column whit this title we know the data in that column is numeric.
+Numeric data is the type of data that we see that represents whole numbers. These are pretty common and are just regular numbers that can be represented differently. When looking at an output in R we can see if the data we are looking at is numeric by looking for how it is abbreviated which is by `num`. Whenever we see a column whit this title we know the data in that column is numeric. You can use the `typeof()` function in R to see exactly what type of data you are dealing with.
 
-```{r, eval=FALSE}
+```{r}
 typeof(42)
+typeof(FALSE)
+typeof("jack")
 
 ```
 
 ### 2.8.2 Character data
 
-Character data is words that we use in R that are not functions but represent something in the data we are dealing with. These could be examples like names in a data set that represent something. It is important to note though we can tell if the data is a character because it must always be in `"".` This shows that it is just text we are dealing with and not some function. The abbreviation for character data in R is `chr`. So whenever you see a column with that you know the data in it is character data.
+Character data is words that we use in R that are not functions but represent something in the data we are dealing with. These could be examples like names in a data set that represent something. It is important to note though we can tell if the data is a character because it must always be in `"".` This shows that it is just text we are dealing with and not some function. The abbreviation for character data in R is `chr`. So whenever you see a column with `chr` you know the data in it is character data.
 
 ```{r, eval=FALSE}
     my_vector <- c("apple", "banana", "cherry")
@@ -264,12 +312,16 @@ Double data is how we refer to data that are numbers but not whole numbers. Not 
 
 When working with R there is always going to be something that will end up needing fixing or something will go wrong and you have no idea what to do. That is OK because there are a few different ways to figure things out when you need help.
 
-### 2.9.1 ?
+### 2.9.1 ? Tool
 
 The question mark tool is a great too that can help explain anything you need. Lets say for example you don't know what a mean is. You can type in `?mean` and the help tab in your bottom right frame will open with whatever you need. It provides arguments and explanations as it is a great tool to help you figure things out.
 
 ```{r, eval=FALSE}
 ?mean
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/help_info_sc.png")
 ```
 
 ### 2.9.2 Help
@@ -282,7 +334,7 @@ help("mean")
 
 ### 2.9.3 Traceback
 
-Whenever we are working in R sometimes we might get an error. This can be confusing because R doesnt always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the `traceback()` function to find exactly where your code stopped working.
+Whenever we are working in R sometimes we might get an error. This can be confusing because R doesn't always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the `traceback()` function to find exactly where your code stopped working.
 
 ## 2.10 Practice
 
