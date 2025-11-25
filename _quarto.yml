@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "RMS textbook"
+  author: "Pilot, Lucas, and Murray"
+  date: "10/28/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - ch_1.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
