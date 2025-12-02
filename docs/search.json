@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "RMS textbook",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is a booked intended to be use for Dr. Pilot’s PSY 303 course at the University of Southern Indiana, home of the screaming eagles.\nThis book was a collaboration between Dr. Pilot, Liam Murray, and Jacob Lucas.",
     "crumbs": [
       "Preface"
     ]
@@ -130,13 +130,103 @@
     ]
   },
   {
-    "objectID": "ch_1.html",
-    "href": "ch_1.html",
-    "title": "3  Chapter 1",
+    "objectID": "what_are_beh_sci.html",
+    "href": "what_are_beh_sci.html",
+    "title": "3  Ch.1 What are Behavioral Sciences",
     "section": "",
-    "text": "here is some stuff from chapter 1",
+    "text": "3.1 What is Psychology?\nPsychology is the study of behavior and mental processes.\nPsychology is rooted in philosophical thought and exploration.\nWilhelm Wundt created the first psychology lab.\nYour Lineage:\nWundt -&gt; Titchener -&gt; Boring -&gt; Tulving -&gt; Habib -&gt; Me-&gt;You\nBehavioral research is involved in a multitude of different disciplines; like Social work, Criminology, and Communication.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapter 1</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#goals-of-behavioral-research",
+    "href": "what_are_beh_sci.html#goals-of-behavioral-research",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.2 Goals of Behavioral Research",
+    "text": "3.2 Goals of Behavioral Research\nDescribe\nPatterns of behavior, thought, and emotion.\nPredict behavior\nFocus on developing equations that predict behavior.\nExplain behavior\nDevelop theoretical explanations for patterns of behavior.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#two-schools-of-research",
+    "href": "what_are_beh_sci.html#two-schools-of-research",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.3 Two Schools of Research",
+    "text": "3.3 Two Schools of Research\nBasic Research\nResearch conducted without regard for whether the knowledge is immediately applicable\nEx. Does drinking coffee influence long-term memory?\nApplied Research\nResearch conducted to find solutions for problems rather than to enhance general knowledge\nEx. Does giving paid maternal/paternal leave increase employee happiness at USI?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#scientific-approach",
+    "href": "what_are_beh_sci.html#scientific-approach",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.4 Scientific Approach",
+    "text": "3.4 Scientific Approach\nSystematic Empiricism\nObserving behavior with clear guidelines for the purpose of drawing conclusions.\nPublic Verification\nAllows others to replicate and discuss your findings.\nSolvable Problems\nResearch questions must be solvable with the current technology.\nExamples of currently unsolvable problems: Whether Freud’s “unconscious” exists, angels, souls, quantum theory?, vampires, fairies",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#purpose-of-behavioral-research",
+    "href": "what_are_beh_sci.html#purpose-of-behavioral-research",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.5 Purpose of Behavioral Research",
+    "text": "3.5 Purpose of Behavioral Research\nDetect\nDiscover and document new phenomena.\nExplain\nDevelop and evaluate theories that explain phenomena.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#how-to-explain",
+    "href": "what_are_beh_sci.html#how-to-explain",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.6 How to Explain",
+    "text": "3.6 How to Explain\nTheory\nDescribes relationships between ideas.\nEx. Theory of Multiple Intelligences- Gardner suggests that there are 8-10 distinct modalities of intelligence instead of one general factor.\nExample: Theory of Evolution\nModel\nA representation of a process.\nExample: Assortative Mating Model-People tend to marry a partner who is has similar interests, lives close, makes a similar amount of money.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#how-to-create-a-hypothesis",
+    "href": "what_are_beh_sci.html#how-to-create-a-hypothesis",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.7 How to create a hypothesis",
+    "text": "3.7 How to create a hypothesis\nHypothesis\nAn idea suggested as a way to explain a phenomena.\nPost-hoc\nExplanations made after the fact.\nA priori\nPredictions made before experimentation.\nAll hypotheses must be falsifiable, able to be unsupported, or shown to be false.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#what-is-a-variable",
+    "href": "what_are_beh_sci.html#what-is-a-variable",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.8 What is a variable?",
+    "text": "3.8 What is a variable?\nA variable is something that you measure.\nTwo ways to define variables:\nConceptual definition\nA dictionary definition.\nEx: Drunk = affected by alcohol to the extent of losing control of one’s faculties or behavior.\nOperational definition\nDefinition that specifies precisely how a concept is measured, think about behaviors you can see.\nEx. Drunk = Blood Alcohol Content over .08.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#proof-disproof-and-progress",
+    "href": "what_are_beh_sci.html#proof-disproof-and-progress",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.9 Proof, Disproof, and Progress",
+    "text": "3.9 Proof, Disproof, and Progress\nScientists do not prove anything, they find information that supports hypotheses.\nScientists may disprove.\nExample: How would one disprove the statement “Unicorns do not exist.”? They would find a unicorn.\nScientific progress depends on replication and accumulated evidence.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "what_are_beh_sci.html#research-strategies",
+    "href": "what_are_beh_sci.html#research-strategies",
+    "title": "3  Ch.1 What are Behavioral Sciences",
+    "section": "3.10 Research Strategies",
+    "text": "3.10 Research Strategies\nDescriptive\nDescribes behavior, thoughts, or feelings.\nCorrelational\nInvestigates relationship between two or more variables.\nQuasi-experimental\nExamines naturally occurring variables.\nExperimental\nDetermines whether certain variables cause changes.\nNon-human animals can be studied in controlled conditions, for extended periods of time, and can be utilized in many types of research inappropriate for human beings.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ch.1 What are Behavioral Sciences</span>"
     ]
   },
   {
