@@ -9,7 +9,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - ch_1.qmd
+    - fundamental_r_use.qmd
+    - what_are_beh_sci.qmd
     - summary.qmd
     - references.qmd
 

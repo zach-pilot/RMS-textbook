@@ -1,0 +1,154 @@
+---
+title: "Ch.1 What are Behavioral Sciences"
+format: html
+editor: visual
+toc: true
+---
+
+## What is Psychology?
+
+Psychology is the study of behavior and mental processes.
+
+Psychology is rooted in philosophical thought and exploration.
+
+Wilhelm Wundt created the first psychology lab.
+
+Your Lineage:
+
+Wundt -\> Titchener -\> Boring -\> Tulving -\> Habib -\> Me-\>You
+
+Behavioral research is involved in a multitude of different disciplines; like Social work, Criminology, and Communication.
+
+## Goals of Behavioral Research
+
+[**Describe**]{.underline}
+
+Patterns of behavior, thought, and emotion.
+
+[**Predict behavior**]{.underline}
+
+Focus on developing equations that predict behavior.
+
+[**Explain behavior**]{.underline}
+
+Develop theoretical explanations for patterns of behavior.
+
+## Two Schools of Research
+
+[**Basic Research**]{.underline}
+
+Research conducted without regard for whether the knowledge is immediately applicable
+
+*Ex. Does drinking coffee influence long-term memory?*
+
+[**Applied Research**]{.underline}
+
+Research conducted to find solutions for problems rather than to enhance general knowledge
+
+*Ex. Does giving paid maternal/paternal leave increase employee happiness at USI?*
+
+## Scientific Approach
+
+[**Systematic Empiricism**]{.underline}
+
+Observing behavior with clear guidelines for the purpose of drawing conclusions.
+
+[**Public Verification**]{.underline}
+
+Allows others to replicate and discuss your findings.
+
+[**Solvable Problems**]{.underline}
+
+Research questions must be solvable with the current technology.
+
+*Examples of currently unsolvable problems: Whether Freud’s “unconscious” exists, angels, souls, quantum theory?, vampires, fairies*
+
+## Purpose of Behavioral Research
+
+[**Detect**]{.underline}
+
+Discover and document new phenomena.
+
+[**Explain**]{.underline}
+
+Develop and evaluate theories that explain phenomena.
+
+## How to Explain
+
+[**Theory**]{.underline}
+
+Describes relationships between ideas.
+
+*Ex. Theory of Multiple Intelligences- Gardner suggests that there are 8-10 distinct modalities of intelligence instead of one general factor.*
+
+Example: Theory of Evolution
+
+[**Model**]{.underline}
+
+A representation of a process.
+
+*Example: Assortative Mating Model-People tend to marry a partner who is has similar interests, lives close, makes a similar amount of money.*
+
+## How to create a hypothesis
+
+Hypothesis
+
+An idea suggested as a way to explain a phenomena.
+
+Post-hoc
+
+Explanations made after the fact.
+
+A priori
+
+Predictions made before experimentation.
+
+All hypotheses must be falsifiable, able to be unsupported, or shown to be false.
+
+## What is a variable?
+
+A variable is something that you measure.
+
+Two ways to define variables:
+
+Conceptual definition
+
+A dictionary definition.
+
+Ex: Drunk = affected by alcohol to the extent of losing control of one's faculties or behavior.
+
+Operational definition
+
+Definition that specifies precisely how a concept is measured, think about behaviors you can see.
+
+Ex. Drunk = Blood Alcohol Content over .08.
+
+## Proof, Disproof, and Progress
+
+Scientists do not prove anything, they find information that supports hypotheses.
+
+Scientists may disprove.
+
+*Example: How would one disprove the statement “Unicorns do not exist.”? They would find a unicorn.*
+
+Scientific progress depends on replication and accumulated evidence.
+
+## Research Strategies
+
+[**Descriptive**]{.underline}
+
+Describes behavior, thoughts, or feelings.
+
+[**Correlational**]{.underline}
+
+Investigates relationship between two or more variables.
+
+[**Quasi-experimental**]{.underline}
+
+Examines naturally occurring variables.
+
+[**Experimental**]{.underline}
+
+Determines whether certain variables cause changes.
+
+Non-human animals can be studied in controlled conditions, for extended periods of time, and can be utilized in many types of research inappropriate for human beings.
