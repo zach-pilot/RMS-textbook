@@ -1,0 +1,239 @@
+---
+title: "T-tests"
+format: html
+editor: visual
+toc: true
+---
+
+## 14.1 Introduction
+
+This chapter will be teaching you about a T-test and the use we have for them in psychology and also the real life applications there are when we use them. T-tests are a very useful tool when it comes to inferential statistics and they allow us to compare means and to also determine if group differences that we observe are statistically significant. In this chapter you will learn how to:
+
+-   Run one sample and independent sample t-tests and paired t-test.
+
+-   perform t-tests using R and interpret them
+
+-   find different assumptions like normality and homogeneity of variance
+
+-   create apa style results using the `report` and `apaTables` packages
+
+## 14.2 Pre-requisites
+
+This chapter will be using different packages in R to make calculating t-tests easier. One function we will be using is the `t_test` function from the `rstatix` package which utilizes the following formula (x = DV \~ 1, mu = number). The 1 after the \~ is used for one sample t tests because we aren't comparing two samples. You will also need to load up the following packages.
+
+```{r}
+library(tidyverse)
+library(rstatix)
+library(report)
+library(apaTables)
+```
+
+**TIP:** Make note of the warning that comes after loading `rstatix` because it says that the use of the `filter()` function now falls under the use of rstatix so the regular stats filter must be called directly if you want to use it but we will be using rstatix in this chapter.
+
+## 14.3 What is a t-test?
+
+Now before we get into working inside of R using t-tests first we have to understand what they are and some different ways we use them. A t-test is a inferential statistic that compares **means** while also making note of variability and sample sizes. There are different ways in psychology that we can use these tests.
+
+### 14.3.1 One-sample t-test
+
+When we want to compare one group against a known value like for example the population average this is when we will use a one-sample t-test because we are only taking one group and applying it to a value that is already known.
+
+### 14.3.2 Independent-sample t-test
+
+Now when we want compare two completely different groups like say for example gender using males and females this is where we will use the independent sample t-test because the two are independent from each other and results will not rely on the other.
+
+### 14.3.3 Paired t-test
+
+We use a paired t-test when we want to examine one group that usually experiences a change so lets say for example we want to measure a groups stress levels before and after listening to music we would use a paired t-test
+
+### 14.3.4 Data-set Example
+
+Now lets practice creating a small data-set that we could see in a real study that you might do for your project.
+
+Lets say a researcher wants to see if listening to calming music will help reduce stress. In the experiment stress is measured on a scale of 0-100.
+
+The hypothesis for this example is that students who listen to music will report lower stress levels.
+
+```{r}
+stress_data <- data.frame(
+  group = c(rep("Control", 8), rep("Music", 8)),
+  stress = c(75, 80, 78, 82, 79, 76, 81, 74, 
+             60, 65, 62, 58, 63, 61, 59, 64)
+)
+
+```
+
+## 14.4 Descriptive Statistics
+
+Now we are going to go through some practice examples to help you get a better use of applying different t-tests to scenarios
+
+### 14.4.1 Example using data
+
+Now lets run through an example fo using a one sample t-test in a psychology example
+
+Does the average stress level in the **music** group differ from the control group?
+
+First we must separate the music only group into their own section from the control group then use the `get_summary_stats` function to get a summary of the stats from our previous data.
+
+```{r}
+stress_data %>%
+  group_by(group) %>%
+  get_summary_stats(stress, type = "mean_sd")
+```
+
+As you can see in the output above the results suggest that the people in the music group are less stressed than the people in the control group.
+
+### 14.4.2 Assumption Testing
+
+Now that we have our data it is important that we check to see if it is normal enough for a t-test by using the Shapiro-wilk test by using our stress variable
+
+### 14.4.3 Shapiro-Wilk test
+
+Now we must use the Shapiro-wilk test to see if p \> .05.
+
+```{r}
+stress_data %>%
+  group_by(group) %>%
+  shapiro_test(stress)
+```
+
+As you can see that our p value is \> than .05 so we can now run a t-test on it.
+
+## 14.5 Independent Sample t-test
+
+Now lets take the data from before and use an independent sample t-test to see if our p value is \< .05 making it significant.
+
+### 14.5.1 Homogeneity of Variance
+
+We need to use the homogeneity of variance test which is the `levene_test` for independent t-tests to see if we are able to conduct a t-test on our data
+
+```{r, warning=FALSE}
+stress_data %>%
+  levene_test(stress ~ group)
+```
+
+As you see in the output our F-value for this test is .317 which shows how the group variance is different compared to each other. So a low F-value means that variance is similar.
+
+The p-value of .583 shows us that our assumption is met because variance is equal between groups.
+
+### 14.5.2 Practice with independent sample
+
+Lets now take our data and run it through a t-test
+
+```{r}
+t_test(stress_data, stress ~ group)
+```
+
+As you see in our output we get a lot of data so lets analyze each part of the output
+
+You can see in `group1` that this is the control group and `group2` is the music group.
+
+The `n1` and `n2` represent the participant number in each group which for this data set is 8
+
+The t stat you can find under `statistic` this is 12.38 and it is a large t value which suggests a big difference between the variability of scores from the groups.
+
+Our p value for this test is 8.5e-09. This is a very small p value which indicates a statistically significant result which means that we reject the null hypothesis fro this experiment.
+
+### 14.5.3 APA Conclusion
+
+Now lets write a APA conclusion for the output that we have just analyzed above.
+
+***Participants in the music group reported significantly lowered stress (M = 12.38, SD = 2.45) than the control group ( M = 13.61, SD = 2.90), t(16) = 12.38, p \< .05.***
+
+## 14.6 One Sample t-test
+
+Now we can use the same data we just used to compare the mean from one group to a known population mean
+
+### 14.6.1 Running the t-test
+
+Now lets take the music group and use the known population mean which will be 70 in this example and compare that to the means of the people in our data
+
+```{r}
+music_only <- stress_data %>% filter(group == "Music")
+t_test(music_only, stress ~ 1, mu = 70)
+```
+
+You can see in this output that our sample mean is below the population mean we compared it to by seeing our statistic is `-9.81` suggesting a large difference relative to variability. We also have a smaller p value than .05 so it means we can reject the null and that our sample mean differs from the population mean.
+
+## 14.7 Paired t-test
+
+We use a paired t-test when we want to examine two scores before and after a group receives a stimulus.
+
+So lets now do some practice imaging that we weant to see students stress levels before and after listening to some calming music
+
+### 14.7.1 Practice Problem
+
+First we need to create our data frame so we can use our data
+
+```{r}
+paired_data <- data.frame(
+  student = 1:8,
+  stress_before = c(75, 80, 78, 82, 79, 76, 81, 74),
+  stress_after  = c(60, 65, 62, 58, 63, 61, 59, 64)
+)
+```
+
+### 14.7.2 Checking for Normality
+
+Now we need to check for normality to see the difference of scores before and after treatment by using the **Shapiro** **wick test.**
+
+```{r}
+paired_data %>%
+  mutate(diff = stress_before - stress_after) %>%
+  shapiro_test(diff)
+```
+
+Since we have a p \> .05 we can now run our paired t-test.
+
+### 14.7.3 Running the t-test
+
+Now we are going to be running our paired t-test to see if stress significantly decreased from the same participants after they have received the treatment.
+
+```{r}
+t.test(paired_data$stress_before,
+       paired_data$stress_after,
+       paired = TRUE)
+```
+
+### 14.7.4 APA Conclusion
+
+Now that we have our output from our t-test we can use the `report` package to create an APA style conclusion for us automatically
+
+```{r}
+paired_test <- t.test(paired_data$stress_before,
+                      paired_data$stress_after,
+                      paired = TRUE)
+
+report(paired_test)
+```
+
+Our output shows us that the effect is positive and significant and the treatment was effective.
+
+## 14.8 APA Tables
+
+APA tables is a very useful package that allows us to present our data in APA formatted tables
+
+### 14.8.1 Creating an APA Table
+
+Now we are going to create an APA table for us to use that combines our control and music groups.
+
+```{r}
+apa.1way.table(
+  data = stress_data,
+  dv = stress,
+  iv = group,
+  filename = "stress_ttest_table.doc"
+)
+```
+
+As you can see `APA tables` creates a simple and detailed table that you can put into a word document when you are writing your final paper.
+
+## 14.9 Report Package
+
+The `report` package automatically formats any data or results into a APA style sentence that works very will for research papers
+
+It generates an APA style paragraph that you can put right into your paper
+
+```{r}
+report(paired_test)
+```

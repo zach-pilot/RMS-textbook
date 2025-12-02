@@ -1,5 +1,5 @@
 ---
-title: "Ch.1 What are Behavioral Sciences"
+title: "What are Behavioral Sciences"
 format: html
 editor: visual
 toc: true

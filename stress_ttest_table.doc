@@ -1,0 +1,46 @@
+{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;}}
+{\pard Table XX \par}
+{\pard  \par}
+{\pard\i Descriptive statistics for stress as a function of group. \par}
+{\pard  \par}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2915 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3779 
+\pard\sa0\sb0\intbl\qr{group}\cell
+\pard\sa0\sb0\intbl\qc{{\i M}}\cell
+\pard\sa0\sb0\intbl\qc{{\i SD}}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx2915 
+\clbrdrt\brdrw15\brdrs
+\clvertalc\cellx3779 
+\pard\sa0\sb0\intbl\qr{Control}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx302{78.12}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx302{2.90}\cell
+\row
+}
+{
+\trowd \trgaph100
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2051 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx2915 
+\clbrdrb\brdrw15\brdrs
+\clvertalc\cellx3779 
+\pard\sa0\sb0\intbl\qr{Music}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx302{61.50}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx302{2.45}\cell
+\row
+}
+{\pard \par}{\pard{\i Note.} {\i M} and {\i SD} represent mean and standard deviation, respectively.\par}
+}
