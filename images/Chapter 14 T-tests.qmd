@@ -235,3 +235,92 @@ It generates an APA style paragraph that you can put right into your paper
 ```{r}
 report(paired_test)
 ```
+
+## 14.10 Graphing T-test Data
+
+Graphs are very helpful when interpreting out results from our t-tests. Being able to visualize these things makes it easier to understand and present.
+
+### 14.10.1 Bar Graphs with Error bars
+
+We can use bar graphs with mean and SE to report group differences.
+
+Lets practice making a graph
+
+```{r}
+summary_stats <- stress_data %>%
+  group_by(group) %>%
+  summarise(
+    mean = mean(stress),
+    sd   = sd(stress),
+    se   = sd / sqrt(n())
+  )
+
+ggplot(summary_stats, aes(x = group, y = mean, fill = group)) +
+  geom_col(width = 0.6) +
+  geom_errorbar(aes(ymin = mean - se, ymax = mean + se), width = 0.15) +
+  labs(
+    title = "Mean Stress Levels by Condition",
+    y = "Stress Score",
+    x = "Group"
+  ) 
+```
+
+### 14.10.2 Box plot
+
+Box plots help visualize the spread of scores and possible outliers
+
+Lets create a box plot
+
+```{r}
+ggplot(stress_data, aes(x = group, y = stress, fill = group)) +
+  geom_boxplot() +
+  labs(
+    title = "Boxplot of Stress Scores",
+    y = "Stress Score",
+    x = "Group"
+  )
+```
+
+## 14.11 Templates and Practice
+
+Here are some templates to practice running t-tests with the data that you have created.
+
+### 14.11.1 Independent t-test template
+
+```{r, eval=FALSE}
+# 1. Inspect the dataset
+glimpse(YOUR_DATA)
+
+# 2. Check means
+YOUR_DATA %>% 
+  group_by(GROUP_VARIABLE) %>% 
+  summarise(mean_score = mean(DV_VARIABLE, na.rm = TRUE))
+
+# 3. Run t-test
+YOUR_DATA %>% 
+  t_test(DV_VARIABLE ~ GROUP_VARIABLE) %>% 
+  get_test_summary()
+```
+
+### 14.11.2 Paired t-test template
+
+```{r, eval=FALSE}
+# Preview the paired dataset
+glimpse(PAIRED_DATA)
+
+# Run paired t-test
+PAIRED_DATA %>% 
+  t_test(score_before ~ score_after, paired = TRUE)
+```
+
+### 14.11.3 Assumption testing template
+
+```{r, eval=FALSE}
+# Normality test by group
+YOUR_DATA %>% 
+  group_by(GROUP_VARIABLE) %>% 
+  shapiro_test(DV_VARIABLE)
+
+YOUR_DATA %>% 
+  levene_test(DV_VARIABLE ~ GROUP_VARIABLE)
+```
