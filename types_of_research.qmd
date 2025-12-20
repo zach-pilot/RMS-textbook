@@ -1,0 +1,176 @@
+---
+title: "types_of_research"
+format: html
+editor: visual
+toc: true
+---
+
+## Approaches to Measurement
+
+### Observational
+
+Directly observing someone’s behavior.
+
+*Example: Watching people cook family meals in different countries.*
+
+Must make three decisions when conducting observational research.
+
+### Where will you record your data?
+
+**Naturalistic observation**
+
+No intrusion, interruption, or intervention by the experimenter.
+
+**Contrived (laboratory) observation**
+
+Observation in a setting designed for observing behavior.
+
+### How will you conduct your research?
+
+**Disguised**
+
+Researcher conceals that behavior is being recorded.
+
+**Undisguised**
+
+Participant is aware they are being recorded.
+
+### How will you record your data?
+
+**Checklist**
+
+Observer marks whether or not a predetermined behavior occurs.
+
+**Latency & Duration**
+
+Example: Reaction time, completion time.
+
+**Observational Rating Scale**
+
+Observer rates behavior on some dimension.
+
+When doing observational research with multiple observers, the researchers must be sure that they have interrater reliability.
+
+**Physiological**
+
+Using a tool to measure some bodily behavior.
+
+Example: Blood pressure, heart rate.
+
+**Neural Electrical**
+
+Using an EEG to record electrical activity in the brain.
+
+**Neuroimaging**
+
+Using radioactivity or blood/oxygen levels to create an image of the brain.
+
+**Nervous System Activity**
+
+Heart rate, galvanic skin response (whether your palms get sweaty)
+
+**Blood and Saliva**
+
+Samples reveal hormone levels.
+
+**Self-report**
+
+Asking the participant you are measuring to provide their own information.
+
+## Constructing your Measure
+
+**Single Item Measures:**
+
+Designed to stand on their own, but are less reliable.
+
+**Multi-Item Measures:**
+
+Series of items designed to measure something, is usually more reliable.
+
+## Keys to writing an effective question
+
+Precise Language
+
+Use basic words without jargon
+
+Don’t make assumptions
+
+Avoid double-barreled questions
+
+## Response Format
+
+Free Response
+
+Multiple Choice (Fixed Response)
+
+Rating/Likert Scale
+
+*Example: Please rate how important the internet is.*
+
+1 2 3 4 5
+
+(Not important) (important) (very important)
+
+## Approaches
+
+**Questionnaire**
+
+Most common, respond on their own, record own answers.
+
+Advantages:
+
+Little amount of time
+
+A lot of data
+
+Less expensive
+
+Less extensive training required
+
+A questionnaire gives the participants response choices
+
+A survey is when a participant answers an open ended question.
+
+### Interview
+
+Participants provide answers that are recorded by the interviewer.
+
+Advantages
+
+Better for certain populations.
+
+*Ex. People who cannot read, children.*
+
+Can confirm questions are understood.
+
+Good interview practice includes:
+
+Building rapport
+
+Show friendly interest, but limit reactions
+
+Ask questions as worded
+
+Avoid leading questions
+
+## Self-Report Biases
+
+**Social desirability**
+
+Participants respond in the way they think they should according to societal values, opposed to the truth.
+
+**Acquiescence**
+
+Participants tend to agree with your test items.
+
+**Nay-saying**
+
+Participants tend to disagree with your test items.
+
+These biases can, in part, can be controlled by having a balanced response set.
+
+### Archival
+
+Doing analyses from a larger pool of data that has previously been collected.
+
+Example: Census, newspapers, correspondence, trending tweets in January 2013

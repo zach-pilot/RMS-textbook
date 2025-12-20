@@ -1,0 +1,144 @@
+---
+title: "measuring behavior"
+format: html
+editor: visual
+toc: true
+---
+
+### Types
+
+-   Observational
+
+-   Physiological
+
+-   Self-report
+
+## Scales of Measurement
+
+-   Nominal
+
+-   Ordinal
+
+-   Interval
+
+-   Ratio
+
+### Nominal Scales
+
+Numbers are assigned as labels for characteristics or behaviors.
+
+Provides the least amount of information.
+
+*Ex. Jersey Number*
+
+### Ordinal Scale
+
+Rank ordering of people’s behaviors or characteristics.
+
+Doesn’t specify the distance between participants on the variable being measured.
+
+*Ex. Sizes at a fast food restaurant: baby, small, medium, large, ex large, super size, super duper size*
+
+### Interval Scale
+
+Equal distance between the numbers reflect equal differences between participants
+
+Does not have a “true” zero point
+
+*Ex. Temperature, IQ score*
+
+### Ratio Scale
+
+Has a “true” zero point.
+
+Provides greatest amount of information.
+
+Should be used when possible.
+
+ex. duration
+
+Central Tendency
+
+T1: Central Tendency
+
+A descriptive measure which represents the entire distribution of scores (mean, median, mode).
+
+Goal: Find a single value that is representative of all the data.
+
+Can condense large data set into a single value.
+
+Allows comparison of 2 or more data sets using the central tendency.
+
+T2: The Mean
+
+Most commonly used measure of central tendency.
+
+Used in interval or ratio scales.
+
+How to compute:
+
+Compute the sum of all scores (∑)
+
+Divide the sum by the number of scores.
+
+In manuscripts, the sample mean is identified as “M”
+
+The sum (∑) of all scores (X) = (∑X)
+
+4 + 5 + 3 = 12
+
+Divide the sum by the number of scores (N) = (∑X/N)
+
+12/3 = 4
+
+Weekly high temperatures in Chicago last winter:
+
+29, 31, 28, 32, 29, 27, 55
+
+What was the average high temperature in Chicago last winter?
+
+All distances below the mean are equal to all the distances above the mean.
+
+Changing any score (adding or subtracting) will influence the mean.
+
+T3: When you shouldn’t use the mean
+
+The mean is not appropriate for nominal or ordinal scales.
+
+It is impossible to do.
+
+The mean is not appropriate when you have extreme scores (outliers).
+
+The mean will be pulled towards the extreme score, rendering it no longer representative of the rest of the data.
+
+The mean is not appropriate when there is missing data
+
+T4: The Median
+
+Scores are listed in order from smallest to largest
+
+The median is the midpoint, it equally divides the scores
+
+When you have an even number of scores you take the average of the two middle scores.
+
+The median can be used on ordinal, interval, or ratio scales.
+
+The median is unaffected by extreme scores (outliers).
+
+Weekly high temperatures in Chicago last winter:
+
+29, 31, 28, 32, 29, 27, 55
+
+What was the median temperature in Chicago last winter?
+
+T5: The Mode
+
+The most frequently occurring score.
+
+Can be used on ALL scales of measurement.
+
+Weekly high temperatures in Chicago last winter:
+
+29, 31, 28, 32, 29, 27, 55
+
+What was the mode temperature in Chicago last winter?

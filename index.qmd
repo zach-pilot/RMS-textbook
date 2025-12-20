@@ -1,6 +1,5 @@
 # Preface {.unnumbered}
 
-This is a booked intended to be use for Dr. Pilot's PSY 303 course at the 
-University of Southern Indiana, home of the screaming eagles. 
+This is a book intended to be used for Dr. Pilot's PSY 303 course at the University of Southern Indiana, home of the screaming eagles.
 
-This book was a collaboration between Dr. Pilot, Liam Murray, and Jacob Lucas. 
+This book was a collaboration between Dr. Pilot, Liam Murray, and Jacob Lucas.

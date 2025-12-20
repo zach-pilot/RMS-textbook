@@ -1,0 +1,230 @@
+---
+title: "How to plan an experiment"
+format: html
+editor: visual
+toc: true
+---
+
+### Experimental Research
+
+Allows us to study causes of behavior.
+
+### Three components of Experimental Research
+
+1.  Manipulate a variable
+
+    -   Exercise experimental control
+
+2.  Systematically put participants in groups
+
+    -   Ensure equivalent groups
+
+3.  Control extraneous variables
+
+    -   Make sure factors that are unimportant don’t influence results
+
+### Independent variable (IV)
+
+The variable that the researcher manipulates. All experimental research must have AT LEAST one. Researchers can manipulate the environment, the instructions, or they may use an invasive variable (like giving someone a caffeine pill).
+
+Must have at least 2 levels
+
+*Ex. Temperature may have two levels; hot and cold*
+
+### Subject (Participant) Variables
+
+Based off of a personal characteristic. Something you cannot manipulate in the lab.
+
+*Ex. Ethnicity/Race, Hob*bies
+
+### Evaluating Your Independent Variable
+
+A bad independent variable can result in a failed experiment.
+
+**Pilot Study**
+
+Test your experiment on a small group of people to ensure that it works.
+
+**Manipulation Check**
+
+Done to ensure that the level of your IV manipulation is strong enough.
+
+*Ex. Is 5mg of caffeine enough or should I use 10mg?*
+
+### Dependent Variable
+
+The variable a researcher measures.
+
+Experiments must have AT LEAST one.
+
+*Ex. Heart rate, response to questionnaire, performance on test*
+
+### Groups in an Experiment
+
+**Experimental**
+
+The group that receives the independent variable manipulation.
+
+*Ex. In a study about sleep, this group is required to stay awake for 2 days.*
+
+**Control**
+
+The group that is not exposed to any independent variable manipulation.
+
+*Ex. In the same sleep study, this group sleeps however much they usually sleep.*
+
+### Assigning Participants
+
+**Simple Random Assignment**
+
+Everyone has an equal chance of being assigned to any group/condition.
+
+*Ex. Roll dice*
+
+In this situation people with any attribute are equally likely to be in either group.
+
+**Matched Random Assignment**
+
+Participants are matched into homogeneous blocks. Participants in each block are then randomly assigned to conditions.
+
+In this situation conditions will be similar along specific dimensions.
+
+### Within Subject Designs (repeated measures)
+
+Participants are exposed to ALL conditions in an experiment.
+
+No need for random assignment.
+
+Ex*. In an experiment testing a new drug all participants receive all doses of the drug (5mg, 10mg, 15mg)*
+
+**Pros**
+
+More powerful
+
+**Cons**
+
+Order Effects
+
+### Power
+
+The ability to detect IV effects.
+
+Requires fewer participants.
+
+### Order Effects
+
+**Carryover effects**
+
+One condition influences the following condition.
+
+**Practice effects**
+
+Participants have learned how to perform from previous experimental trials.
+
+**Fatigue effects**
+
+Participants are tired, bored, have no energy over time.
+
+**Sensitization**
+
+Participants realize the hypothesis being tested and do not perform naturally.\
+
+**Counterbalancing**
+
+can be used to correct for order effects.
+
+A researcher presents the levels of the IV in different orders for different participants.
+
+### Between-Subjects Design (Independent Measures)
+
+Participants experience only one condition of the IV.
+
+Typically requires random assignment.
+
+*Ex. In an experiment testing a new drug each participant will receive only one of the three levels of drug dosage (5mg or 10 mg or 15 mg).*
+
+### Experimental Control
+
+**Treatment effect**
+
+Systematic differences due to the IV
+
+**Confounds**
+
+Variable other than the IV that differs systematically between conditions.
+
+Confounds invalidate your experiment because, if confounds are present, it is unclear whether the observed differences are due to the IV or the confound.
+
+Must be eliminated to draw accurate conclusions.
+
+**Error**
+
+Unsystematic effects due to extraneous (uncontrolled) variables.
+
+### Sources of Error
+
+Individual Differences
+
+Transient states
+
+Environmental factors
+
+Differential treatment
+
+Measurement error
+
+### Types of Validity
+
+**Internal Validity**
+
+Degree to which we can draw accurate conclusions about the effects of the IV
+
+Gain internal validity when all confounds are eliminated and you can conclude that the observed differences were due to the IV.
+
+Has experimental control.
+
+**External Validity**
+
+Inverse relationship with internal validity
+
+The greater experimental control in your experiment, the less likely it will be externally valid or generalizable to the “real world”.
+
+Internal validity is more critical and desirable than external validity.
+
+### Threats to internal validity
+
+**Biased assignment of participants**
+
+Occurs when random assignment isn’t possible or doesn’t produce equivalent groups.
+
+**Differential attrition**
+
+Participants drop out of the experiment differently across levels of the IV.
+
+**Demand Characteristics**
+
+Participants perform in the way they believe the experimenter wants them to.
+
+**Placebo Effects**
+
+Change as the result of the mere suggestion of change.
+
+**Pretest sensitization**
+
+Exposure to pretest affects one IV level differently than another
+
+**History**
+
+External events that participants experience affect one level of the IV differently than another
+
+**Experimenter expectancy effects**
+
+Experimenter with certain expectations interacts with participants differently
+
+### Reducing threats to validity
+
+**Double Blind Procedure**
+
+The researcher administering the IV and the participant both do not know what level of the IV is being administered.
+
+Can eliminate expectancy effects and demand characteristics
