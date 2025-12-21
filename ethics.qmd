@@ -1,0 +1,144 @@
+---
+title: "Ethical Issues in Behavioral Research"
+format: html
+editor: visual
+toc: true
+---
+
+## Researcher Obligations
+
+Enhance Understanding
+
+Protect participants
+
+Ethical questions arise when enhancing understanding and protecting participants conflict
+
+## Some approaches to ethical decisions
+
+Deontology
+
+Ethical decisions are made based on a moral code
+
+Utilitarianism
+
+Ethical decisions are made based on weighing the benefits and consequences
+
+Ethical Skepticism
+
+Belief that a concrete moral code cannot exist
+
+### Benefits of Utilitarianism
+
+Basic knowledge
+
+Improved techniques
+
+Practical outcomes
+
+Benefits for researchers
+
+Benefits for participants
+
+### Costs of Utilitarianism
+
+Time and effort
+
+Participant’s welfare
+
+Money
+
+Deception; creating distrust
+
+## Institutional Review Board (IRB)
+
+Scientific and nonscientific board members
+
+Researchers describes purpose, procedures, and risks
+
+IRB must approve study before it can be conducted
+
+
+
+## Lack of adequate informed consent
+
+Informed consent is a disclosing of the nature of participation
+
+A researcher must obtain explicit agreement from participants
+
+Possible problems:
+
+Compromise study validity
+
+Some participants are unable to consent
+
+## Ethical Considerations
+
+### Invasion of privacy
+
+Participants may decide when, where, to whom, and what responses to reveal
+
+Public observation is not an invasion of privacy
+
+### Coercion
+
+Pressure to participate from an authority figure
+
+To prevent coercion, alternate activity must be available to opt of out research
+
+### Potential Harm
+
+Pain, stress, failure, anxiety, or other negative emotions
+
+Minimal risk – no greater than that ordinarily encountered
+
+More than minimal risk requires strong justification
+
+### Deception
+
+False purpose of study
+
+Experimental Confederate
+
+False feedback
+
+Presenting related studies as unrelated
+
+Giving incorrect information regarding stimulus materials
+
+### Violation of Confidentiality
+
+Data may only be used for research
+
+Data may not be disclosed to others
+
+Anonymity is the easiest way to ensure confidentiality
+
+### Debriefing
+
+Clarify nature of study 
+
+Remove any stress or negative study-indices consequences 
+
+Obtain participant reactions 
+
+Ensure participants leave feeling good about participation 
+
+### Vulnerable Populations
+
+Children
+
+Prisoners
+
+People with impaired decision making
+
+People at risk for suicide
+
+Pregnant women, fetuses, newborns
+
+### Scientific Misconduct
+
+Fabrication, falsification, plagiarism
+
+Questionable research practices
+
+Unethical behavior

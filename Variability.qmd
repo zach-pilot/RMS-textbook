@@ -1,5 +1,8 @@
 ---
 title: "Variability"
+format: html
+editor: visual
+toc: true
 ---
 
 ## Variability
@@ -106,4 +109,4 @@ When you add a value to every score in the data set it does not change the stand
 
 When you multiply each score by the same value it changes the standard deviation
 
-***** DO IN R ******
+\*\*\*\*\* DO IN R \*\*\*\*\*\*

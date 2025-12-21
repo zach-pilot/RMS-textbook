@@ -1,0 +1,144 @@
+---
+title: "Selecting participants"
+format: html
+editor: visual
+toc: true
+---
+
+## Sampling
+
+Difficult to study everyone (population)
+
+*Ex. Every single person with PTSD*
+
+**Probability Samples**
+
+Can quantify the likelihood of being selected because we know how many people are in the population of interest
+
+Know selection probability
+
+Accurately describes a population
+
+Must be representative of the population
+
+Rarely used in behavioral sciences
+
+*Ex. A 1 in a million chance of winning the lottery*
+
+**Non-Probability**
+
+Can’t quantify the likelihood of being selected, probably because we don’t know how many people are in the population being measured.
+
+## Error of Estimation
+
+Samples rarely mirror the population perfectly
+
+The difference between them is called sampling error
+
+Sampling error can be estimated for probability samples because we know the population size
+
+## Probability sampling
+
+## Types of Probability Sampling
+
+**Simple Random Sampling**
+
+Known Population
+
+Random Selection
+
+Equal selection probability for every sample
+
+*Ex. Pulling a name out of a hat*
+
+Require a **sampling frame**
+
+-   An outline of the people you will be sampling from
+
+*ex. USI students enrolled in Introduction to Psychology this year*
+
+**Systematic Sampling**
+
+Not concerned with population size
+
+Every *n*th person gets chosen
+
+It is not random, a system is used to choose participants
+
+*Ex. The every third person who enters the classroom gets to participate in an experiment*
+
+**Stratified Random Sampling**
+
+Divide population into groups based on a shared characteristic (called **strata**)
+
+Randomly sample people from each strata
+
+This sampling method ensures an adequate number of participants from each group
+
+*Ex. Separate participants into groups based on major, then take 5 random participants from those strata*
+
+**Clustered Sampling**
+
+Clusters occur naturally
+
+Sample the clusters, then sample participants
+
+More efficient than stratified random sampling because only the clusters are sampled
+
+Clusters are essentially the same as one another, whereas strata are fundamentally different
+
+*Ex. Randomly sample 5 of the counties in Illinois, then randomly sample the participants in those counties.*
+
+## Issues with Probability Sampling
+
+**Non-response**
+
+Some participants do not respond, these participants may be different in some important way from those that do respond
+
+**Misgeneralization**
+
+Generalizing to the wrong population
+
+## Non-probability Samples
+
+Can’t calculate selection probability
+
+Not random
+
+Used to study relationships among variables
+
+Behavioral sciences use non-probability samples most often
+
+### Types of Non-probability Samples
+
+**Convenience Sampling**
+
+Uses participants that are easy to obtain
+
+Most typical type of non-probability sampling
+
+Replication of experiments shows generalizability
+
+**Quota Sampling**
+
+Specific proportions of people with selected characteristics are selected
+
+Often used for market research
+
+*Ex: 20 USI students who enjoy hiking*
+
+**Snowball Sampling**
+
+Used for hard to reach groups
+
+Can use incentives (cautiously) to increase response
+
+*Ex: For every person you bring in to the experiment I will give you 5 dollars*
+
+## How Many Participants is Enough?
+
+Economic samples are typical, only collect as much data as needed.
+
+Determine how many are needed via a power analysis.
+
+Aim for reasonable accuracy and cost for the scope of the project.
