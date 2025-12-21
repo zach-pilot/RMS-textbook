@@ -1,0 +1,58 @@
+---
+title: "Distribution of Sample Means"
+format: html
+editor: visual
+toc: true
+---
+
+## Samples vs. Populations 
+
+Though most behavioral science uses sample to test hypotheses, often times those hypotheses are about populations. 
+
+A sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population.  
+
+Sampling Error 
+
+The difference between sample statistics and population parameters.  
+
+## Sampling Distributions 
+
+Sampling Distribution 
+
+A distribution of statistics of all possible samples of a given size from a population 
+
+One example of a sampling distribution is….. 
+
+Distribution of Sample Means 
+
+A collection of sample means for all possible random samples of a given size that could be obtained from a population.  
+
+A distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.  
+
+Larger sample are more representative of populations than smaller samples.  
+
+The mean of the distribution of sample means is the same as the population mean.  
+
+## Standard Error of the Mean 
+
+The standard deviation of the distribution of sample means is the 
+
+Standard Error of the Mean 
+
+𝜎𝑀= 𝜎𝑛√
+𝜎
+M
+=
+ 
+𝜎
+n
+ 
+ 
+
+## Z-score for a Sample 
+
+By using a sampling distribution you can calculate the location of an entire sample within a population 
+
+z = M - µ 
+
+  σM 

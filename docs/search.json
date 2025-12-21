@@ -680,103 +680,293 @@
     ]
   },
   {
+    "objectID": "z_scores.html",
+    "href": "z_scores.html",
+    "title": "10  z scores",
+    "section": "",
+    "text": "10.1 z-Scores and Location\nRaw scores provide very little information by themselves\nEx. Terrence got 34 points on the test. Did he do well?\nThe mean and standard deviation provide a context with which to interpret the raw score.\nEx. Archibald’s class average was 75 points with a 2 point standard deviation. His score of 34 is not very good.\nz-scores tell us where an x value is in relation to the mean and standard deviation with one number.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-scores",
+    "href": "z_scores.html#z-scores",
+    "title": "10  z scores",
+    "section": "10.2 Z-scores",
+    "text": "10.2 Z-scores\nSigned (+ or -) number\nThe sign tells you whether the x value is above the mean (positive) or below the mean (negative)\nThe number tells you the amount of standard deviations between the raw score and the mean of the distribution\nEx: What does a z-score of ________ mean: -1? +2? -3?",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-score-formula",
+    "href": "z_scores.html#z-score-formula",
+    "title": "10  z scores",
+    "section": "10.3 Z-score Formula",
+    "text": "10.3 Z-score Formula",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-scores-as-a-standard-distribution",
+    "href": "z_scores.html#z-scores-as-a-standard-distribution",
+    "title": "10  z scores",
+    "section": "10.4 Z-scores as a Standard Distribution",
+    "text": "10.4 Z-scores as a Standard Distribution\nz-scores do not change the shape of the original distribution or the location of a score relative to others\nWhen x values are transformed into z-scores, the resulting distribution:\nThe mean is always zero\nThe standard deviation is always one\nMost z-scores are between z = -2.00 and z = +2.00",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-scores-and-locations",
+    "href": "z_scores.html#z-scores-and-locations",
+    "title": "10  z scores",
+    "section": "10.5 Z-scores and Locations",
+    "text": "10.5 Z-scores and Locations\nAs descriptive statistics, describe exactly where an individual is located\nAs inferential statistics, determine whether a sample is representative of its population",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-scores-and-samples",
+    "href": "z_scores.html#z-scores-and-samples",
+    "title": "10  z scores",
+    "section": "10.6 Z-scores and Samples",
+    "text": "10.6 Z-scores and Samples\nZ-scores are standardized, so we can compare different distributions.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html",
+    "href": "probability.html",
+    "title": "11  Probability",
+    "section": "",
+    "text": "11.1 Probability\nThe likelihood of all possible outcomes\n“Probability” = p\nCan use fractions, decimals, or percentages:\np = ½ = .50 = 50%\nGoes from 0% - 100% or 0 – 1\nEquals the desired outcome divided by all possible outcomes",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html#probability-sampling",
+    "href": "probability.html#probability-sampling",
+    "title": "11  Probability",
+    "section": "11.2 Probability & Sampling",
+    "text": "11.2 Probability & Sampling\nSamples are used in inferential statistics, to make inferences about larger populations\nProbability can be used to quantify the relationship between samples and population\nWhen something occurs in a sample, how likely is it that it represents the population?\nProbability calculation requires independent random sampling, has an equal probability of being selected and replacement",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html#probability-and-inferential-statistics",
+    "href": "probability.html#probability-and-inferential-statistics",
+    "title": "11  Probability",
+    "section": "11.3 Probability and Inferential Statistics",
+    "text": "11.3 Probability and Inferential Statistics\nLow probability values = Special/Rare, not common or likely to happen\nHigh probability values = Common/likely to happen\nIn terms of finding an effect:\nLow probability = effect\nMeans your finding is unlikely to happen by chance, there is a different cause\nHigh probability = no effect\nMeans your finding is common or likely to happen",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html#probability-and-frequency-distributions",
+    "href": "probability.html#probability-and-frequency-distributions",
+    "title": "11  Probability",
+    "section": "11.4 Probability and Frequency Distributions",
+    "text": "11.4 Probability and Frequency Distributions\nIf a distribution displays a population of scores a portion of the graph represents a portion of the population\nProbability can be defined by a proportion of the graph\nCan determine this by using the z-score and the unit normal table",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "dist_sample_means.html",
+    "href": "dist_sample_means.html",
+    "title": "12  Distribution of Sample Means",
+    "section": "",
+    "text": "12.1 Samples vs. Populations\nThough most behavioral science uses sample to test hypotheses, often times those hypotheses are about populations.\nA sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population.\nSampling Error\nThe difference between sample statistics and population parameters.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
+    ]
+  },
+  {
+    "objectID": "dist_sample_means.html#sampling-distributions",
+    "href": "dist_sample_means.html#sampling-distributions",
+    "title": "12  Distribution of Sample Means",
+    "section": "12.2 Sampling Distributions",
+    "text": "12.2 Sampling Distributions\nSampling Distribution\nA distribution of statistics of all possible samples of a given size from a population\nOne example of a sampling distribution is…..\nDistribution of Sample Means\nA collection of sample means for all possible random samples of a given size that could be obtained from a population.\nA distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.\nLarger sample are more representative of populations than smaller samples.\nThe mean of the distribution of sample means is the same as the population mean.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
+    ]
+  },
+  {
+    "objectID": "dist_sample_means.html#standard-error-of-the-mean",
+    "href": "dist_sample_means.html#standard-error-of-the-mean",
+    "title": "12  Distribution of Sample Means",
+    "section": "12.3 Standard Error of the Mean",
+    "text": "12.3 Standard Error of the Mean\nThe standard deviation of the distribution of sample means is the\nStandard Error of the Mean\n𝜎𝑀= 𝜎𝑛√ 𝜎 M =\n𝜎 n",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
+    ]
+  },
+  {
+    "objectID": "dist_sample_means.html#z-score-for-a-sample",
+    "href": "dist_sample_means.html#z-score-for-a-sample",
+    "title": "12  Distribution of Sample Means",
+    "section": "12.4 Z-score for a Sample",
+    "text": "12.4 Z-score for a Sample\nBy using a sampling distribution you can calculate the location of an entire sample within a population\nz = M - µ\nσM",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
+    ]
+  },
+  {
+    "objectID": "hyp_test.html",
+    "href": "hyp_test.html",
+    "title": "13  Hypothesis Testing",
+    "section": "",
+    "text": "13.1 Purpose of Hypothesis Testing\nBehavioral scientists often can’t measure all individuals in a population.\nEx. Measuring the inhibition of all lawyers in the United States\nUse samples to test a hypothesis that is made about the population.\nExpose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.\nHypothesis testing takes several steps",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "hyp_test.html#steps-of-hypothesis-testing",
+    "href": "hyp_test.html#steps-of-hypothesis-testing",
+    "title": "13  Hypothesis Testing",
+    "section": "13.2 Steps of Hypothesis Testing",
+    "text": "13.2 Steps of Hypothesis Testing\n\nState the Hypothesis\n\nNull Hypothesis\n\nH0\nThe treatment had no effect on the DV\n\nAlternative Hypothesis\n\nH1\nThe treatment does have an effect on the DV\n\n\nSet the decision criteria\n\nAlpha (α)\nThe alpha value tells us how willing we are to make a mistake (as there is never a flawless study) and what probability of error we are willing to accept.\nIn social sciences less than 5% probability (p) is acceptable\nα = .05 = 5% = 5/100\nProbability of error (p) should be &lt; .05\n\nCollect data and compute statistic\n\nT test, Correlation, ANOVA\n\nMake a decision\n\nCan reject the null hypothesis or fail to reject the null hypothesis\nReject the Null hypothesis\n\nClaims there no significant effect\n\nFail to Reject the Null Hypothesis\n\nClaims there is a significant effect\n\nThere is a 5% chance of making a mistake (false positive or false negative)",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "hyp_test.html#decision-making-errors",
+    "href": "hyp_test.html#decision-making-errors",
+    "title": "13  Hypothesis Testing",
+    "section": "13.3 Decision Making Errors",
+    "text": "13.3 Decision Making Errors\nType 1 Error (False Positive)\nRejecting a true Null hypothesis, claiming there is a significant effect when there really is not.\nEx. Claiming that a medical treatment will cure cancer, but it does not.\nType II Error (False Negative)\nFailing to reject a false Null Hypothesis, claiming there is not a significant effect when there really is.\nEx. Claiming there is no difference between smokers and non-smokers, but there really is.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "hyp_test.html#hypothesis-testing-table",
+    "href": "hyp_test.html#hypothesis-testing-table",
+    "title": "13  Hypothesis Testing",
+    "section": "13.4 Hypothesis Testing Table",
+    "text": "13.4 Hypothesis Testing Table\nUse this table to help you determine whether the correct decision has been made about the Null and Alternative Hypotheses.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
+    "objectID": "hyp_test.html#assumptions-of-hypothesis-testing",
+    "href": "hyp_test.html#assumptions-of-hypothesis-testing",
+    "title": "13  Hypothesis Testing",
+    "section": "13.5 Assumptions of Hypothesis Testing",
+    "text": "13.5 Assumptions of Hypothesis Testing\nThe variability of scores and the number of scores in a sample influence the results of a hypothesis test, so several assumptions must be met before conducting one.\n\nMust have random sampling\nMust have independent observations\nThe value of sigma must remain unchanged by the treatment\nThe data must form a normal sampling distribution",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Hypothesis Testing</span>"
+    ]
+  },
+  {
     "objectID": "t_tests.html",
     "href": "t_tests.html",
-    "title": "10  T-tests",
+    "title": "14  T-tests",
     "section": "",
-    "text": "10.1 Introduction\nThis chapter will be teaching you about a T-test and the use we have for them in psychology and also the real life applications there are when we use them. T-tests are a very useful tool when it comes to inferential statistics and they allow us to compare means and to also determine if group differences that we observe are statistically significant. In this chapter you will learn how to:",
+    "text": "14.1 Introduction\nThis chapter will be teaching you about a T-test and the use we have for them in psychology and also the real life applications there are when we use them. T-tests are a very useful tool when it comes to inferential statistics and they allow us to compare means and to also determine if group differences that we observe are statistically significant. In this chapter you will learn how to:",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#introduction",
     "href": "t_tests.html#introduction",
-    "title": "10  T-tests",
+    "title": "14  T-tests",
     "section": "",
     "text": "Run one sample and independent sample t-tests and paired t-test.\nperform t-tests using R and interpret them\nfind different assumptions like normality and homogeneity of variance\ncreate apa style results using the report and apaTables packages",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#pre-requisites",
     "href": "t_tests.html#pre-requisites",
-    "title": "10  T-tests",
-    "section": "10.2 Pre-requisites",
-    "text": "10.2 Pre-requisites\nThis chapter will be using different packages in R to make calculating t-tests easier. One function we will be using is the t_test function from the rstatix package which utilizes the following formula (x = DV ~ 1, mu = number). The 1 after the ~ is used for one sample t tests because we aren’t comparing two samples. You will also need to load up the following packages.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rstatix)\n\n\nAttaching package: 'rstatix'\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(report)\nlibrary(apaTables)\n\nTIP: Make note of the warning that comes after loading rstatix because it says that the use of the filter() function now falls under the use of rstatix so the regular stats filter must be called directly if you want to use it but we will be using rstatix in this chapter.",
+    "title": "14  T-tests",
+    "section": "14.2 Pre-requisites",
+    "text": "14.2 Pre-requisites\nThis chapter will be using different packages in R to make calculating t-tests easier. One function we will be using is the t_test function from the rstatix package which utilizes the following formula (x = DV ~ 1, mu = number). The 1 after the ~ is used for one sample t tests because we aren’t comparing two samples. You will also need to load up the following packages.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rstatix)\n\n\nAttaching package: 'rstatix'\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(report)\nlibrary(apaTables)\n\nTIP: Make note of the warning that comes after loading rstatix because it says that the use of the filter() function now falls under the use of rstatix so the regular stats filter must be called directly if you want to use it but we will be using rstatix in this chapter.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#what-is-a-t-test",
     "href": "t_tests.html#what-is-a-t-test",
-    "title": "10  T-tests",
-    "section": "10.3 What is a t-test?",
-    "text": "10.3 What is a t-test?\nNow before we get into working inside of R using t-tests first we have to understand what they are and some different ways we use them. A t-test is a inferential statistic that compares means while also making note of variability and sample sizes. There are different ways in psychology that we can use these tests.\n\n10.3.1 One-sample t-test\nWhen we want to compare one group against a known value like for example the population average this is when we will use a one-sample t-test because we are only taking one group and applying it to a value that is already known.\n\n\n10.3.2 Independent-sample t-test\nNow when we want compare two completely different groups like say for example gender using males and females this is where we will use the independent sample t-test because the two are independent from each other and results will not rely on the other.\n\n\n10.3.3 Paired t-test\nWe use a paired t-test when we want to examine one group that usually experiences a change so lets say for example we want to measure a groups stress levels before and after listening to music we would use a paired t-test\n\n\n10.3.4 Now lets practice creating a small data-set that we could see in a real study that you might do for your project.\nLets say a researcher wants to see if listening to calming music will help reduce stress. In the experiment stress is measured on a scale of 0-100.\nThe hypothesis for this example is that students who listen to music will report lower stress levels.\n\nstress_data &lt;- data.frame(\n  group = c(rep(\"Control\", 8), rep(\"Music\", 8)),\n  stress = c(75, 80, 78, 82, 79, 76, 81, 74, \n             60, 65, 62, 58, 63, 61, 59, 64)\n)",
+    "title": "14  T-tests",
+    "section": "14.3 What is a t-test?",
+    "text": "14.3 What is a t-test?\nNow before we get into working inside of R using t-tests first we have to understand what they are and some different ways we use them. A t-test is a inferential statistic that compares means while also making note of variability and sample sizes. There are different ways in psychology that we can use these tests.\n\n14.3.1 One-sample t-test\nWhen we want to compare one group against a known value like for example the population average this is when we will use a one-sample t-test because we are only taking one group and applying it to a value that is already known.\n\n\n14.3.2 Independent-sample t-test\nNow when we want compare two completely different groups like say for example gender using males and females this is where we will use the independent sample t-test because the two are independent from each other and results will not rely on the other.\n\n\n14.3.3 Paired t-test\nWe use a paired t-test when we want to examine one group that usually experiences a change so lets say for example we want to measure a groups stress levels before and after listening to music we would use a paired t-test\n\n\n14.3.4 Now lets practice creating a small data-set that we could see in a real study that you might do for your project.\nLets say a researcher wants to see if listening to calming music will help reduce stress. In the experiment stress is measured on a scale of 0-100.\nThe hypothesis for this example is that students who listen to music will report lower stress levels.\n\nstress_data &lt;- data.frame(\n  group = c(rep(\"Control\", 8), rep(\"Music\", 8)),\n  stress = c(75, 80, 78, 82, 79, 76, 81, 74, \n             60, 65, 62, 58, 63, 61, 59, 64)\n)",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#descriptive-statistics",
     "href": "t_tests.html#descriptive-statistics",
-    "title": "10  T-tests",
-    "section": "10.4 Descriptive Statistics",
-    "text": "10.4 Descriptive Statistics\nNow we are going to go through some practice examples to help you get a better use of applying different t-tests to scenarios\n\n10.4.1 Example using data\nNow lets run through an example fo using a one sample t-test in a psychology example\nDoes the average stress level in the music group differ from the control group?\nFirst we must separate the music only group into their own section from the control group then use the get_summary_stats function to get a summary of the stats from our previous data.\n\nstress_data %&gt;%\n  group_by(group) %&gt;%\n  get_summary_stats(stress, type = \"mean_sd\")\n\n# A tibble: 2 × 5\n  group   variable     n  mean    sd\n  &lt;chr&gt;   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Control stress       8  78.1  2.9 \n2 Music   stress       8  61.5  2.45\n\n\nAs you can see in the output above the results suggest that the people in the music group are less stressed than the people in the control group.\n\n\n10.4.2 Assumption Testing\nNow that we have our data it is important that we check to see if it is normal enough for a t-test by using the Shapiro-wilk test by using our stress variable\n\n\n10.4.3 Shapiro-Wilk test\nNow we must use the Shapiro-wilk test to see if p &gt; .05.\n\nstress_data %&gt;%\n  group_by(group) %&gt;%\n  shapiro_test(stress)\n\n# A tibble: 2 × 4\n  group   variable statistic     p\n  &lt;chr&gt;   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;\n1 Control stress       0.954 0.753\n2 Music   stress       0.975 0.933\n\n\nAs you can see that our p value is &gt; than .05 so we can now run a t-test on it.",
+    "title": "14  T-tests",
+    "section": "14.4 Descriptive Statistics",
+    "text": "14.4 Descriptive Statistics\nNow we are going to go through some practice examples to help you get a better use of applying different t-tests to scenarios\n\n14.4.1 Example using data\nNow lets run through an example fo using a one sample t-test in a psychology example\nDoes the average stress level in the music group differ from the control group?\nFirst we must separate the music only group into their own section from the control group then use the get_summary_stats function to get a summary of the stats from our previous data.\n\nstress_data %&gt;%\n  group_by(group) %&gt;%\n  get_summary_stats(stress, type = \"mean_sd\")\n\n# A tibble: 2 × 5\n  group   variable     n  mean    sd\n  &lt;chr&gt;   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Control stress       8  78.1  2.9 \n2 Music   stress       8  61.5  2.45\n\n\nAs you can see in the output above the results suggest that the people in the music group are less stressed than the people in the control group.\n\n\n14.4.2 Assumption Testing\nNow that we have our data it is important that we check to see if it is normal enough for a t-test by using the Shapiro-wilk test by using our stress variable\n\n\n14.4.3 Shapiro-Wilk test\nNow we must use the Shapiro-wilk test to see if p &gt; .05.\n\nstress_data %&gt;%\n  group_by(group) %&gt;%\n  shapiro_test(stress)\n\n# A tibble: 2 × 4\n  group   variable statistic     p\n  &lt;chr&gt;   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;\n1 Control stress       0.954 0.753\n2 Music   stress       0.975 0.933\n\n\nAs you can see that our p value is &gt; than .05 so we can now run a t-test on it.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#independent-sample-t-test-1",
     "href": "t_tests.html#independent-sample-t-test-1",
-    "title": "10  T-tests",
-    "section": "10.5 Independent Sample t-test",
-    "text": "10.5 Independent Sample t-test\nNow lets take the data from before and use an independent sample t-test to see if our p value is &lt; .05 making it significant.\n\n10.5.1 Homogeneity of Variance\nWe need to use the homogeneity of variance test which is the levene_test for independent t-tests to see if we are able to conduct a t-test on our data\n\nstress_data %&gt;%\n  levene_test(stress ~ group)\n\n# A tibble: 1 × 4\n    df1   df2 statistic     p\n  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;\n1     1    14     0.317 0.583\n\n\nAs you see in the output our F-value for this test is .317 which shows how the group variance is different compared to each other. So a low F-value means that variance is similar.\nThe p-value of .583 shows us that our assumption is met because variance is equal between groups.\n\n\n10.5.2 Practice with independent sample\nLets now take our data and run it through a t-test\n\nt_test(stress_data, stress ~ group)\n\n# A tibble: 1 × 8\n  .y.    group1  group2    n1    n2 statistic    df            p\n* &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt;\n1 stress Control Music      8     8      12.4  13.6 0.0000000085\n\n\nAs you see in our output we get a lot of data so lets analyze each part of the output\nYou can see in group1 that this is the control group and group2 is the music group.\nThe n1 and n2 represent the participant number in each group which for this data set is 8\nThe t stat you can find under statistic this is 12.38 and it is a large t value which suggests a big difference between the variability of scores from the groups.\nOur p value for this test is 8.5e-09. This is a very small p value which indicates a statistically significant result which means that we reject the null hypothesis fro this experiment.\n\n\n10.5.3 APA Conclusion\nNow lets write a APA conclusion for the output that we have just analyzed above.\nParticipants in the music group reported significantly lowered stress (M = 12.38, SD = 2.45) than the control group ( M = 13.61, SD = 2.90), t(16) = 12.38, p &lt; .05.",
+    "title": "14  T-tests",
+    "section": "14.5 Independent Sample t-test",
+    "text": "14.5 Independent Sample t-test\nNow lets take the data from before and use an independent sample t-test to see if our p value is &lt; .05 making it significant.\n\n14.5.1 Homogeneity of Variance\nWe need to use the homogeneity of variance test which is the levene_test for independent t-tests to see if we are able to conduct a t-test on our data\n\nstress_data %&gt;%\n  levene_test(stress ~ group)\n\n# A tibble: 1 × 4\n    df1   df2 statistic     p\n  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;\n1     1    14     0.317 0.583\n\n\nAs you see in the output our F-value for this test is .317 which shows how the group variance is different compared to each other. So a low F-value means that variance is similar.\nThe p-value of .583 shows us that our assumption is met because variance is equal between groups.\n\n\n14.5.2 Practice with independent sample\nLets now take our data and run it through a t-test\n\nt_test(stress_data, stress ~ group)\n\n# A tibble: 1 × 8\n  .y.    group1  group2    n1    n2 statistic    df            p\n* &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt;\n1 stress Control Music      8     8      12.4  13.6 0.0000000085\n\n\nAs you see in our output we get a lot of data so lets analyze each part of the output\nYou can see in group1 that this is the control group and group2 is the music group.\nThe n1 and n2 represent the participant number in each group which for this data set is 8\nThe t stat you can find under statistic this is 12.38 and it is a large t value which suggests a big difference between the variability of scores from the groups.\nOur p value for this test is 8.5e-09. This is a very small p value which indicates a statistically significant result which means that we reject the null hypothesis fro this experiment.\n\n\n14.5.3 APA Conclusion\nNow lets write a APA conclusion for the output that we have just analyzed above.\nParticipants in the music group reported significantly lowered stress (M = 12.38, SD = 2.45) than the control group ( M = 13.61, SD = 2.90), t(16) = 12.38, p &lt; .05.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#one-sample-t-test-1",
     "href": "t_tests.html#one-sample-t-test-1",
-    "title": "10  T-tests",
-    "section": "10.6 One Sample t-test",
-    "text": "10.6 One Sample t-test\nNow we can use the same data we just used to compare the mean from one group to a known population mean\n\n10.6.1 Running the t-test\nNow lets take the music group and use the known population mean which will be 70 in this example and compare that to the means of the people in our data\n\nmusic_only &lt;- stress_data %&gt;% filter(group == \"Music\")\nt_test(music_only, stress ~ 1, mu = 70)\n\n# A tibble: 1 × 7\n  .y.    group1 group2         n statistic    df         p\n* &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 stress 1      null model     8     -9.81     7 0.0000242\n\n\nYou can see in this output that our sample mean is below the population mean we compared it to by seeing our statistic is -9.81 suggesting a large difference relative to variability. We also have a smaller p value than .05 so it means we can reject the null and that our sample mean differs from the population mean.",
+    "title": "14  T-tests",
+    "section": "14.6 One Sample t-test",
+    "text": "14.6 One Sample t-test\nNow we can use the same data we just used to compare the mean from one group to a known population mean\n\n14.6.1 Running the t-test\nNow lets take the music group and use the known population mean which will be 70 in this example and compare that to the means of the people in our data\n\nmusic_only &lt;- stress_data %&gt;% filter(group == \"Music\")\nt_test(music_only, stress ~ 1, mu = 70)\n\n# A tibble: 1 × 7\n  .y.    group1 group2         n statistic    df         p\n* &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 stress 1      null model     8     -9.81     7 0.0000242\n\n\nYou can see in this output that our sample mean is below the population mean we compared it to by seeing our statistic is -9.81 suggesting a large difference relative to variability. We also have a smaller p value than .05 so it means we can reject the null and that our sample mean differs from the population mean.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#paired-t-test-1",
     "href": "t_tests.html#paired-t-test-1",
-    "title": "10  T-tests",
-    "section": "10.7 Paired t-test",
-    "text": "10.7 Paired t-test\nWe use a paired t-test when we want to examine two scores before and after a group receives a stimulus.\nSo lets now do some practice imaging that we weant to see students stress levels before and after listening to some calming music\n\n10.7.1 Practice Problem\nFirst we need to create our data frame so we can use our data\n\npaired_data &lt;- data.frame(\n  student = 1:8,\n  stress_before = c(75, 80, 78, 82, 79, 76, 81, 74),\n  stress_after  = c(60, 65, 62, 58, 63, 61, 59, 64)\n)\n\n\n\n10.7.2 Checking for Normality\nNow we need to check for normality to see the difference of scores before and after treatment by using the Shapiro wick test.\n\npaired_data %&gt;%\n  mutate(diff = stress_before - stress_after) %&gt;%\n  shapiro_test(diff)\n\n# A tibble: 1 × 3\n  variable statistic     p\n  &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;\n1 diff         0.877 0.177\n\n\nSince we have a p &gt; .05 we can now run our paired t-test.\n\n\n10.7.3 Running the t-test\nNow we are going to be running our paired t-test to see if stress significantly decreased from the same participants after they have received the treatment.\n\nt.test(paired_data$stress_before,\n       paired_data$stress_after,\n       paired = TRUE)\n\n\n    Paired t-test\n\ndata:  paired_data$stress_before and paired_data$stress_after\nt = 10.673, df = 7, p-value = 1.39e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 12.94169 20.30831\nsample estimates:\nmean difference \n         16.625 \n\n\n\n\n10.7.4 APA Conclusion\nNow that we have our output from our t-test we can use the report package to create an APA style conclusion for us automatically\n\npaired_test &lt;- t.test(paired_data$stress_before,\n                      paired_data$stress_after,\n                      paired = TRUE)\n\nreport(paired_test)\n\nFor paired samples, 'repeated_measures_d()' provides more options.\n\n\nEffect sizes were labelled following Cohen's (1988) recommendations.\n\nThe Paired t-test testing the difference between paired_data$stress_before and\npaired_data$stress_after (mean difference = 16.62) suggests that the effect is\npositive, statistically significant, and large (difference = 16.62, 95% CI\n[12.94, 20.31], t(7) = 10.67, p &lt; .001; Cohen's d = 3.77, 95% CI [1.71, 5.81])\n\n\nOur output shows us that the effect is positive and significant and the treatment was effective.",
+    "title": "14  T-tests",
+    "section": "14.7 Paired t-test",
+    "text": "14.7 Paired t-test\nWe use a paired t-test when we want to examine two scores before and after a group receives a stimulus.\nSo lets now do some practice imaging that we weant to see students stress levels before and after listening to some calming music\n\n14.7.1 Practice Problem\nFirst we need to create our data frame so we can use our data\n\npaired_data &lt;- data.frame(\n  student = 1:8,\n  stress_before = c(75, 80, 78, 82, 79, 76, 81, 74),\n  stress_after  = c(60, 65, 62, 58, 63, 61, 59, 64)\n)\n\n\n\n14.7.2 Checking for Normality\nNow we need to check for normality to see the difference of scores before and after treatment by using the Shapiro wick test.\n\npaired_data %&gt;%\n  mutate(diff = stress_before - stress_after) %&gt;%\n  shapiro_test(diff)\n\n# A tibble: 1 × 3\n  variable statistic     p\n  &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;\n1 diff         0.877 0.177\n\n\nSince we have a p &gt; .05 we can now run our paired t-test.\n\n\n14.7.3 Running the t-test\nNow we are going to be running our paired t-test to see if stress significantly decreased from the same participants after they have received the treatment.\n\nt.test(paired_data$stress_before,\n       paired_data$stress_after,\n       paired = TRUE)\n\n\n    Paired t-test\n\ndata:  paired_data$stress_before and paired_data$stress_after\nt = 10.673, df = 7, p-value = 1.39e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 12.94169 20.30831\nsample estimates:\nmean difference \n         16.625 \n\n\n\n\n14.7.4 APA Conclusion\nNow that we have our output from our t-test we can use the report package to create an APA style conclusion for us automatically\n\npaired_test &lt;- t.test(paired_data$stress_before,\n                      paired_data$stress_after,\n                      paired = TRUE)\n\nreport(paired_test)\n\nFor paired samples, 'repeated_measures_d()' provides more options.\n\n\nEffect sizes were labelled following Cohen's (1988) recommendations.\n\nThe Paired t-test testing the difference between paired_data$stress_before and\npaired_data$stress_after (mean difference = 16.62) suggests that the effect is\npositive, statistically significant, and large (difference = 16.62, 95% CI\n[12.94, 20.31], t(7) = 10.67, p &lt; .001; Cohen's d = 3.77, 95% CI [1.71, 5.81])\n\n\nOur output shows us that the effect is positive and significant and the treatment was effective.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#apa-tables",
     "href": "t_tests.html#apa-tables",
-    "title": "10  T-tests",
-    "section": "10.8 APA Tables",
-    "text": "10.8 APA Tables\nAPA tables is a very useful package that allows us to present our data in APA formatted tables\n\n10.8.1 Creating an APA Table\nNow we are going to create an APA table for us to use that combines our control and music groups.\n\napa.1way.table(\n  data = stress_data,\n  dv = stress,\n  iv = group,\n  filename = \"stress_ttest_table.doc\"\n)\n\n\n\nDescriptive statistics for stress as a function of group.  \n\n   group     M   SD\n Control 78.12 2.90\n   Music 61.50 2.45\n\nNote. M and SD represent mean and standard deviation, respectively.\n \n\n\nAs you can see APA tables creates a simple and detailed table that you can put into a word document when you are writing your final paper.",
+    "title": "14  T-tests",
+    "section": "14.8 APA Tables",
+    "text": "14.8 APA Tables\nAPA tables is a very useful package that allows us to present our data in APA formatted tables\n\n14.8.1 Creating an APA Table\nNow we are going to create an APA table for us to use that combines our control and music groups.\n\napa.1way.table(\n  data = stress_data,\n  dv = stress,\n  iv = group,\n  filename = \"stress_ttest_table.doc\"\n)\n\n\n\nDescriptive statistics for stress as a function of group.  \n\n   group     M   SD\n Control 78.12 2.90\n   Music 61.50 2.45\n\nNote. M and SD represent mean and standard deviation, respectively.\n \n\n\nAs you can see APA tables creates a simple and detailed table that you can put into a word document when you are writing your final paper.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {
     "objectID": "t_tests.html#report-package",
     "href": "t_tests.html#report-package",
-    "title": "10  T-tests",
-    "section": "10.9 Report Package",
-    "text": "10.9 Report Package\nThe report package automatically formats any data or results into a APA style sentence that works very will for research papers\nIt generates an APA style paragraph that you can put right into your paper\n\nreport(paired_test)\n\nFor paired samples, 'repeated_measures_d()' provides more options.\n\n\nEffect sizes were labelled following Cohen's (1988) recommendations.\n\nThe Paired t-test testing the difference between paired_data$stress_before and\npaired_data$stress_after (mean difference = 16.62) suggests that the effect is\npositive, statistically significant, and large (difference = 16.62, 95% CI\n[12.94, 20.31], t(7) = 10.67, p &lt; .001; Cohen's d = 3.77, 95% CI [1.71, 5.81])",
+    "title": "14  T-tests",
+    "section": "14.9 Report Package",
+    "text": "14.9 Report Package\nThe report package automatically formats any data or results into a APA style sentence that works very will for research papers\nIt generates an APA style paragraph that you can put right into your paper\n\nreport(paired_test)\n\nFor paired samples, 'repeated_measures_d()' provides more options.\n\n\nEffect sizes were labelled following Cohen's (1988) recommendations.\n\nThe Paired t-test testing the difference between paired_data$stress_before and\npaired_data$stress_after (mean difference = 16.62) suggests that the effect is\npositive, statistically significant, and large (difference = 16.62, 95% CI\n[12.94, 20.31], t(7) = 10.67, p &lt; .001; Cohen's d = 3.77, 95% CI [1.71, 5.81])",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>T-tests</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>T-tests</span>"
     ]
   },
   {

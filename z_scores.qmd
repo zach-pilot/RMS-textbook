@@ -1,0 +1,55 @@
+---
+title: "z scores"
+format: html
+editor: visual
+toc: true
+---
+
+## z-Scores and Location  
+
+Raw scores provide very little information by themselves 
+
+Ex. Terrence got 34 points on the test. Did he do well?  
+
+The mean and standard deviation provide a context with which to interpret the raw score.  
+
+Ex. Archibald’s class average was 75 points with a 2 point standard deviation. His score of 34 is not very good.  
+
+z-scores tell us where an x value is in relation to the mean and standard deviation with one number.  
+
+ 
+
+## Z-scores  
+
+Signed (+ or -) number  
+
+The sign tells you whether the x value is above the mean (positive) or below the mean (negative)  
+
+The number tells you the amount of standard deviations between the raw score and the mean of the distribution  
+
+Ex: What does a z-score of ________ mean:  -1?  +2?  -3?  
+
+## Z-score Formula  
+
+
+## Z-scores as a Standard Distribution  
+
+z-scores do not change the shape of the original distribution or the location of a score relative to others 
+
+When x values are transformed into z-scores, the resulting distribution: 
+
+The mean is always zero  
+
+The standard deviation is always one  
+
+Most z-scores are between z = -2.00 and z = +2.00 
+
+## Z-scores and Locations 
+
+As descriptive statistics, describe exactly where an individual is located 
+
+As inferential statistics, determine whether a sample is representative of its population  
+
+## Z-scores and Samples 
+
+Z-scores are standardized, so we can compare different distributions.   

@@ -17,6 +17,10 @@ book:
     - variability.qmd
     - select_participants.qmd
     - ethics.qmd
+    - z_scores.qmd
+    - probability.qmd
+    - dist_sample_means.qmd
+    - hyp_test.qmd
     - t_tests.qmd
     - references.qmd
 

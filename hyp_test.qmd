@@ -1,0 +1,73 @@
+---
+title: "Hypothesis Testing"
+format: html
+editor: visual
+toc: true
+---
+
+## Purpose of Hypothesis Testing
+
+Behavioral scientists often can’t measure all individuals in a population.
+
+*Ex. Measuring the inhibition of all lawyers in the United States*
+
+Use samples to test a hypothesis that is made about the population.
+
+Expose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.
+
+Hypothesis testing takes several steps
+
+## Steps of Hypothesis Testing
+
+1.  State the Hypothesis
+    -   **Null Hypothesis**
+        -   H0
+        -   The treatment had no effect on the DV
+    -   **Alternative Hypothesis**
+        -   H1
+        -   The treatment does have an effect on the DV
+2.  Set the decision criteria
+    -   **Alpha (α)**
+    -   The alpha value tells us how willing we are to make a mistake (as there is never a flawless study) and what probability of error we are willing to accept.
+    -   In social sciences less than 5% probability (p) is acceptable
+    -   α = .05 = 5% = 5/100
+    -   Probability of error (p) should be \< .05
+3.  Collect data and compute statistic
+    -   T test, Correlation, ANOVA
+4.  Make a decision
+    -   Can reject the null hypothesis or fail to reject the null hypothesis
+    -   **Reject the Null hypothesis**
+        -   Claims there no significant effect
+    -   **Fail to Reject the Null Hypothesis**
+        -   Claims there is a significant effect
+    -   There is a 5% chance of making a mistake (false positive or false negative)
+
+## Decision Making Errors
+
+**Type 1 Error (False Positive)**
+
+Rejecting a true Null hypothesis, claiming there is a significant effect when there really is not.
+
+*Ex. Claiming that a medical treatment will cure cancer, but it does not.*
+
+**Type II Error (False Negative)**
+
+Failing to reject a false Null Hypothesis, claiming there is not a significant effect when there really is.
+
+*Ex. Claiming there is no difference between smokers and non-smokers, but there really is.*
+
+## Hypothesis Testing Table
+
+Use this table to help you determine whether the correct decision has been made about the Null and Alternative Hypotheses.
+
+## Assumptions of Hypothesis Testing
+
+The variability of scores and the number of scores in a sample influence the results of a hypothesis test, so several assumptions must be met before conducting one.
+
+1.  Must have random sampling
+
+2.  Must have independent observations
+
+3.  The value of sigma must remain unchanged by the treatment
+
+4.  The data must form a normal sampling distribution

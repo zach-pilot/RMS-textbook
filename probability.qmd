@@ -1,0 +1,55 @@
+---
+title: "Probability"
+format: html
+editor: visual
+toc: true
+---
+
+## Probability 
+
+The likelihood of all possible outcomes 
+
+“Probability” = p  
+
+Can use fractions, decimals, or percentages: 
+
+p = ½ = .50 = 50% 
+
+Goes from 0% - 100% or 0 – 1  
+
+Equals the desired outcome divided by all possible outcomes  
+
+## Probability & Sampling  
+
+Samples are used in inferential statistics, to make inferences about larger populations  
+
+Probability can be used to quantify the relationship between samples and population  
+
+When something occurs in a sample, how likely is it that it represents the population?  
+
+Probability calculation requires independent random sampling, has an equal probability of being selected and replacement  
+
+## Probability and Inferential Statistics  
+
+Low probability values = Special/Rare, not common or likely to happen 
+
+High probability values = Common/likely to happen  
+
+In terms of finding an effect:  
+
+Low probability = effect  
+
+Means your finding is unlikely to happen by chance, there is a different cause 
+
+High probability = no effect  
+
+Means your finding is common or likely to happen 
+
+ 
+## Probability and Frequency Distributions  
+
+If a distribution displays a population of scores a portion of the graph represents a portion of the population  
+
+Probability can be defined by a proportion of the graph  
+
+Can determine this by using the z-score and the unit normal table  

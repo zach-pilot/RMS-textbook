@@ -57,8 +57,6 @@ Researchers describes purpose, procedures, and risks
 
 IRB must approve study before it can be conducted
 
-
-
 ## Lack of adequate informed consent
 
 Informed consent is a disclosing of the nature of participation
@@ -115,13 +113,13 @@ Anonymity is the easiest way to ensure confidentiality
 
 ### Debriefing
 
-Clarify nature of study 
+Clarify nature of study
 
-Remove any stress or negative study-indices consequences 
+Remove any stress or negative study-indices consequences
 
-Obtain participant reactions 
+Obtain participant reactions
 
-Ensure participants leave feeling good about participation 
+Ensure participants leave feeling good about participation
 
 ### Vulnerable Populations
 

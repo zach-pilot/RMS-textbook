@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; How to plan an experiment – RMS textbook</title>
+<title>13&nbsp; Hypothesis Testing – RMS textbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./measure_behav.html" rel="next">
-<link href="./what_are_beh_sci.html" rel="prev">
+<link href="./t_tests.html" rel="next">
+<link href="./dist_sample_means.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./how_plan_exp.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to plan an experiment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hyp_test.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./how_plan_exp.html" class="sidebar-item-text sidebar-link active">
+  <a href="./how_plan_exp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to plan an experiment</span></span></a>
   </div>
 </li>
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hyp_test.html" class="sidebar-item-text sidebar-link">
+  <a href="./hyp_test.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
   </div>
 </li>
@@ -213,27 +213,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#experimental-research" id="toc-experimental-research" class="nav-link active" data-scroll-target="#experimental-research"><span class="header-section-number">4.1</span> Experimental Research</a></li>
-  <li><a href="#three-components-of-experimental-research" id="toc-three-components-of-experimental-research" class="nav-link" data-scroll-target="#three-components-of-experimental-research"><span class="header-section-number">4.2</span> Three components of Experimental Research</a></li>
-  <li><a href="#independent-variable-iv" id="toc-independent-variable-iv" class="nav-link" data-scroll-target="#independent-variable-iv"><span class="header-section-number">4.3</span> Independent variable (IV)</a></li>
-  <li><a href="#subject-participant-variables" id="toc-subject-participant-variables" class="nav-link" data-scroll-target="#subject-participant-variables"><span class="header-section-number">4.4</span> Subject (Participant) Variables</a></li>
-  <li><a href="#evaluating-your-independent-variable" id="toc-evaluating-your-independent-variable" class="nav-link" data-scroll-target="#evaluating-your-independent-variable"><span class="header-section-number">4.5</span> Evaluating Your Independent Variable</a></li>
-  <li><a href="#dependent-variable" id="toc-dependent-variable" class="nav-link" data-scroll-target="#dependent-variable"><span class="header-section-number">4.6</span> Dependent Variable</a></li>
-  <li><a href="#groups-in-an-experiment" id="toc-groups-in-an-experiment" class="nav-link" data-scroll-target="#groups-in-an-experiment"><span class="header-section-number">4.7</span> Groups in an Experiment</a></li>
-  <li><a href="#assigning-participants" id="toc-assigning-participants" class="nav-link" data-scroll-target="#assigning-participants"><span class="header-section-number">4.8</span> Assigning Participants</a></li>
-  <li><a href="#within-subject-designs-repeated-measures" id="toc-within-subject-designs-repeated-measures" class="nav-link" data-scroll-target="#within-subject-designs-repeated-measures"><span class="header-section-number">4.9</span> Within Subject Designs (repeated measures)</a></li>
-  <li><a href="#power" id="toc-power" class="nav-link" data-scroll-target="#power"><span class="header-section-number">4.10</span> Power</a></li>
-  <li><a href="#order-effects" id="toc-order-effects" class="nav-link" data-scroll-target="#order-effects"><span class="header-section-number">4.11</span> Order Effects</a>
-  <ul class="collapse">
-  <li><a href="#between-subjects-design-independent-measures" id="toc-between-subjects-design-independent-measures" class="nav-link" data-scroll-target="#between-subjects-design-independent-measures"><span class="header-section-number">4.11.1</span> Between-Subjects Design (Independent Measures)</a></li>
-  </ul></li>
-  <li><a href="#experimental-control" id="toc-experimental-control" class="nav-link" data-scroll-target="#experimental-control"><span class="header-section-number">4.12</span> Experimental Control</a></li>
-  <li><a href="#sources-of-error" id="toc-sources-of-error" class="nav-link" data-scroll-target="#sources-of-error"><span class="header-section-number">4.13</span> Sources of Error</a></li>
-  <li><a href="#types-of-validity" id="toc-types-of-validity" class="nav-link" data-scroll-target="#types-of-validity"><span class="header-section-number">4.14</span> Types of Validity</a></li>
-  <li><a href="#threats-to-internal-validity" id="toc-threats-to-internal-validity" class="nav-link" data-scroll-target="#threats-to-internal-validity"><span class="header-section-number">4.15</span> Threats to internal validity</a>
-  <ul class="collapse">
-  <li><a href="#reducing-threats-to-validity" id="toc-reducing-threats-to-validity" class="nav-link" data-scroll-target="#reducing-threats-to-validity"><span class="header-section-number">4.15.1</span> Reducing threats to validity</a></li>
-  </ul></li>
+  <li><a href="#purpose-of-hypothesis-testing" id="toc-purpose-of-hypothesis-testing" class="nav-link active" data-scroll-target="#purpose-of-hypothesis-testing"><span class="header-section-number">13.1</span> Purpose of Hypothesis Testing</a></li>
+  <li><a href="#steps-of-hypothesis-testing" id="toc-steps-of-hypothesis-testing" class="nav-link" data-scroll-target="#steps-of-hypothesis-testing"><span class="header-section-number">13.2</span> Steps of Hypothesis Testing</a></li>
+  <li><a href="#decision-making-errors" id="toc-decision-making-errors" class="nav-link" data-scroll-target="#decision-making-errors"><span class="header-section-number">13.3</span> Decision Making Errors</a></li>
+  <li><a href="#hypothesis-testing-table" id="toc-hypothesis-testing-table" class="nav-link" data-scroll-target="#hypothesis-testing-table"><span class="header-section-number">13.4</span> Hypothesis Testing Table</a></li>
+  <li><a href="#assumptions-of-hypothesis-testing" id="toc-assumptions-of-hypothesis-testing" class="nav-link" data-scroll-target="#assumptions-of-hypothesis-testing"><span class="header-section-number">13.5</span> Assumptions of Hypothesis Testing</a></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to plan an experiment</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></h1>
 </div>
 
 
@@ -259,161 +243,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="experimental-research" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="experimental-research"><span class="header-section-number">4.1</span> Experimental Research</h2>
-<p>Allows us to study causes of behavior.</p>
+<section id="purpose-of-hypothesis-testing" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="purpose-of-hypothesis-testing"><span class="header-section-number">13.1</span> Purpose of Hypothesis Testing</h2>
+<p>Behavioral scientists often can’t measure all individuals in a population.</p>
+<p><em>Ex. Measuring the inhibition of all lawyers in the United States</em></p>
+<p>Use samples to test a hypothesis that is made about the population.</p>
+<p>Expose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.</p>
+<p>Hypothesis testing takes several steps</p>
 </section>
-<section id="three-components-of-experimental-research" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="three-components-of-experimental-research"><span class="header-section-number">4.2</span> Three components of Experimental Research</h2>
+<section id="steps-of-hypothesis-testing" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="steps-of-hypothesis-testing"><span class="header-section-number">13.2</span> Steps of Hypothesis Testing</h2>
 <ol type="1">
-<li><p>Manipulate a variable</p>
+<li>State the Hypothesis
 <ul>
-<li>Exercise experimental control</li>
+<li><strong>Null Hypothesis</strong>
+<ul>
+<li>H0</li>
+<li>The treatment had no effect on the DV</li>
 </ul></li>
-<li><p>Systematically put participants in groups</p>
+<li><strong>Alternative Hypothesis</strong>
 <ul>
-<li>Ensure equivalent groups</li>
+<li>H1</li>
+<li>The treatment does have an effect on the DV</li>
 </ul></li>
-<li><p>Control extraneous variables</p>
+</ul></li>
+<li>Set the decision criteria
 <ul>
-<li>Make sure factors that are unimportant don’t influence results</li>
+<li><strong>Alpha (α)</strong></li>
+<li>The alpha value tells us how willing we are to make a mistake (as there is never a flawless study) and what probability of error we are willing to accept.</li>
+<li>In social sciences less than 5% probability (p) is acceptable</li>
+<li>α = .05 = 5% = 5/100</li>
+<li>Probability of error (p) should be &lt; .05</li>
+</ul></li>
+<li>Collect data and compute statistic
+<ul>
+<li>T test, Correlation, ANOVA</li>
+</ul></li>
+<li>Make a decision
+<ul>
+<li>Can reject the null hypothesis or fail to reject the null hypothesis</li>
+<li><strong>Reject the Null hypothesis</strong>
+<ul>
+<li>Claims there no significant effect</li>
+</ul></li>
+<li><strong>Fail to Reject the Null Hypothesis</strong>
+<ul>
+<li>Claims there is a significant effect</li>
+</ul></li>
+<li>There is a 5% chance of making a mistake (false positive or false negative)</li>
 </ul></li>
 </ol>
 </section>
-<section id="independent-variable-iv" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="independent-variable-iv"><span class="header-section-number">4.3</span> Independent variable (IV)</h2>
-<p>The variable that the researcher manipulates. All experimental research must have AT LEAST one. Researchers can manipulate the environment, the instructions, or they may use an invasive variable (like giving someone a caffeine pill).</p>
-<p>Must have at least 2 levels</p>
-<p><em>Ex. Temperature may have two levels; hot and cold</em></p>
+<section id="decision-making-errors" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="decision-making-errors"><span class="header-section-number">13.3</span> Decision Making Errors</h2>
+<p><strong>Type 1 Error (False Positive)</strong></p>
+<p>Rejecting a true Null hypothesis, claiming there is a significant effect when there really is not.</p>
+<p><em>Ex. Claiming that a medical treatment will cure cancer, but it does not.</em></p>
+<p><strong>Type II Error (False Negative)</strong></p>
+<p>Failing to reject a false Null Hypothesis, claiming there is not a significant effect when there really is.</p>
+<p><em>Ex. Claiming there is no difference between smokers and non-smokers, but there really is.</em></p>
 </section>
-<section id="subject-participant-variables" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="subject-participant-variables"><span class="header-section-number">4.4</span> Subject (Participant) Variables</h2>
-<p>Based off of a personal characteristic. Something you cannot manipulate in the lab.</p>
-<p><em>Ex. Ethnicity/Race, Hob</em>bies</p>
+<section id="hypothesis-testing-table" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="hypothesis-testing-table"><span class="header-section-number">13.4</span> Hypothesis Testing Table</h2>
+<p>Use this table to help you determine whether the correct decision has been made about the Null and Alternative Hypotheses.</p>
 </section>
-<section id="evaluating-your-independent-variable" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="evaluating-your-independent-variable"><span class="header-section-number">4.5</span> Evaluating Your Independent Variable</h2>
-<p>A bad independent variable can result in a failed experiment.</p>
-<p><strong>Pilot Study</strong></p>
-<p>Test your experiment on a small group of people to ensure that it works.</p>
-<p><strong>Manipulation Check</strong></p>
-<p>Done to ensure that the level of your IV manipulation is strong enough.</p>
-<p><em>Ex. Is 5mg of caffeine enough or should I use 10mg?</em></p>
-</section>
-<section id="dependent-variable" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="dependent-variable"><span class="header-section-number">4.6</span> Dependent Variable</h2>
-<p>The variable a researcher measures.</p>
-<p>Experiments must have AT LEAST one.</p>
-<p><em>Ex. Heart rate, response to questionnaire, performance on test</em></p>
-</section>
-<section id="groups-in-an-experiment" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="groups-in-an-experiment"><span class="header-section-number">4.7</span> Groups in an Experiment</h2>
-<p><strong>Experimental</strong></p>
-<p>The group that receives the independent variable manipulation.</p>
-<p><em>Ex. In a study about sleep, this group is required to stay awake for 2 days.</em></p>
-<p><strong>Control</strong></p>
-<p>The group that is not exposed to any independent variable manipulation.</p>
-<p><em>Ex. In the same sleep study, this group sleeps however much they usually sleep.</em></p>
-</section>
-<section id="assigning-participants" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="assigning-participants"><span class="header-section-number">4.8</span> Assigning Participants</h2>
-<p><strong>Simple Random Assignment</strong></p>
-<p>Everyone has an equal chance of being assigned to any group/condition.</p>
-<p><em>Ex. Roll dice</em></p>
-<p>In this situation people with any attribute are equally likely to be in either group.</p>
-<p><strong>Matched Random Assignment</strong></p>
-<p>Participants are matched into homogeneous blocks. Participants in each block are then randomly assigned to conditions.</p>
-<p>In this situation conditions will be similar along specific dimensions.</p>
-</section>
-<section id="within-subject-designs-repeated-measures" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="within-subject-designs-repeated-measures"><span class="header-section-number">4.9</span> Within Subject Designs (repeated measures)</h2>
-<p>Participants are exposed to ALL conditions in an experiment.</p>
-<p>No need for random assignment.</p>
-<p>Ex<em>. In an experiment testing a new drug all participants receive all doses of the drug (5mg, 10mg, 15mg)</em></p>
-<p><strong>Pros</strong></p>
-<p>More powerful</p>
-<p><strong>Cons</strong></p>
-<p>Order Effects</p>
-</section>
-<section id="power" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="power"><span class="header-section-number">4.10</span> Power</h2>
-<p>The ability to detect IV effects.</p>
-<p>Requires fewer participants.</p>
-</section>
-<section id="order-effects" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="order-effects"><span class="header-section-number">4.11</span> Order Effects</h2>
-<p><strong>Carryover effects</strong></p>
-<p>One condition influences the following condition.</p>
-<p><strong>Practice effects</strong></p>
-<p>Participants have learned how to perform from previous experimental trials.</p>
-<p><strong>Fatigue effects</strong></p>
-<p>Participants are tired, bored, have no energy over time.</p>
-<p><strong>Sensitization</strong></p>
-<p>Participants realize the hypothesis being tested and do not perform naturally.</p>
-<p><strong>Counterbalancing</strong></p>
-<p>can be used to correct for order effects.</p>
-<p>A researcher presents the levels of the IV in different orders for different participants.</p>
-<section id="between-subjects-design-independent-measures" class="level3" data-number="4.11.1">
-<h3 data-number="4.11.1" class="anchored" data-anchor-id="between-subjects-design-independent-measures"><span class="header-section-number">4.11.1</span> Between-Subjects Design (Independent Measures)</h3>
-<p>Participants experience only one condition of the IV.</p>
-<p>Typically requires random assignment.</p>
-<p><em>Ex. In an experiment testing a new drug each participant will receive only one of the three levels of drug dosage (5mg or 10 mg or 15 mg).</em></p>
-</section>
-</section>
-<section id="experimental-control" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="experimental-control"><span class="header-section-number">4.12</span> Experimental Control</h2>
-<p><strong>Treatment effect</strong></p>
-<p>Systematic differences due to the IV</p>
-<p><strong>Confounds</strong></p>
-<p>Variable other than the IV that differs systematically between conditions.</p>
-<p>Confounds invalidate your experiment because, if confounds are present, it is unclear whether the observed differences are due to the IV or the confound.</p>
-<p>Must be eliminated to draw accurate conclusions.</p>
-<p><strong>Error</strong></p>
-<p>Unsystematic effects due to extraneous (uncontrolled) variables.</p>
-</section>
-<section id="sources-of-error" class="level2" data-number="4.13">
-<h2 data-number="4.13" class="anchored" data-anchor-id="sources-of-error"><span class="header-section-number">4.13</span> Sources of Error</h2>
-<p>Individual Differences</p>
-<p>Transient states</p>
-<p>Environmental factors</p>
-<p>Differential treatment</p>
-<p>Measurement error</p>
-</section>
-<section id="types-of-validity" class="level2" data-number="4.14">
-<h2 data-number="4.14" class="anchored" data-anchor-id="types-of-validity"><span class="header-section-number">4.14</span> Types of Validity</h2>
-<p><strong>Internal Validity</strong></p>
-<p>Degree to which we can draw accurate conclusions about the effects of the IV</p>
-<p>Gain internal validity when all confounds are eliminated and you can conclude that the observed differences were due to the IV.</p>
-<p>Has experimental control.</p>
-<p><strong>External Validity</strong></p>
-<p>Inverse relationship with internal validity</p>
-<p>The greater experimental control in your experiment, the less likely it will be externally valid or generalizable to the “real world”.</p>
-<p>Internal validity is more critical and desirable than external validity.</p>
-</section>
-<section id="threats-to-internal-validity" class="level2" data-number="4.15">
-<h2 data-number="4.15" class="anchored" data-anchor-id="threats-to-internal-validity"><span class="header-section-number">4.15</span> Threats to internal validity</h2>
-<p><strong>Biased assignment of participants</strong></p>
-<p>Occurs when random assignment isn’t possible or doesn’t produce equivalent groups.</p>
-<p><strong>Differential attrition</strong></p>
-<p>Participants drop out of the experiment differently across levels of the IV.</p>
-<p><strong>Demand Characteristics</strong></p>
-<p>Participants perform in the way they believe the experimenter wants them to.</p>
-<p><strong>Placebo Effects</strong></p>
-<p>Change as the result of the mere suggestion of change.</p>
-<p><strong>Pretest sensitization</strong></p>
-<p>Exposure to pretest affects one IV level differently than another</p>
-<p><strong>History</strong></p>
-<p>External events that participants experience affect one level of the IV differently than another</p>
-<p><strong>Experimenter expectancy effects</strong></p>
-<p>Experimenter with certain expectations interacts with participants differently</p>
-<section id="reducing-threats-to-validity" class="level3" data-number="4.15.1">
-<h3 data-number="4.15.1" class="anchored" data-anchor-id="reducing-threats-to-validity"><span class="header-section-number">4.15.1</span> Reducing threats to validity</h3>
-<p><strong>Double Blind Procedure</strong></p>
-<p>The researcher administering the IV and the participant both do not know what level of the IV is being administered.</p>
-<p>Can eliminate expectancy effects and demand characteristics</p>
+<section id="assumptions-of-hypothesis-testing" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="assumptions-of-hypothesis-testing"><span class="header-section-number">13.5</span> Assumptions of Hypothesis Testing</h2>
+<p>The variability of scores and the number of scores in a sample influence the results of a hypothesis test, so several assumptions must be met before conducting one.</p>
+<ol type="1">
+<li><p>Must have random sampling</p></li>
+<li><p>Must have independent observations</p></li>
+<li><p>The value of sigma must remain unchanged by the treatment</p></li>
+<li><p>The data must form a normal sampling distribution</p></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -818,13 +722,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./what_are_beh_sci.html" class="pagination-link" aria-label="What are Behavioral Sciences">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What are Behavioral Sciences</span></span>
+      <a href="./dist_sample_means.html" class="pagination-link" aria-label="Distribution of Sample Means">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribution of Sample Means</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./measure_behav.html" class="pagination-link" aria-label="Measuring behavior">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring behavior</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./t_tests.html" class="pagination-link" aria-label="T-tests">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">T-tests</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
