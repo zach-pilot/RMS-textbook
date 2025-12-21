@@ -13,8 +13,9 @@ book:
     - what_are_beh_sci.qmd
     - how_plan_exp.qmd
     - measure_behav.qmd
+    - measurement.qmd
+    - variability.qmd
     - t_tests.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib

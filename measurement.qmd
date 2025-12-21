@@ -1,0 +1,148 @@
+---
+title: "Measurement"
+format: html
+editor: visual
+toc: true
+---
+
+## Measurement
+
+**Measurement Error**
+
+Variability in scores due to factors that distort the true score.
+
+**True Score**
+
+The score a participant would obtain if a measure were perfect and we could measure without error.
+
+Measurement error + True Score = Observed score
+
+## Sources of Measurement Error
+
+**Transient States**
+
+Temporary state
+
+*Ex. mood*
+
+**Stable Attribute**
+
+A lasting state
+
+*Ex. Ambitious personality*
+
+**Situational factor**
+
+Research setting (Ex. Noise/temperature in the room)
+
+**Characteristics of the measure**
+
+The measure itself is ambiguous or too long
+
+**Mistakes in recording**
+
+Incorrect data
+
+## Reliability
+
+Consistency/dependability of the measuring technique
+
+Inverse relationship with measurement error
+
+If observed score is close to the true score, your measure has high reliability
+
+Can be assessed using several measurements of the same behavior and comparing to see if they resulted in similar scores (typically through a correlation)
+
+**Correlation Coefficient**
+
+Value that describes relationship between two measures
+
+Ranges from -1.00 to +1.00, sign indicates direction
+
+Correlation of .00 indicates no relationship
+
+## Forms of Reliability
+
+**Inter-rater Reliability**
+
+Consistency among two or more researchers who observe and record participants’ behavior
+
+**Test-Retest Reliability**
+
+Consistency of responses on a measure over time, use the same measure twice and evaluate the correlation.
+
+The results of a reliable measure should not change over time.
+
+**Inter-Item Reliability**
+
+Consistency between items on a scale.
+
+Tells the researcher whether the items on the scale are measuring the same thing
+
+If the items do not measure the same thing, measurement error increases and reliability decreases.
+
+## Indices of Inter-Item Reliability
+
+**Item-total correlation**
+
+The correlation between one item and the sum of all other items on a scale.
+
+**Split-half reliability**
+
+Divide items on a scale into two sections and examine the correlation between the sections.
+
+**Cronbach’s Alpha (α)**
+
+The average of all possible split-half reliabilities
+
+Most frequently used
+
+α \> .70 considered acceptable
+
+## Increasing Reliability
+
+Standardize how measure is administered
+
+Clarify instructions and questions
+
+Train researchers/coders
+
+Minimize errors in coding data
+
+## Validity
+
+How accurate is a measure at estimating what it is attempting to assess?
+
+Do differences in scores truly reflect differences in what you are trying to measure?
+
+## Forms of Validity
+
+**Face Validity**
+
+The extent to which an assessment appears to describe what it is supposed to measure.
+
+Does not actually impact the “true” validity
+
+**Construct Validity**
+
+How well does a measurement of a hypothetical construct relate to other measures.
+
+-   **Hypothetical Construct**
+
+    -   Something that cannot be directly observed, but is inferred based on observation or experience.
+
+    -   *Ex. Personality, Confidence*
+
+**Convergent Validity**
+
+A measure correlates with other measures that it should correlate with
+
+**Discriminant Validity**
+
+A measure does not correlate with other measures that it should not correlate with
+
+## Bias
+
+**Test Bias**
+
+When the validity of a measure is lower for some groups than others.

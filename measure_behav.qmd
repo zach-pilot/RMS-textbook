@@ -1,11 +1,11 @@
 ---
-title: "measuring behavior"
+title: "Measuring behavior"
 format: html
 editor: visual
 toc: true
 ---
 
-### Types
+## Types
 
 -   Observational
 
@@ -14,14 +14,6 @@ toc: true
 -   Self-report
 
 ## Scales of Measurement
-
--   Nominal
-
--   Ordinal
-
--   Interval
-
--   Ratio
 
 ### Nominal Scales
 
@@ -55,33 +47,31 @@ Provides greatest amount of information.
 
 Should be used when possible.
 
-ex. duration
+*ex. duration, weight, accuracy*
 
-Central Tendency
-
-T1: Central Tendency
+## Central Tendency
 
 A descriptive measure which represents the entire distribution of scores (mean, median, mode).
 
-Goal: Find a single value that is representative of all the data.
+**Goal:** Find a single value that is representative of all the data.
 
 Can condense large data set into a single value.
 
 Allows comparison of 2 or more data sets using the central tendency.
 
-T2: The Mean
+### The Mean
 
 Most commonly used measure of central tendency.
 
 Used in interval or ratio scales.
 
-How to compute:
+#### How to compute:
 
 Compute the sum of all scores (∑)
 
 Divide the sum by the number of scores.
 
-In manuscripts, the sample mean is identified as “M”
+In manuscripts, the sample mean is identified as “*M*”
 
 The sum (∑) of all scores (X) = (∑X)
 
@@ -101,19 +91,19 @@ All distances below the mean are equal to all the distances above the mean.
 
 Changing any score (adding or subtracting) will influence the mean.
 
-T3: When you shouldn’t use the mean
+#### When you shouldn’t use the mean
 
 The mean is not appropriate for nominal or ordinal scales.
 
-It is impossible to do.
+-   It is impossible to calculate.
 
 The mean is not appropriate when you have extreme scores (outliers).
 
-The mean will be pulled towards the extreme score, rendering it no longer representative of the rest of the data.
+-   The mean will be pulled towards the extreme score, rendering it no longer representative of the rest of the data.
 
 The mean is not appropriate when there is missing data
 
-T4: The Median
+### The Median
 
 Scores are listed in order from smallest to largest
 
@@ -131,7 +121,7 @@ Weekly high temperatures in Chicago last winter:
 
 What was the median temperature in Chicago last winter?
 
-T5: The Mode
+### The Mode
 
 The most frequently occurring score.
 

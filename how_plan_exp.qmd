@@ -5,11 +5,11 @@ editor: visual
 toc: true
 ---
 
-### Experimental Research
+## Experimental Research
 
 Allows us to study causes of behavior.
 
-### Three components of Experimental Research
+## Three components of Experimental Research
 
 1.  Manipulate a variable
 
@@ -23,7 +23,7 @@ Allows us to study causes of behavior.
 
     -   Make sure factors that are unimportant don’t influence results
 
-### Independent variable (IV)
+## Independent variable (IV)
 
 The variable that the researcher manipulates. All experimental research must have AT LEAST one. Researchers can manipulate the environment, the instructions, or they may use an invasive variable (like giving someone a caffeine pill).
 
@@ -31,13 +31,13 @@ Must have at least 2 levels
 
 *Ex. Temperature may have two levels; hot and cold*
 
-### Subject (Participant) Variables
+## Subject (Participant) Variables
 
 Based off of a personal characteristic. Something you cannot manipulate in the lab.
 
 *Ex. Ethnicity/Race, Hob*bies
 
-### Evaluating Your Independent Variable
+## Evaluating Your Independent Variable
 
 A bad independent variable can result in a failed experiment.
 
@@ -51,7 +51,7 @@ Done to ensure that the level of your IV manipulation is strong enough.
 
 *Ex. Is 5mg of caffeine enough or should I use 10mg?*
 
-### Dependent Variable
+## Dependent Variable
 
 The variable a researcher measures.
 
@@ -59,7 +59,7 @@ Experiments must have AT LEAST one.
 
 *Ex. Heart rate, response to questionnaire, performance on test*
 
-### Groups in an Experiment
+## Groups in an Experiment
 
 **Experimental**
 
@@ -73,7 +73,7 @@ The group that is not exposed to any independent variable manipulation.
 
 *Ex. In the same sleep study, this group sleeps however much they usually sleep.*
 
-### Assigning Participants
+## Assigning Participants
 
 **Simple Random Assignment**
 
@@ -89,7 +89,7 @@ Participants are matched into homogeneous blocks. Participants in each block are
 
 In this situation conditions will be similar along specific dimensions.
 
-### Within Subject Designs (repeated measures)
+## Within Subject Designs (repeated measures)
 
 Participants are exposed to ALL conditions in an experiment.
 
@@ -105,13 +105,13 @@ More powerful
 
 Order Effects
 
-### Power
+## Power
 
 The ability to detect IV effects.
 
 Requires fewer participants.
 
-### Order Effects
+## Order Effects
 
 **Carryover effects**
 
@@ -127,7 +127,7 @@ Participants are tired, bored, have no energy over time.
 
 **Sensitization**
 
-Participants realize the hypothesis being tested and do not perform naturally.\
+Participants realize the hypothesis being tested and do not perform naturally.
 
 **Counterbalancing**
 
@@ -143,7 +143,7 @@ Typically requires random assignment.
 
 *Ex. In an experiment testing a new drug each participant will receive only one of the three levels of drug dosage (5mg or 10 mg or 15 mg).*
 
-### Experimental Control
+## Experimental Control
 
 **Treatment effect**
 
@@ -161,7 +161,7 @@ Must be eliminated to draw accurate conclusions.
 
 Unsystematic effects due to extraneous (uncontrolled) variables.
 
-### Sources of Error
+## Sources of Error
 
 Individual Differences
 
@@ -173,7 +173,7 @@ Differential treatment
 
 Measurement error
 
-### Types of Validity
+## Types of Validity
 
 **Internal Validity**
 
@@ -191,7 +191,7 @@ The greater experimental control in your experiment, the less likely it will be 
 
 Internal validity is more critical and desirable than external validity.
 
-### Threats to internal validity
+## Threats to internal validity
 
 **Biased assignment of participants**
 

@@ -1,0 +1,109 @@
+---
+title: "Variability"
+---
+
+## Variability
+
+A quantitative measure of difference between a set of scores that describes how scores are scattered around a central point.
+
+**Descriptive Variability**
+
+Assesses spread or clustering of scores.
+
+**Inferential Variability**
+
+Assesses how accurately one individual score/sample represents the population.
+
+Used to detect patterns, variability influences how easily those patterns are detected.
+
+Variability can be small or large.
+
+Small indicates that scores are very clustered together.
+
+Large indicates that scores are widely dispersed.
+
+## Measures of Variability
+
+### Range
+
+Total distance covered by the distribution, from highest to lowest value, also gives information about how many categories there are.
+
+Relies on two values (extremes), ignores all others
+
+#### To Calculate
+
+Range = Maximum Score – Minimum Score
+
+Find the range of the following scores: 53, 14, 39, 46, 20, 70
+
+\*\*\* DO IN R \*\*\*
+
+### Variance & Standard Deviation
+
+Calculated using all scores in a distribution
+
+Most commonly used measure of variability
+
+Describes average distance between a score and the mean
+
+Used with interval and ratio scales
+
+#### How to Calculate the Standard Deviation in Seven Easy Steps
+
+1.  Calculate the mean.
+
+2.  Subtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.
+
+3.  Square the difference scores to get squared scores.
+
+4.  Add all of the squared scores to get the Sum of Squared Deviations (SS).
+
+5.  Divide the SS by the size of your population (N) or sample (n-1) to get the variance (σ\^2 or s\^2).
+
+6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
+
+### Stabdard deviation in R
+
+Find the standard deviation for the scores from this population: 1, 9, 5, 8, 7
+
+## Population v Sample
+
+Population is EVERYONE.
+
+Variance (σ\^2) = SS/N
+
+Standard Deviation (σ) = √(SS/N)
+
+Sample is a subset of everyone.
+
+Variance (s2) = SS/n-1.
+
+Standard Deviation (s) = √(SS/(n-1)).
+
+We use a different formula for samples because we are using limited information from a small group (the sample) to draw inferences about a larger group (the population).
+
+Samples have less variability than populations.
+
+## Biased and Unbiased Statistics
+
+**Biased Statistics**
+
+The average value overestimates or underestimates the population parameter
+
+i.e. the sample before adjustment (n-1)
+
+**Unbiased Statistics**
+
+The average value is equal to the population parameter.
+
+i.e. the sample after adjustment (n-1).
+
+## Transforming Data Sets
+
+When you add a value to every score in the data set it does not change the standard deviation.
+
+\*\*\* **DO IN R** \*\*\*\*\*
+
+When you multiply each score by the same value it changes the standard deviation
+
+***** DO IN R ******
