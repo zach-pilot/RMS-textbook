@@ -10,8 +10,8 @@ NEED RAFALIB PACKAGE
 ```{r}
 #| include: false
 library(tidyverse)
+library(ggplot2)
 ```
-
 
 ## Variability
 
@@ -85,11 +85,9 @@ Describes average distance between a score and the mean
 
 Used with interval and ratio scales
 
-variance 
-definition of variance
+variance definition of variance
 
-standard deviation
-definition of standard deviation
+standard deviation definition of standard deviation
 
 #### Calculate by hand
 
@@ -105,10 +103,9 @@ definition of standard deviation
 
 6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
 
-
 #### Calculate in R (long)
 
-Start with a simple vector we will store in the object 'y'. 
+Start with a simple vector we will store in the object 'y'.
 
 ```{r}
 # data
@@ -168,10 +165,7 @@ Start with the same data
 y <- c( 1, 2, 3, 4, 5)
 ```
 
-
-1. Calculate variance. For the calculation of population variance and standard 
-deviation we can use the `rafalib` package. For populations we will use the `popvar` 
-function and for sample vaiance we will use the `var` function from base R. 
+1.  Calculate variance. For the calculation of population variance and standard deviation we can use the `rafalib` package. For populations we will use the `popvar` function and for sample vaiance we will use the `var` function from base R.
 
 ```{r}
 # population variance
@@ -182,7 +176,7 @@ popvar(y)
 var(y)
 ```
 
-2. Calculate stabdard deviation 
+2.  Calculate stabdard deviation
 
 ```{r}
 # population stabdard deviation
@@ -228,7 +222,7 @@ i.e. the sample after adjustment (n-1).
 
 ### Adding a constant
 
-When you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example object. 
+When you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example object.
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -237,21 +231,20 @@ s <- sd(example_1)
 s
 ```
 
-Now, let's add a constant value of 2 to every score in the example object. 
+Now, let's add a constant value of 2 to every score in the example object.
 
 ```{r}
 example_2 <- example_1 + 2
 example_2
 ```
 
-Let's see if the sample standard deviation has changed. 
+Let's see if the sample standard deviation has changed.
 
 ```{r}
 s <- sd(example_2)
 ```
 
-There is no difference because the distance between scores is unchanged.
-The shape of the distribution is the same, just shifted to the right. 
+There is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.
 
 ```{r}
 #| echo: false
@@ -269,7 +262,7 @@ dat %>%
 
 ### Multiplying by a constant
 
-When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object. 
+When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object.
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -278,23 +271,22 @@ s <- sd(example_1)
 s
 ```
 
-Now, let's multiply every score in the dataset by a contant of 3. 
+Now, let's multiply every score in the dataset by a contant of 3.
 
 ```{r}
 example_2 <- example_1 * 3
 example_2
 ```
 
-Let's see if the sample standard deviation has changed. 
+Let's see if the sample standard deviation has changed.
 
 ```{r}
 s <- sd(example_2)
 s
 ```
 
-There distributions now look very different. The distance between scores in the
-`example_2` object has changed by a multiple of 3. The distance between scores
-is now greater, resulting in a wider distribution. 
+There distributions now look very different. The distance between scores in the `example_2` object has changed by a multiple of 3. The distance between scores is now greater, resulting in a wider distribution.
+
 ```{r}
 #| echo: false
 #| message: false
