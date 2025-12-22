@@ -5,6 +5,14 @@ editor: visual
 toc: true
 ---
 
+NEED RAFALIB PACKAGE
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+
 ## Variability
 
 A quantitative measure of difference between a set of scores that describes how scores are scattered around a central point.
@@ -33,13 +41,39 @@ Total distance covered by the distribution, from highest to lowest value, also g
 
 Relies on two values (extremes), ignores all others
 
-#### To Calculate
-
 Range = Maximum Score – Minimum Score
 
-Find the range of the following scores: 53, 14, 39, 46, 20, 70
+#### Calculate in R
 
-\*\*\* DO IN R \*\*\*
+Let's use R to work out an example. First, use the `sample` function to create 10 scores from 1:10 and assign that list of numbers (called a vector) to the object 'x'.
+
+```{r, eval=FALSE}
+# random sample of 10 scores from 1-10
+x <- sample(1:10, 10)
+```
+
+The `range` function will produce the two values we use to calculate the range, the highest and lowest.
+
+```{r, eval=FALSE}
+# gives us the extreme values
+range(x)
+```
+
+The `max` and `min` function will give us the largest and smallest numbers respectively.
+
+```{r, eval=FALSE}
+# gives us the maximum value
+max(x)
+
+# gives us the minimum value
+min(x)
+```
+
+Now we can use these functions to calculate the mean.
+
+```{r, eval=FALSE}
+max(x) - min(x)
+```
 
 ### Variance & Standard Deviation
 
@@ -51,7 +85,13 @@ Describes average distance between a score and the mean
 
 Used with interval and ratio scales
 
-#### How to Calculate the Standard Deviation in Seven Easy Steps
+variance 
+definition of variance
+
+standard deviation
+definition of standard deviation
+
+#### Calculate by hand
 
 1.  Calculate the mean.
 
@@ -65,9 +105,92 @@ Used with interval and ratio scales
 
 6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
 
-### Stabdard deviation in R
 
-Find the standard deviation for the scores from this population: 1, 9, 5, 8, 7
+#### Calculate in R (long)
+
+Start with a simple vector we will store in the object 'y'. 
+
+```{r}
+# data
+y <- c( 1, 2, 3, 4, 5)
+```
+
+1.  Calculate the mean.
+
+```{r}
+mean(y)
+```
+
+2.  Subtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.
+
+```{r}
+diff_score <- y - mean(y)
+```
+
+3.  Square the difference scores to get squared scores.
+
+```{r}
+sq_score <- diff_score^2
+```
+
+4.  Add all of the squared scores to get the Sum of Squared Deviations (SS).
+
+```{r}
+SS <- sum(sq_score)
+```
+
+5.  Divide the SS by the size of your population (N) or sample (n-1) to get the variance (σ\^2 or s\^2).
+
+```{r}
+# variance for a population
+pop_var <- SS/length(y)
+
+# variance for a sample 
+sample_var <- SS/(length(y) - 1)
+```
+
+6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
+
+```{r}
+# population standard deviation
+sqrt(pop_var)
+
+# sample standard deviation
+sqrt(sample_var)
+```
+
+#### Calculate in R (short)
+
+Start with the same data
+
+```{r}
+# data
+y <- c( 1, 2, 3, 4, 5)
+```
+
+
+1. Calculate variance. For the calculation of population variance and standard 
+deviation we can use the `rafalib` package. For populations we will use the `popvar` 
+function and for sample vaiance we will use the `var` function from base R. 
+
+```{r}
+# population variance
+library(rafalib)
+popvar(y)
+
+# sample variance
+var(y)
+```
+
+2. Calculate stabdard deviation 
+
+```{r}
+# population stabdard deviation
+popsd(y)
+
+# sample sd
+sd(y)
+```
 
 ## Population v Sample
 
@@ -103,10 +226,85 @@ i.e. the sample after adjustment (n-1).
 
 ## Transforming Data Sets
 
-When you add a value to every score in the data set it does not change the standard deviation.
+### Adding a constant
 
-\*\*\* **DO IN R** \*\*\*\*\*
+When you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example object. 
 
-When you multiply each score by the same value it changes the standard deviation
+```{r}
+example_1 <- c(1, 2, 3, 4, 5)
 
-\*\*\*\*\* DO IN R \*\*\*\*\*\*
+s <- sd(example_1)
+s
+```
+
+Now, let's add a constant value of 2 to every score in the example object. 
+
+```{r}
+example_2 <- example_1 + 2
+example_2
+```
+
+Let's see if the sample standard deviation has changed. 
+
+```{r}
+s <- sd(example_2)
+```
+
+There is no difference because the distance between scores is unchanged.
+The shape of the distribution is the same, just shifted to the right. 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+dat <- tibble(example_1, example_2)
+dat <- dat %>% 
+  pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")
+
+dat %>% 
+  ggplot(aes(x = score, color = group, color = group)) + 
+  geom_density(adjust = 1.5) +
+  theme_classic()
+```
+
+### Multiplying by a constant
+
+When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object. 
+
+```{r}
+example_1 <- c(1, 2, 3, 4, 5)
+
+s <- sd(example_1)
+s
+```
+
+Now, let's multiply every score in the dataset by a contant of 3. 
+
+```{r}
+example_2 <- example_1 * 3
+example_2
+```
+
+Let's see if the sample standard deviation has changed. 
+
+```{r}
+s <- sd(example_2)
+s
+```
+
+There distributions now look very different. The distance between scores in the
+`example_2` object has changed by a multiple of 3. The distance between scores
+is now greater, resulting in a wider distribution. 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+dat <- tibble(example_1, example_2)
+dat <- dat %>% 
+  pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")
+
+dat %>% 
+  ggplot(aes(x = score, color = group, color = group)) + 
+  geom_density(adjust = 1.5) +
+  theme_classic()
+```
