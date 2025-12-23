@@ -250,12 +250,20 @@ There is no difference because the distance between scores is unchanged. The sha
 #| echo: false
 #| message: false
 #| warning: false
-dat <- tibble(example_1, example_2)
-dat <- dat %>% 
-  pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")
 
-t_1 <- dat %>% 
-  ggplot(aes(x = score, color = group, color = group)) + 
+dat <- tibble(
+  example_1 = example_1,
+  example_2 = example_2
+)
+
+dat <- dat %>% 
+  pivot_longer(
+    cols = c(example_1, example_2),
+    names_to = "group",
+    values_to = "score"
+  )
+
+t_1 <- ggplot(dat, aes(x = score, color = group)) + 
   geom_density(adjust = 1.5) +
   theme_classic()
 
