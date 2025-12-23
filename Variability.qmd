@@ -247,9 +247,9 @@ s <- sd(example_2)
 There is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.
 
 ```{r}
-#| echo: false
 #| message: false
 #| warning: false
+#| include: false
 
 dat <- tibble(
   example_1 = example_1,
@@ -270,6 +270,10 @@ t_1 <- ggplot(dat, aes(x = score, color = group)) +
 print(t_1)
 ```
 
+```{r}
+#| echo: false
+knitr:: include_graphics("Variability_files/figure-html/unnamed-chunk-19-1.png")
+```
 ### Multiplying by a constant
 
 When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object.
