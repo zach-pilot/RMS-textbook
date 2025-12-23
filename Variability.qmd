@@ -257,7 +257,8 @@ dat <- dat %>%
 dat %>% 
   ggplot(aes(x = score, color = group, color = group)) + 
   geom_density(adjust = 1.5) +
-  theme_classic()
+  theme_classic() %>% 
+  print()
 ```
 
 ### Multiplying by a constant
