@@ -254,11 +254,12 @@ dat <- tibble(example_1, example_2)
 dat <- dat %>% 
   pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")
 
-dat %>% 
+t_1 <- dat %>% 
   ggplot(aes(x = score, color = group, color = group)) + 
   geom_density(adjust = 1.5) +
-  theme_classic() %>% 
-  print()
+  theme_classic()
+
+print(t_1)
 ```
 
 ### Multiplying by a constant
