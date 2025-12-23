@@ -274,6 +274,7 @@ print(t_1)
 #| echo: false
 knitr:: include_graphics("Variability_files/figure-html/unnamed-chunk-19-1.png")
 ```
+
 ### Multiplying by a constant
 
 When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object.
@@ -309,8 +310,15 @@ dat <- tibble(example_1, example_2)
 dat <- dat %>% 
   pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")
 
-dat %>% 
+t_2 <- dat %>% 
   ggplot(aes(x = score, color = group, color = group)) + 
   geom_density(adjust = 1.5) +
   theme_classic()
+
+print(t_2)
+```
+
+```{r}
+#| echo: false
+knitr:: include_graphics("Variability_files/figure-html/unnamed-chunk-24-1.png")
 ```
