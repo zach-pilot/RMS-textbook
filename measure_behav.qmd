@@ -65,6 +65,8 @@ Most commonly used measure of central tendency.
 
 Used in interval or ratio scales.
 
+Is influenced by extreme scores (outliers)
+
 #### How to compute:
 
 Compute the sum of all scores (∑)
@@ -80,6 +82,32 @@ The sum (∑) of all scores (X) = (∑X)
 Divide the sum by the number of scores (N) = (∑X/N)
 
 12/3 = 4
+
+#### Compute in R
+
+You can calculate the mean in R with the function `mean()`
+```{r}
+# create vector of scores
+x <- c(4, 5, 3)
+
+# use the mean function on the object
+mean(x)
+```
+The mean is influenced by extreme scores. It gets pulled in the direction of the
+extreme score, making it less representative of the whole dataset and more 
+reflective of the outlier (which isn't what we want). 
+
+```{r}
+# create vector of scores with an outlier
+x <- c(4, 5, 3, 46)
+
+# use the mean function on the object
+mean(x)
+```
+
+This score is not very reflective of our dataset, so we should use an alternative 
+measure of central tendency, like the median. 
+
 
 Weekly high temperatures in Chicago last winter:
 
@@ -114,6 +142,27 @@ When you have an even number of scores you take the average of the two middle sc
 The median can be used on ordinal, interval, or ratio scales.
 
 The median is unaffected by extreme scores (outliers).
+
+```{r}
+# create vector of data 
+x <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+# calculate median of the data object x
+median(x)
+```
+
+Remember the datset with an outlier from before? How does the median handle the
+outlier?
+
+```{r}
+# create vector of scores with an outlier
+x <- c(4, 5, 3, 46)
+
+# use the median function on the object
+median(x)
+```
+
+That is a much more representative measure for the entire dataset. 
 
 Weekly high temperatures in Chicago last winter:
 
