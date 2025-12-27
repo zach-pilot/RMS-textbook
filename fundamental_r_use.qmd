@@ -93,8 +93,7 @@ install.packages("psych")
 
 ### Loading packages
 
-In order to access all the awesome functions within a package you must load it 
-into the environment every single time. 
+In order to access all the awesome functions within a package you must load it into the environment every single time.
 
 You will want to do this by running the following in your source frame or the top left. We do this by using the the **library** function which calls up any package that you have installed it will not work if you do not have the package installed.
 
@@ -136,20 +135,17 @@ starwars %>%
   filter(species == "human") %>% 
   arrange(desc(mass))
 ```
+
 ## Objects
 
-In R, we will primarily be working with object. An object is a container that you 
-label. It can bea single number, a giant dataset, a graph, a function or even 
-models that we need. In order to create an object we use the `assignment operator`, 
-it looks like an arrow pointing to the left `<-`. The `assignment operator` creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.
+In R, we will primarily be working with object. An object is a container that you label. It can bea single number, a giant dataset, a graph, a function or even models that we need. In order to create an object we use the `assignment operator`, it looks like an arrow pointing to the left `<-`. The `assignment operator` creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.
 
 ```{r}
 x <- 67 # object named x 
 y <- "Good Morning" # object named y
 ```
 
-If i make changes to an object that I want to keep, I must rewrite the original 
-object or create a new one. If not, then my changes are not saved. 
+If i make changes to an object that I want to keep, I must rewrite the original object or create a new one. If not, then my changes are not saved.
 
 ```{r}
 x # open the x object
@@ -190,16 +186,7 @@ x <- (c(1, 2, 3, 4, 5))
 
 ### Arguments
 
-Functions require certain information to carry out their actions. Arguments are 
-where we provide that information. Many functions have default values automatically 
-used for arguments. However, we often have to supply information for arguments, 
-even if it's just the name of the object we want to use the function on. Arguments 
-are separated by a comma. Let's look at the `sum` function. It has two arguments, 
-the first is the data itself or the vector object containing the data and the 
-second is `na.rm = ` which has a default value of `FALSE`. `na.rm` is a logical 
-argument asking if we want to remove data coded as NA, which could be missing 
-data or incompatible data. Default arguments don't need to be typed out, they 
-are implied, unless we want to give a value to the argment other than the default. 
+Functions require certain information to carry out their actions. Arguments are where we provide that information. Many functions have default values automatically used for arguments. However, we often have to supply information for arguments, even if it's just the name of the object we want to use the function on. Arguments are separated by a comma. Let's look at the `sum` function. It has two arguments, the first is the data itself or the vector object containing the data and the second is `na.rm =` which has a default value of `FALSE`. `na.rm` is a logical argument asking if we want to remove data coded as NA, which could be missing data or incompatible data. Default arguments don't need to be typed out, they are implied, unless we want to give a value to the argment other than the default.
 
 ```{r, eval=FALSE}
 x <- c( 1, 2, 3, 4, 5)
@@ -228,10 +215,7 @@ We created the function `plus_two`, which will take whatever is in our function 
 
 ### Vectors
 
-A **vector** is a simple data structure that holds elements of the same kind. So 
-if we want to combine a bunch of names we can use a vector to do so but they need 
-to all be the same type of data. We will go over the different types of data 
-later in the chapter. Here are some simple basic examples of vectors.
+A **vector** is a simple data structure that holds elements of the same kind. So if we want to combine a bunch of names we can use a vector to do so but they need to all be the same type of data. We will go over the different types of data later in the chapter. Here are some simple basic examples of vectors.
 
 ```{r}
 numbers <- c(1, 2, 3, 4, 5, 6, 7)
@@ -246,11 +230,7 @@ sum(numbers)
 
 ### Data Frames
 
-A **data frame** is arranged into a rectangular shape and uses rows and columns. 
-The columns in a data frame are called **variables** and the rows in our data 
-frame are called **observations**. Now we can use data frames to combine two 
-different types of data into one object. The `data.frame()` function creates 
-this framework for us. We create columns and observations in this format:
+A **data frame** is arranged into a rectangular shape and uses rows and columns. The columns in a data frame are called **variables** and the rows in our data frame are called **observations**. Now we can use data frames to combine two different types of data into one object. The `data.frame()` function creates this framework for us. We create columns and observations in this format:
 
 ```{r, eval=FALSE}
 data.frame(
@@ -259,7 +239,8 @@ data.frame(
 )
 ```
 
-Let's put some data in there. 
+Let's put some data in there.
+
 ```{r}
 df <- data.frame(
   name = c("James", "Henry"),
@@ -268,15 +249,11 @@ df <- data.frame(
 )
 ```
 
-Notice we have three columns and two observations. All information in a row is 
-part of one observation. So, James is 21 and his sport is Baseball. 
+Notice we have three columns and two observations. All information in a row is part of one observation. So, James is 21 and his sport is Baseball.
 
 ### Tibbles
 
-A tribble is short for transposed tibble and it is a different way to create small 
-data frames that looks more like a spreadsheet. It requires the `tibble` package 
-to work, but that's part of the tidyverse so we should be ok. Some functions will 
-only take data formatted as tibbles. 
+A tribble is short for transposed tibble and it is a different way to create small data frames that looks more like a spreadsheet. It requires the `tibble` package to work, but that's part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.
 
 ```{r}
 library(tidyverse)
@@ -290,45 +267,27 @@ people <- tribble(
 people
 ```
 
-Now you can see our tribble fully completed with both rows and columns where you 
-can see in the bottom of the output that the tribble shows the rows. It also tells 
-us the type of data that we are seeing in the output which you will learn more 
-about later in the chapter.
+Now you can see our tribble fully completed with both rows and columns where you can see in the bottom of the output that the tribble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later in the chapter.
 
 ### Glimpse
 
-When you want to examine the characteristics of your data you can use glimpse to 
-get more information about it. It provides the full data for your set and gives 
-all the details you could need.
+When you want to examine the characteristics of your data you can use glimpse to get more information about it. It provides the full data for your set and gives all the details you could need.
 
 ```{r}
 glimpse(people)
 ```
 
-Look at the output above you can see next to name the `<chr>` that means the 
-column contains data that is characters. The one below that is the `<dbl>` so 
-you can see that is double data. This shows us that vectors simple a column of 
-names and values that are the same type.
+Look at the output above you can see next to name the `<chr>` that means the column contains data that is characters. The one below that is the `<dbl>` so you can see that is double data. This shows us that vectors simple a column of names and values that are the same type.
 
 ## Types of data
 
-There are different types of data. In statistics we use numbers to represent all
-kinds of different things. We must differentiate between when a number 3 is 
-epresenting a third category or the result of 1 + 2.
+There are different types of data. In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is epresenting a third category or the result of 1 + 2.
 
 ### Numeric and Double data
 
-Numeric data is the type of data that we see that represents integers and "double 
-precision floating point" numbers....or decimals. These are pretty common and are 
-just regular numbers as you are familiar with them. They exist on a number line, 
-can 
-be multiplied and divided, and so on. Data formatted as numeric or double are on
-interval or ratio scales of measurement. 
+Numeric data is the type of data that we see that represents integers and "double precision floating point" numbers....or decimals. These are pretty common and are just regular numbers as you are familiar with them. They exist on a number line, can be multiplied and divided, and so on. Data formatted as numeric or double are on interval or ratio scales of measurement.
 
-We can see if the data we are looking at is numeric/double by looking for how it 
-is abbreviated. You can use the `typeof()` function in R to see exactly what type 
-of data you are dealing with when you have a question about single objects, like 
-below. 
+We can see if the data we are looking at is numeric/double by looking for how it is abbreviated. You can use the `typeof()` function in R to see exactly what type of data you are dealing with when you have a question about single objects, like below.
 
 ```{r}
 typeof(42)
@@ -336,23 +295,16 @@ typeof(FALSE)
 typeof("jack")
 ```
 
-If we use the `glimipse` function, which tells us the format of an object and
-the first few observations in the object, we can see how we will more commonly
-interact with data formats. 
+If we use the `glimipse` function, which tells us the format of an object and the first few observations in the object, we can see how we will more commonly interact with data formats.
+
 ```{r}
 x <- c(1 , 2, 3, 4, 5)
 glimpse(x)
 ```
 
-
 ### Character data
 
-Character data is words that are not functions. Character data may also be 
-referred to as "string" data. As behavioral scientists we may ask participants to 
-write a response, this would be stored as character data. We can tell if the data 
-is a character because it must always be in `"".` This shows that it is just text 
-we are dealing with and not some function. The abbreviation for character data in 
-R is `chr`.
+Character data is words that are not functions. Character data may also be referred to as "string" data. As behavioral scientists we may ask participants to write a response, this would be stored as character data. We can tell if the data is a character because it must always be in `"".` This shows that it is just text we are dealing with and not some function. The abbreviation for character data in R is `chr`.
 
 ```{r, eval=FALSE}
 my_vector <- c("apple", "banana", "cherry")
@@ -362,10 +314,7 @@ glimpse(my_vector)
 
 ### Logical data
 
-Logical data can only represent one of two values, `TRUE` or `FALSE`. Logical data 
-will be represented in R as either `TRUE` or `FALSE`. It is important that they 
-are all capitalized so they cannot be confused for something else. The abbreviations 
-in R are simple because it will either be `T` or `F`.
+Logical data can only represent one of two values, `TRUE` or `FALSE`. Logical data will be represented in R as either `TRUE` or `FALSE`. It is important that they are all capitalized so they cannot be confused for something else. The abbreviations in R are simple because it will either be `T` or `F`.
 
 ```{r, eval=FALSE}
 # Assigning logical values using full names
@@ -381,12 +330,7 @@ typeof(bool4)
 
 ### Factor data
 
-Data are formatted as factors when we are referring to categories. It works with 
-variables that have a fixed and already known set of possible values. We use factor
-data differently depending on the data we have. Data formatted as a factor can be 
-on an ordinal scale or a nominal scale. We use `factor()` to create a new factor 
-from a vector. We use `as.factor()` to move an object like a character list into
-a vector.
+Data are formatted as factors when we are referring to categories. It works with variables that have a fixed and already known set of possible values. We use factor data differently depending on the data we have. Data formatted as a factor can be on an ordinal scale or a nominal scale. We use `factor()` to create a new factor from a vector. We use `as.factor()` to move an object like a character list into a vector.
 
 ```{r, eval=FALSE}
 college <- c("freshman", "sophomore", "junior", "senior")
@@ -403,7 +347,6 @@ glimpse(college_fct) # now the order is right
 data <-  c(1, 2, 3, 4, 5)
 factor(data)
 ```
-
 
 ## The pipe
 
