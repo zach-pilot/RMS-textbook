@@ -1,58 +1,92 @@
 ---
 title: "Distribution of Sample Means"
 format: html
+filters: 
+  - shinylive
 editor: visual
 toc: true
 ---
 
-## Samples vs. Populations 
+## Samples vs. Populations
 
-Though most behavioral science uses sample to test hypotheses, often times those hypotheses are about populations. 
+Though most behavioral science uses samples to test hypotheses, those hypotheses are almost always about populations.
 
-A sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population.  
+A sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population. They are approximations.
 
-Sampling Error 
+[**Sampling Error**]{.underline}
 
-The difference between sample statistics and population parameters.  
+The difference between sample statistics and population parameters.
 
-## Sampling Distributions 
+## Sampling Distributions
 
-Sampling Distribution 
+[**Sampling Distribution**]{.underline}
 
-A distribution of statistics of all possible samples of a given size from a population 
+A distribution of statistics of all possible samples of a given size from a population
 
-One example of a sampling distribution is….. 
+One example of a sampling distribution is…..
 
-Distribution of Sample Means 
+[**Distribution of Sample Means**]{.underline}
 
-A collection of sample means for all possible random samples of a given size that could be obtained from a population.  
+A collection of sample means for all possible random samples of a given size that could be obtained from a population.
 
-A distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.  
+A distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.
 
-Larger sample are more representative of populations than smaller samples.  
+Larger samples are more representative of populations than smaller samples.
 
-The mean of the distribution of sample means is the same as the population mean.  
+The mean of the distribution of sample means is the always same as the population mean.
 
-## Standard Error of the Mean 
+## Standard Error of the Mean
 
-The standard deviation of the distribution of sample means is the 
+The standard deviation of the distribution of sample means is the
 
-Standard Error of the Mean 
+[**Standard Error of the Mean**]{.underline}
 
-𝜎𝑀= 𝜎𝑛√
-𝜎
-M
-=
- 
-𝜎
-n
- 
- 
+𝜎𝑀= 𝜎𝑛√ 𝜎 M =
 
-## Z-score for a Sample 
+𝜎 n
 
-By using a sampling distribution you can calculate the location of an entire sample within a population 
+## Z-score for a Sample
 
-z = M - µ 
+By using a sampling distribution you can calculate the location of an entire sample within a population
 
-  σM 
+z = M - µ
+
+σM
+
+```{shinylive-r} 
+#| standalone: true
+#| viewerHeight: 600
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  title = "Sampling Distribution Explorer",
+  sidebar = sidebar(
+    sliderInput("n", "Sample Size (n):", min = 2, max = 100, value = 30),
+    sliderInput("sims", "Number of Simulations:", min = 5, max = 150, value = 1000, step = 5),
+    actionButton("resample", "Generate New Samples", class = "btn-primary")
+  ),
+  card(
+    card_header("Distribution of Sample Means"),
+    plotOutput("distPlot")
+  )
+)
+
+server <- function(input, output, session) {
+  sample_means <- reactive({
+    input$resample
+    # Simulate drawing random samples from a normal population
+    replicate(input$sims, mean(rnorm(input$n, mean = 50, sd = 10)))
+  })
+  
+  output$distPlot <- renderPlot({
+    means <- sample_means()
+    hist(means, breaks = 30, col = "#007bc2", border = "white",
+         main = paste("Distribution of", input$sims, "Means (n =", input$n, ")"),
+         xlab = "Sample Mean Value")
+    abline(v = 50, col = "red", lwd = 2, lty = 2) # Population Mean
+  })
+}
+
+shinyApp(ui, server)
+```

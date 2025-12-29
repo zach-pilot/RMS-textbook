@@ -15,8 +15,6 @@ Use samples to test a hypothesis that is made about the population.
 
 Expose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.
 
-Hypothesis testing takes several steps
-
 ## Steps of Hypothesis Testing
 
 1.  State the Hypothesis
@@ -44,13 +42,13 @@ Hypothesis testing takes several steps
 
 ## Decision Making Errors
 
-**Type 1 Error (False Positive)**
+[**Type 1 Error (False Positive)**]{.underline}
 
 Rejecting a true Null hypothesis, claiming there is a significant effect when there really is not.
 
 *Ex. Claiming that a medical treatment will cure cancer, but it does not.*
 
-**Type II Error (False Negative)**
+[**Type II Error (False Negative)**]{.underline}
 
 Failing to reject a false Null Hypothesis, claiming there is not a significant effect when there really is.
 

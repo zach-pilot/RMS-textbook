@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -70,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -207,12 +271,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#z-scores-and-location" id="toc-z-scores-and-location" class="nav-link active" data-scroll-target="#z-scores-and-location"><span class="header-section-number">9.1</span> z-Scores and Location</a></li>
-  <li><a href="#z-scores" id="toc-z-scores" class="nav-link" data-scroll-target="#z-scores"><span class="header-section-number">9.2</span> Z-scores</a></li>
-  <li><a href="#z-score-formula" id="toc-z-score-formula" class="nav-link" data-scroll-target="#z-score-formula"><span class="header-section-number">9.3</span> Z-score Formula</a></li>
-  <li><a href="#z-scores-as-a-standard-distribution" id="toc-z-scores-as-a-standard-distribution" class="nav-link" data-scroll-target="#z-scores-as-a-standard-distribution"><span class="header-section-number">9.4</span> Z-scores as a Standard Distribution</a></li>
-  <li><a href="#z-scores-and-locations" id="toc-z-scores-and-locations" class="nav-link" data-scroll-target="#z-scores-and-locations"><span class="header-section-number">9.5</span> Z-scores and Locations</a></li>
-  <li><a href="#z-scores-and-samples" id="toc-z-scores-and-samples" class="nav-link" data-scroll-target="#z-scores-and-samples"><span class="header-section-number">9.6</span> Z-scores and Samples</a></li>
+  <li><a href="#z-scores" id="toc-z-scores" class="nav-link active" data-scroll-target="#z-scores"><span class="header-section-number">9.1</span> z-scores</a></li>
+  <li><a href="#z-scores-as-a-standardized-distribution" id="toc-z-scores-as-a-standardized-distribution" class="nav-link" data-scroll-target="#z-scores-as-a-standardized-distribution"><span class="header-section-number">9.2</span> Z-scores as a Standardized Distribution</a></li>
+  <li><a href="#z-score-formula" id="toc-z-score-formula" class="nav-link" data-scroll-target="#z-score-formula"><span class="header-section-number">9.3</span> Z-score Formula</a>
+  <ul class="collapse">
+  <li><a href="#samples" id="toc-samples" class="nav-link" data-scroll-target="#samples"><span class="header-section-number">9.3.1</span> Samples</a></li>
+  <li><a href="#populations" id="toc-populations" class="nav-link" data-scroll-target="#populations"><span class="header-section-number">9.3.2</span> Populations</a></li>
+  </ul></li>
+  <li><a href="#calculating-z-scores-in-r" id="toc-calculating-z-scores-in-r" class="nav-link" data-scroll-target="#calculating-z-scores-in-r"><span class="header-section-number">9.4</span> Calculating z-scores in R</a></li>
+  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize"><span class="header-section-number">9.5</span> Visualize</a></li>
+  <li><a href="#larger-datasets" id="toc-larger-datasets" class="nav-link" data-scroll-target="#larger-datasets"><span class="header-section-number">9.6</span> Larger Datasets</a>
+  <ul class="collapse">
+  <li><a href="#find-z-for-all-scores-in-a-dataset" id="toc-find-z-for-all-scores-in-a-dataset" class="nav-link" data-scroll-target="#find-z-for-all-scores-in-a-dataset"><span class="header-section-number">9.6.1</span> find z for all scores in a dataset</a></li>
+  <li><a href="#compare" id="toc-compare" class="nav-link" data-scroll-target="#compare"><span class="header-section-number">9.6.2</span> compare</a></li>
+  <li><a href="#visualize-raw-scores" id="toc-visualize-raw-scores" class="nav-link" data-scroll-target="#visualize-raw-scores"><span class="header-section-number">9.6.3</span> Visualize raw scores</a></li>
+  <li><a href="#visualize-z-scores" id="toc-visualize-z-scores" class="nav-link" data-scroll-target="#visualize-z-scores"><span class="header-section-number">9.6.4</span> Visualize z scores</a></li>
+  </ul></li>
+  <li><a href="#z-scores-and-probability" id="toc-z-scores-and-probability" class="nav-link" data-scroll-target="#z-scores-and-probability"><span class="header-section-number">9.7</span> z scores and probability</a></li>
+  <li><a href="#z-scores-and-locations" id="toc-z-scores-and-locations" class="nav-link" data-scroll-target="#z-scores-and-locations"><span class="header-section-number">9.8</span> Z-scores and Locations</a></li>
   </ul>
 </nav>
     </div>
@@ -238,40 +314,686 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="z-scores-and-location" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="z-scores-and-location"><span class="header-section-number">9.1</span> z-Scores and Location</h2>
+<section id="z-scores" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="z-scores"><span class="header-section-number">9.1</span> z-scores</h2>
 <p>Raw scores provide very little information by themselves</p>
-<p>Ex. Terrence got 34 points on the test. Did he do well?</p>
+<p><em>Ex. Terrence got 34 points on the test. Did he do well?</em></p>
+<p>We have no idea - how many points were there? How did his peers perform?</p>
 <p>The mean and standard deviation provide a context with which to interpret the raw score.</p>
-<p>Ex. Archibald’s class average was 75 points with a 2 point standard deviation. His score of 34 is not very good.</p>
-<p>z-scores tell us where an x value is in relation to the mean and standard deviation with one number.</p>
+<p><em>Ex. Terrence’s class average was 75 points with a 2 point standard deviation. His score of 34 is uniquely terrible.</em></p>
+<p>z-scores tell us where an x value is located in relation to the mean and standard deviation with one number - the z score.</p>
+<p>A z score is a signed (+ or -) number, like -1.5 or +2.</p>
+<p>The sign tells you whether the x value is above the mean (positive) or below the mean (negative).</p>
+<p>The number tells you the amount of standard deviations between the raw score and the mean of the distribution.</p>
 </section>
-<section id="z-scores" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="z-scores"><span class="header-section-number">9.2</span> Z-scores</h2>
-<p>Signed (+ or -) number</p>
-<p>The sign tells you whether the x value is above the mean (positive) or below the mean (negative)</p>
-<p>The number tells you the amount of standard deviations between the raw score and the mean of the distribution</p>
-<p>Ex: What does a z-score of ________ mean: -1? +2? -3?</p>
+<section id="z-scores-as-a-standardized-distribution" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="z-scores-as-a-standardized-distribution"><span class="header-section-number">9.2</span> Z-scores as a Standardized Distribution</h2>
+<p>z-scores do not change the shape of the original distribution or the location of a score relative to others.</p>
+<p>Because the scores are standardized we can compare scores from two completely different scales. For example, if a biology exam was scored out of 100 points and a psychology exam was scored of 75 points we could compare our performance on them via z scores. The first observation in the dataset below got 60 points on both exams. However, the 60 on the psych exam is a “worse” score because everyone in the class did better.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 4
+    bio   z_bio   psy  z_psy
+  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1    60 -1.10      60 -1.73 
+2    78  0.0456    75  1.25 
+3    88  0.685     65 -0.739
+4    57 -1.30      70  0.256
+5    98  1.32      73  0.853
+6    70 -0.466     70  0.256
+7    90  0.812     68 -0.142</code></pre>
+</div>
+</div>
+<p>When raw scores are transformed into z-scores, the resulting distribution:</p>
+<ul>
+<li><p>Always has a mean of 0</p></li>
+<li><p>Always has a standard deviation of 1</p></li>
+<li><p>Most z-scores are between z = -2.00 and z = +2.00</p></li>
+</ul>
 </section>
 <section id="z-score-formula" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="z-score-formula"><span class="header-section-number">9.3</span> Z-score Formula</h2>
+<section id="samples" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="samples"><span class="header-section-number">9.3.1</span> Samples</h3>
+<p>(x - <em>M)</em> / <em>s</em></p>
 </section>
-<section id="z-scores-as-a-standard-distribution" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="z-scores-as-a-standard-distribution"><span class="header-section-number">9.4</span> Z-scores as a Standard Distribution</h2>
-<p>z-scores do not change the shape of the original distribution or the location of a score relative to others</p>
-<p>When x values are transformed into z-scores, the resulting distribution:</p>
-<p>The mean is always zero</p>
-<p>The standard deviation is always one</p>
-<p>Most z-scores are between z = -2.00 and z = +2.00</p>
+<section id="populations" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="populations"><span class="header-section-number">9.3.2</span> Populations</h3>
+<p>(x - <em>M</em> )/ <span class="math inline">\(\sigma\)</span></p>
 </section>
-<section id="z-scores-and-locations" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="z-scores-and-locations"><span class="header-section-number">9.5</span> Z-scores and Locations</h2>
-<p>As descriptive statistics, describe exactly where an individual is located</p>
-<p>As inferential statistics, determine whether a sample is representative of its population</p>
 </section>
-<section id="z-scores-and-samples" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="z-scores-and-samples"><span class="header-section-number">9.6</span> Z-scores and Samples</h2>
-<p>Z-scores are standardized, so we can compare different distributions.</p>
+<section id="calculating-z-scores-in-r" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="calculating-z-scores-in-r"><span class="header-section-number">9.4</span> Calculating z-scores in R</h2>
+<p>To calculate a z score we will need to use the <code>scale()</code> function. First, we will create a vector of scores using the <code>sample()</code> function. When using the <code>sample()</code> function the first argument is the range of scores you are asking R to generate values from, then the <code>size</code> argument is how many observations you want, the final argument is <code>replace</code>. When <code>replace = TRUE</code> then the same number can appear twice. This is called sampling WITH replacement.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load</span>(rio, tidyverse, skimr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(min value<span class="sc">:</span>max value, <span class="at">size =</span> number of observations, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When combining <code>sample()</code> with the <code>tibble()</code> function to create a small dataframe our code looks like this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>small <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">raw_scores =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size =</span> <span class="dv">25</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 25 × 1
+   raw_scores
+        &lt;int&gt;
+ 1         10
+ 2          6
+ 3          5
+ 4          5
+ 5          2
+ 6          7
+ 7          3
+ 8          2
+ 9          4
+10          7
+# ℹ 15 more rows</code></pre>
+</div>
+</div>
+<p>Now that we have a set of raw scores, let’s transform them into z scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>small <span class="ot">&lt;-</span> small <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_scores =</span> <span class="fu">scale</span>(raw_scores))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 25 × 2
+   raw_scores z_scores[,1]
+        &lt;int&gt;        &lt;dbl&gt;
+ 1         10       1.88  
+ 2          6       0.433 
+ 3          5       0.0722
+ 4          5       0.0722
+ 5          2      -1.01  
+ 6          7       0.795 
+ 7          3      -0.650 
+ 8          2      -1.01  
+ 9          4      -0.289 
+10          7       0.795 
+# ℹ 15 more rows</code></pre>
+</div>
+</div>
+<p>Did it work? Let’s check out a quick snapshot of our data with the <code>skim()</code> function. We can see that the mean for the z scores is incredibly close to zero. Good enough. We also see that the standard deviation is 1. That is what we’d expect.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">small</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raw_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">2.77</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: right;">7.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: left;">▇▅▇▆▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-1.37</td>
+<td style="text-align: right;">-1.01</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">1.88</td>
+<td style="text-align: left;">▇▅▇▆▃</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">small</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raw_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">2.77</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: right;">7.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: left;">▇▅▇▆▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-1.37</td>
+<td style="text-align: right;">-1.01</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">1.88</td>
+<td style="text-align: left;">▇▅▇▆▃</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="visualize" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="visualize"><span class="header-section-number">9.5</span> Visualize</h2>
+<ul>
+<li><p>What do you notice when you compare the two distributions to one another?</p></li>
+<li><p>Are the x axes the same?</p></li>
+<li><p>Are the distributions the same shape?</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Raw score distribution</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Z score distribution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>small <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> raw_scores)) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>small <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> z_scores)) <span class="sc">+</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>) <span class="sc">+</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="larger-datasets" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="larger-datasets"><span class="header-section-number">9.6</span> Larger Datasets</h2>
+<p>Let’s try with larger datasets, one where the data is randomly distributed and one where the data is normally distributed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>random_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">raw_scores =</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)) </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>norm_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">raw_scores =</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="find-z-for-all-scores-in-a-dataset" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="find-z-for-all-scores-in-a-dataset"><span class="header-section-number">9.6.1</span> find z for all scores in a dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a column in the dataframe named "z-score" using scale function</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>random_dat <span class="ot">&lt;-</span> random_dat <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_score =</span> <span class="fu">scale</span>(raw_scores))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>norm_dat <span class="ot">&lt;-</span> norm_dat <span class="sc">|&gt;</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_score =</span> <span class="fu">scale</span>(raw_scores))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="compare" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="compare"><span class="header-section-number">9.6.2</span> compare</h3>
+<p>Despite very different raw values the mean for the z scores is zero and the standard deviation is 1.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">random_dat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">1000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raw_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">51.42</td>
+<td style="text-align: right;">29.11</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">26.00</td>
+<td style="text-align: right;">53.00</td>
+<td style="text-align: right;">76.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z_score</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-1.73</td>
+<td style="text-align: right;">-0.87</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">1.67</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">norm_dat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">1000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raw_scores</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">99.35</td>
+<td style="text-align: right;">10.17</td>
+<td style="text-align: right;">63.87</td>
+<td style="text-align: right;">92.25</td>
+<td style="text-align: right;">99.3</td>
+<td style="text-align: right;">105.83</td>
+<td style="text-align: right;">132.58</td>
+<td style="text-align: left;">▁▃▇▅▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">z_score</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">-3.49</td>
+<td style="text-align: right;">-0.70</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">3.27</td>
+<td style="text-align: left;">▁▃▇▅▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="visualize-raw-scores" class="level3" data-number="9.6.3">
+<h3 data-number="9.6.3" class="anchored" data-anchor-id="visualize-raw-scores"><span class="header-section-number">9.6.3</span> Visualize raw scores</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">randomly distributed</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">normally distributed</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the raw score distribution</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>random_dat <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> raw_scores)) <span class="sc">+</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>norm_dat <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> raw_scores)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-z-scores" class="level3" data-number="9.6.4">
+<h3 data-number="9.6.4" class="anchored" data-anchor-id="visualize-z-scores"><span class="header-section-number">9.6.4</span> Visualize z scores</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">randomly distributed</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">normally distributed</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>random_dat <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> z_score)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>norm_dat <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> z_score)) <span class="sc">+</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="z_scores_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="z-scores-and-probability" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="z-scores-and-probability"><span class="header-section-number">9.7</span> z scores and probability</h2>
+<p>We often need to know how likely it is to obtain a certain score. We can do this by using the <code>pnorm()</code> function. This function has four arguments we need to understand.</p>
+<ul>
+<li><p><code>q</code> is the value that you want to calculate the probability of</p></li>
+<li><p><code>mean</code> is the mean of the distribution</p></li>
+<li><p><code>sd</code> is the standard deviation of the distribution</p></li>
+<li><p><code>lower.tail</code> indicates whether we are looking at the lower tail or upper tail of the distribution. If it is FALSE, then we are looking at the upper tail.</p></li>
+</ul>
+<p>PsyTeachR - Data Skills Chapter 13 and 14 are great for this</p>
+<p>This code gives us the probability of obtaining a z score smaller than -1.96. We know this is a z distribution because the mean is 0 and the standard deviation is 1.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="sc">-</span><span class="fl">1.96</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0249979</code></pre>
+</div>
+</div>
+<p>The probability value, or p, is &lt; .25</p>
+<p>The code below gives us the probability of randomly selecting a score of 700 or above from a dataset with a mean of 500, and a standard deviation of 100.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="dv">700</span>, <span class="at">mean =</span> <span class="dv">500</span>, <span class="at">sd =</span> <span class="dv">100</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02275013</code></pre>
+</div>
+</div>
+</section>
+<section id="z-scores-and-locations" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="z-scores-and-locations"><span class="header-section-number">9.8</span> Z-scores and Locations</h2>
+<p>As descriptive statistics, z scores describe exactly where a score is located in a distribution.</p>
+<p>As inferential statistics, determine whether a sample is representative of its population.</p>
 
 
 </section>

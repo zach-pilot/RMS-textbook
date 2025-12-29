@@ -354,7 +354,7 @@
     "href": "how_plan_exp.html#types-of-validity",
     "title": "3  How to plan an experiment",
     "section": "3.14 Types of Validity",
-    "text": "3.14 Types of Validity\nInternal Validity\nDegree to which we can draw accurate conclusions about the effects of the IV\nGain internal validity when all confounds are eliminated and you can conclude that the observed differences were due to the IV.\nHas experimental control.\nExternal Validity\nInverse relationship with internal validity\nThe greater experimental control in your experiment, the less likely it will be externally valid or generalizable to the “real world”.\nInternal validity is more critical and desirable than external validity.",
+    "text": "3.14 Types of Validity\nInternal Validity\nDegree to which we can draw accurate conclusions about the effects of the IV\nGain internal validity when all confounds are eliminated and you can conclude that the observed differences were due to the IV.\nHas experimental control.\nExternal Validity\nInverse relationship with internal validity\nThe greater experimental control in your experiment, the less likely it will be externally valid or generalizable to the “real world”.\nInternal validity is more critical and desirable than external validity. If you are not confident in the outcome of your experiment what value does it have?",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>How to plan an experiment</span>"
     ]
@@ -514,7 +514,7 @@
     "href": "variability.html#measures-of-variability",
     "title": "6  Variability",
     "section": "6.2 Measures of Variability",
-    "text": "6.2 Measures of Variability\n\n6.2.1 Range\nTotal distance covered by the distribution, from highest to lowest value, also gives information about how many categories there are.\nRelies on two values (extremes), ignores all others\nRange = Maximum Score – Minimum Score\n\n6.2.1.1 Calculate in R\nLet’s use R to work out an example. First, use the sample function to create 10 scores from 1:10 and assign that list of numbers (called a vector) to the object ‘x’.\n\n# random sample of 10 scores from 1-10\nx &lt;- sample(1:10, 10)\n\nThe range function will produce the two values we use to calculate the range, the highest and lowest.\n\n# gives us the extreme values\nrange(x)\n\nThe max and min function will give us the largest and smallest numbers respectively.\n\n# gives us the maximum value\nmax(x)\n\n# gives us the minimum value\nmin(x)\n\nNow we can use these functions to calculate the mean.\n\nmax(x) - min(x)\n\n\n\n\n6.2.2 Variance & Standard Deviation\nCalculated using all scores in a distribution\nMost commonly used measure of variability\nDescribes average distance between a score and the mean\nUsed with interval and ratio scales\nvariance definition of variance\nstandard deviation definition of standard deviation\n\n6.2.2.1 Calculate by hand\n\nCalculate the mean.\nSubtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.\nSquare the difference scores to get squared scores.\nAdd all of the squared scores to get the Sum of Squared Deviations (SS).\nDivide the SS by the size of your population (N) or sample (n-1) to get the variance (σ^2 or s^2).\nFind the square root of σ^2 to find the standard deviation(σ or s).\n\n\n\n6.2.2.2 Calculate in R (long)\nStart with a simple vector we will store in the object ‘y’.\n\n# data\ny &lt;- c( 1, 2, 3, 4, 5)\n\n\nCalculate the mean.\n\n\nmean(y)\n\n[1] 3\n\n\n\nSubtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.\n\n\ndiff_score &lt;- y - mean(y)\n\n\nSquare the difference scores to get squared scores.\n\n\nsq_score &lt;- diff_score^2\n\n\nAdd all of the squared scores to get the Sum of Squared Deviations (SS).\n\n\nSS &lt;- sum(sq_score)\n\n\nDivide the SS by the size of your population (N) or sample (n-1) to get the variance (σ^2 or s^2).\n\n\n# variance for a population\npop_var &lt;- SS/length(y)\n\n# variance for a sample \nsample_var &lt;- SS/(length(y) - 1)\n\n\nFind the square root of σ^2 to find the standard deviation(σ or s).\n\n\n# population standard deviation\nsqrt(pop_var)\n\n[1] 1.414214\n\n# sample standard deviation\nsqrt(sample_var)\n\n[1] 1.581139\n\n\n\n\n6.2.2.3 Calculate in R (short)\nStart with the same data\n\n# data\ny &lt;- c( 1, 2, 3, 4, 5)\n\n\nCalculate variance. For the calculation of population variance and standard deviation we can use the rafalib package. For populations we will use the popvar function and for sample vaiance we will use the var function from base R.\n\n\n# population variance\nlibrary(rafalib)\npopvar(y)\n\n[1] 2\n\n# sample variance\nvar(y)\n\n[1] 2.5\n\n\n\nCalculate stabdard deviation\n\n\n# population stabdard deviation\npopsd(y)\n\n[1] 1.414214\n\n# sample sd\nsd(y)\n\n[1] 1.581139",
+    "text": "6.2 Measures of Variability\n\n6.2.1 Range\nTotal distance covered by the distribution, from highest to lowest value, also gives information about how many categories there are.\nRelies on two values (extremes), ignores all others\nRange = Maximum Score – Minimum Score\n\n6.2.1.1 Calculate in R\nLet’s use R to work out an example. First, use the sample function to create 10 scores from 1:10 and assign that list of numbers (called a vector) to the object ‘x’.\n\n# random sample of 10 scores from 1-10\nx &lt;- sample(1:10, 10)\n\nThe range function will produce the two values we use to calculate the range, the highest and lowest.\n\n# gives us the extreme values\nrange(x)\n\nThe max and min function will give us the largest and smallest numbers respectively.\n\n# gives us the maximum value\nmax(x)\n\n# gives us the minimum value\nmin(x)\n\nNow we can use these functions to calculate the range.\n\nmax(x) - min(x)\n\n\n\n\n6.2.2 Variance & Standard Deviation\nCalculated using all scores in a distribution\nMost commonly used measure of variability\nDescribes average distance between a score and the mean\nUsed with interval and ratio scales\nvariance definition of variance\nstandard deviation definition of standard deviation\n\n6.2.2.1 Calculate by hand\n\nCalculate the mean.\nSubtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.\nSquare the difference scores to get squared scores.\nAdd all of the squared scores to get the Sum of Squared Deviations (SS).\nDivide the SS by the size of your population (N) or sample (n-1) to get the variance (σ2 or s2).\nFind the square root of σ2 to find the standard deviation(σ or s).\n\n\n\n6.2.2.2 Calculate in R (long)\nStart with a simple vector we will store in the object ‘y’.\n\n# data\ny &lt;- c( 1, 2, 3, 4, 5)\n\n\nCalculate the mean.\n\n\nmean(y)\n\n[1] 3\n\n\n\nSubtract the mean from each individual score to get a difference score for each participant. Make sure that if you add all of the difference scores they equal zero.\n\n\ndiff_score &lt;- y - mean(y)\n\n\nSquare the difference scores to get squared scores.\n\n\nsq_score &lt;- diff_score^2\n\n\nAdd all of the squared scores to get the Sum of Squared Deviations (SS).\n\n\nSS &lt;- sum(sq_score)\n\n\nDivide the SS by the size of your population (N) or sample (n-1) to get the variance (σ^2 or s^2).\n\n\n# variance for a population\npop_var &lt;- SS/length(y)\npop_var\n\n[1] 2\n\n# variance for a sample \nsample_var &lt;- SS/(length(y) - 1)\nsample_var\n\n[1] 2.5\n\n\n\nFind the square root of σ2 to find the standard deviation(σ or s).\n\n\n# population standard deviation\nsqrt(pop_var)\n\n[1] 1.414214\n\n# sample standard deviation\nsqrt(sample_var)\n\n[1] 1.581139\n\n\n\n\n6.2.2.3 Calculate in R (short)\nStart with the same data\n\n# data\ny &lt;- c( 1, 2, 3, 4, 5)\n\n\nCalculate variance. For the calculation of population variance and standard deviation we can use the rafalib package. For populations we will use the popvar function and for sample vaiance we will use the var function from base R.\n\n\n# population variance\nlibrary(rafalib)\npopvar(y)\n\n[1] 2\n\n# sample variance\nvar(y)\n\n[1] 2.5\n\n\n\nCalculate standard deviation\n\n\n# population stabdard deviation\npopsd(y)\n\n[1] 1.414214\n\n# sample sd\nsd(y)\n\n[1] 1.581139",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Variability</span>"
     ]
@@ -524,7 +524,7 @@
     "href": "variability.html#population-v-sample",
     "title": "6  Variability",
     "section": "6.3 Population v Sample",
-    "text": "6.3 Population v Sample\nPopulation is EVERYONE.\nVariance (σ^2) = SS/N\nStandard Deviation (σ) = √(SS/N)\nSample is a subset of everyone.\nVariance (s2) = SS/n-1.\nStandard Deviation (s) = √(SS/(n-1)).\nWe use a different formula for samples because we are using limited information from a small group (the sample) to draw inferences about a larger group (the population).\nSamples have less variability than populations.",
+    "text": "6.3 Population v Sample\nPopulation is EVERYONE.\nVariance (σ2) = SS/N\nStandard Deviation (σ) = √(SS/N)\nSample is a subset of everyone.\nVariance (s2) = SS/n-1.\nStandard Deviation (s) = √(SS/(n-1)).\nWe use a different formula for samples because we are using limited information from a small group (the sample) to draw inferences about a larger group (the population).\nSamples have less variability than populations, so statistics we run on them must be adjusted to account for this.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Variability</span>"
     ]
@@ -534,7 +534,7 @@
     "href": "variability.html#biased-and-unbiased-statistics",
     "title": "6  Variability",
     "section": "6.4 Biased and Unbiased Statistics",
-    "text": "6.4 Biased and Unbiased Statistics\nBiased Statistics\nThe average value overestimates or underestimates the population parameter\ni.e. the sample before adjustment (n-1)\nUnbiased Statistics\nThe average value is equal to the population parameter.\ni.e. the sample after adjustment (n-1).",
+    "text": "6.4 Biased and Unbiased Statistics\nBiased Statistics\nThe average value calculated for a sample overestimates or underestimates the population parameter\ni.e. the sample before adjustment (n-1)\nUnbiased Statistics\nThe average value is equal to the population parameter.\ni.e. the sample after adjustment (n-1).",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Variability</span>"
     ]
@@ -544,7 +544,7 @@
     "href": "variability.html#transforming-data-sets",
     "title": "6  Variability",
     "section": "6.5 Transforming Data Sets",
-    "text": "6.5 Transforming Data Sets\n\n6.5.1 Adding a constant\nWhen you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example object.\n\nexample_1 &lt;- c(1, 2, 3, 4, 5)\n\ns &lt;- sd(example_1)\ns\n\n[1] 1.581139\n\n\nNow, let’s add a constant value of 2 to every score in the example object.\n\nexample_2 &lt;- example_1 + 2\nexample_2\n\n[1] 3 4 5 6 7\n\n\nLet’s see if the sample standard deviation has changed.\n\ns &lt;- sd(example_2)\n\nThere is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.5.2 Multiplying by a constant\nWhen you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object.\n\nexample_1 &lt;- c(1, 2, 3, 4, 5)\n\ns &lt;- sd(example_1)\ns\n\n[1] 1.581139\n\n\nNow, let’s multiply every score in the dataset by a contant of 3.\n\nexample_2 &lt;- example_1 * 3\nexample_2\n\n[1]  3  6  9 12 15\n\n\nLet’s see if the sample standard deviation has changed.\n\ns &lt;- sd(example_2)\ns\n\n[1] 4.743416\n\n\nThere distributions now look very different. The distance between scores in the example_2 object has changed by a multiple of 3. The distance between scores is now greater, resulting in a wider distribution.",
+    "text": "6.5 Transforming Data Sets\n\n6.5.1 Adding a constant\nWhen you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example_1.\n\nexample_1 &lt;- c(1, 2, 3, 4, 5)\n\ns &lt;- sd(example_1)\ns\n\n[1] 1.581139\n\n\nNow, let’s add a constant value of 2 to every score.\n\nexample_2 &lt;- example_1 + 2\nexample_2\n\n[1] 3 4 5 6 7\n\n\nLet’s see if the sample standard deviation changed.\n\ns &lt;- sd(example_2)\n\nThere is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.5.2 Multiplying by a constant\nMultiplying every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of example_1.\n\nexample_1 &lt;- c(1, 2, 3, 4, 5)\n\ns &lt;- sd(example_1)\ns\n\n[1] 1.581139\n\n\nNow, let’s multiply every score by a constant of 3.\n\nexample_2 &lt;- example_1 * 3\nexample_2\n\n[1]  3  6  9 12 15\n\n\nLet’s see if the sample standard deviation has changed.\n\ns &lt;- sd(example_2)\ns\n\n[1] 4.743416\n\n\nThere distributions now look very different. The distance between scores in example_2 has changed by a multiple of 3. The distance between scores is now greater, resulting in a wider distribution.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Variability</span>"
     ]
@@ -674,17 +674,17 @@
     "href": "z_scores.html",
     "title": "9  z scores",
     "section": "",
-    "text": "9.1 z-Scores and Location\nRaw scores provide very little information by themselves\nEx. Terrence got 34 points on the test. Did he do well?\nThe mean and standard deviation provide a context with which to interpret the raw score.\nEx. Archibald’s class average was 75 points with a 2 point standard deviation. His score of 34 is not very good.\nz-scores tell us where an x value is in relation to the mean and standard deviation with one number.",
+    "text": "9.1 z-scores\nRaw scores provide very little information by themselves\nEx. Terrence got 34 points on the test. Did he do well?\nWe have no idea - how many points were there? How did his peers perform?\nThe mean and standard deviation provide a context with which to interpret the raw score.\nEx. Terrence’s class average was 75 points with a 2 point standard deviation. His score of 34 is uniquely terrible.\nz-scores tell us where an x value is located in relation to the mean and standard deviation with one number - the z score.\nA z score is a signed (+ or -) number, like -1.5 or +2.\nThe sign tells you whether the x value is above the mean (positive) or below the mean (negative).\nThe number tells you the amount of standard deviations between the raw score and the mean of the distribution.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
     ]
   },
   {
-    "objectID": "z_scores.html#z-scores",
-    "href": "z_scores.html#z-scores",
+    "objectID": "z_scores.html#z-scores-as-a-standardized-distribution",
+    "href": "z_scores.html#z-scores-as-a-standardized-distribution",
     "title": "9  z scores",
-    "section": "9.2 Z-scores",
-    "text": "9.2 Z-scores\nSigned (+ or -) number\nThe sign tells you whether the x value is above the mean (positive) or below the mean (negative)\nThe number tells you the amount of standard deviations between the raw score and the mean of the distribution\nEx: What does a z-score of ________ mean: -1? +2? -3?",
+    "section": "9.2 Z-scores as a Standardized Distribution",
+    "text": "9.2 Z-scores as a Standardized Distribution\nz-scores do not change the shape of the original distribution or the location of a score relative to others.\nBecause the scores are standardized we can compare scores from two completely different scales. For example, if a biology exam was scored out of 100 points and a psychology exam was scored of 75 points we could compare our performance on them via z scores. The first observation in the dataset below got 60 points on both exams. However, the 60 on the psych exam is a “worse” score because everyone in the class did better.\n\n\n# A tibble: 7 × 4\n    bio   z_bio   psy  z_psy\n  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    60 -1.10      60 -1.73 \n2    78  0.0456    75  1.25 \n3    88  0.685     65 -0.739\n4    57 -1.30      70  0.256\n5    98  1.32      73  0.853\n6    70 -0.466     70  0.256\n7    90  0.812     68 -0.142\n\n\nWhen raw scores are transformed into z-scores, the resulting distribution:\n\nAlways has a mean of 0\nAlways has a standard deviation of 1\nMost z-scores are between z = -2.00 and z = +2.00",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
     ]
@@ -694,17 +694,47 @@
     "href": "z_scores.html#z-score-formula",
     "title": "9  z scores",
     "section": "9.3 Z-score Formula",
-    "text": "9.3 Z-score Formula",
+    "text": "9.3 Z-score Formula\n\n9.3.1 Samples\n(x - M) / s\n\n\n9.3.2 Populations\n(x - M )/ \\(\\sigma\\)",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
     ]
   },
   {
-    "objectID": "z_scores.html#z-scores-as-a-standard-distribution",
-    "href": "z_scores.html#z-scores-as-a-standard-distribution",
+    "objectID": "z_scores.html#calculating-z-scores-in-r",
+    "href": "z_scores.html#calculating-z-scores-in-r",
     "title": "9  z scores",
-    "section": "9.4 Z-scores as a Standard Distribution",
-    "text": "9.4 Z-scores as a Standard Distribution\nz-scores do not change the shape of the original distribution or the location of a score relative to others\nWhen x values are transformed into z-scores, the resulting distribution:\nThe mean is always zero\nThe standard deviation is always one\nMost z-scores are between z = -2.00 and z = +2.00",
+    "section": "9.4 Calculating z-scores in R",
+    "text": "9.4 Calculating z-scores in R\nTo calculate a z score we will need to use the scale() function. First, we will create a vector of scores using the sample() function. When using the sample() function the first argument is the range of scores you are asking R to generate values from, then the size argument is how many observations you want, the final argument is replace. When replace = TRUE then the same number can appear twice. This is called sampling WITH replacement.\n\nlibrary(pacman) \np_load(rio, tidyverse, skimr) \n\n\nsample(min value:max value, size = number of observations, replace = TRUE)\n\nWhen combining sample() with the tibble() function to create a small dataframe our code looks like this.\n\nsmall &lt;- tibble(raw_scores = sample(1:10, size = 25, replace = TRUE))\nsmall\n\n# A tibble: 25 × 1\n   raw_scores\n        &lt;int&gt;\n 1         10\n 2          6\n 3          5\n 4          5\n 5          2\n 6          7\n 7          3\n 8          2\n 9          4\n10          7\n# ℹ 15 more rows\n\n\nNow that we have a set of raw scores, let’s transform them into z scores.\n\nsmall &lt;- small %&gt;% \n  mutate(z_scores = scale(raw_scores))\n\nsmall\n\n# A tibble: 25 × 2\n   raw_scores z_scores[,1]\n        &lt;int&gt;        &lt;dbl&gt;\n 1         10       1.88  \n 2          6       0.433 \n 3          5       0.0722\n 4          5       0.0722\n 5          2      -1.01  \n 6          7       0.795 \n 7          3      -0.650 \n 8          2      -1.01  \n 9          4      -0.289 \n10          7       0.795 \n# ℹ 15 more rows\n\n\nDid it work? Let’s check out a quick snapshot of our data with the skim() function. We can see that the mean for the z scores is incredibly close to zero. Good enough. We also see that the standard deviation is 1. That is what we’d expect.\n\nskim(small)\n\n\nData summary\n\n\nName\nsmall\n\n\nNumber of rows\n25\n\n\nNumber of columns\n2\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nraw_scores\n0\n1\n4.8\n2.77\n1.00\n2.00\n5.00\n7.00\n10.00\n▇▅▇▆▃\n\n\nz_scores\n0\n1\n0.0\n1.00\n-1.37\n-1.01\n0.07\n0.79\n1.88\n▇▅▇▆▃\n\n\n\n\noptions(scipen = 999)\n\nskim(small)\n\n\nData summary\n\n\nName\nsmall\n\n\nNumber of rows\n25\n\n\nNumber of columns\n2\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nraw_scores\n0\n1\n4.8\n2.77\n1.00\n2.00\n5.00\n7.00\n10.00\n▇▅▇▆▃\n\n\nz_scores\n0\n1\n0.0\n1.00\n-1.37\n-1.01\n0.07\n0.79\n1.88\n▇▅▇▆▃",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#visualize",
+    "href": "z_scores.html#visualize",
+    "title": "9  z scores",
+    "section": "9.5 Visualize",
+    "text": "9.5 Visualize\n\nWhat do you notice when you compare the two distributions to one another?\nAre the x axes the same?\nAre the distributions the same shape?\n\n\nRaw score distributionZ score distribution\n\n\n\nsmall %&gt;% \n  ggplot(aes(x = raw_scores)) + \n  geom_histogram(bins = 10) + \n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nsmall %&gt;% \n  ggplot(aes(x = z_scores)) + \n  geom_histogram(bins = 10) + \n  theme_classic()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#larger-datasets",
+    "href": "z_scores.html#larger-datasets",
+    "title": "9  z scores",
+    "section": "9.6 Larger Datasets",
+    "text": "9.6 Larger Datasets\nLet’s try with larger datasets, one where the data is randomly distributed and one where the data is normally distributed.\n\nrandom_dat &lt;- tibble(raw_scores =sample(1:100, size = 1000, replace = TRUE)) \n\nnorm_dat &lt;- tibble(raw_scores = rnorm(1000, mean = 100, sd = 10))\n\n\n9.6.1 find z for all scores in a dataset\n\n# create a column in the dataframe named \"z-score\" using scale function\n\nrandom_dat &lt;- random_dat |&gt; \n  mutate(z_score = scale(raw_scores))\n         \nnorm_dat &lt;- norm_dat |&gt; \n  mutate(z_score = scale(raw_scores))\n\n\n\n9.6.2 compare\nDespite very different raw values the mean for the z scores is zero and the standard deviation is 1.\n\n\n\nData summary\n\n\nName\nrandom_dat\n\n\nNumber of rows\n1000\n\n\nNumber of columns\n2\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nraw_scores\n0\n1\n51.42\n29.11\n1.00\n26.00\n53.00\n76.00\n100.00\n▇▇▇▇▇\n\n\nz_score\n0\n1\n0.00\n1.00\n-1.73\n-0.87\n0.05\n0.84\n1.67\n▇▇▇▇▇\n\n\n\n\n\n\nData summary\n\n\nName\nnorm_dat\n\n\nNumber of rows\n1000\n\n\nNumber of columns\n2\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nraw_scores\n0\n1\n99.35\n10.17\n63.87\n92.25\n99.3\n105.83\n132.58\n▁▃▇▅▁\n\n\nz_score\n0\n1\n0.00\n1.00\n-3.49\n-0.70\n0.0\n0.64\n3.27\n▁▃▇▅▁\n\n\n\n\n\n\n\n9.6.3 Visualize raw scores\n\nrandomly distributednormally distributed\n\n\n\n# plot the raw score distribution\n\nrandom_dat %&gt;% \n  ggplot(aes(x = raw_scores)) + \n  geom_histogram(bins = 25) + \n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nnorm_dat %&gt;% \n  ggplot(aes(x = raw_scores)) + \n  geom_histogram(bins = 25) + \n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\n\n\n9.6.4 Visualize z scores\n\nrandomly distributednormally distributed\n\n\n\nrandom_dat %&gt;% \n  ggplot(aes(x = z_score)) +\n  geom_histogram(bins = 25) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nnorm_dat %&gt;% \n  ggplot(aes(x = z_score)) + \n  geom_histogram(bins = 25) + \n  theme_classic()",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
+    ]
+  },
+  {
+    "objectID": "z_scores.html#z-scores-and-probability",
+    "href": "z_scores.html#z-scores-and-probability",
+    "title": "9  z scores",
+    "section": "9.7 z scores and probability",
+    "text": "9.7 z scores and probability\nWe often need to know how likely it is to obtain a certain score. We can do this by using the pnorm() function. This function has four arguments we need to understand.\n\nq is the value that you want to calculate the probability of\nmean is the mean of the distribution\nsd is the standard deviation of the distribution\nlower.tail indicates whether we are looking at the lower tail or upper tail of the distribution. If it is FALSE, then we are looking at the upper tail.\n\nPsyTeachR - Data Skills Chapter 13 and 14 are great for this\nThis code gives us the probability of obtaining a z score smaller than -1.96. We know this is a z distribution because the mean is 0 and the standard deviation is 1.\n\npnorm(q = -1.96, mean = 0, sd = 1, lower.tail = TRUE)\n\n[1] 0.0249979\n\n\nThe probability value, or p, is &lt; .25\nThe code below gives us the probability of randomly selecting a score of 700 or above from a dataset with a mean of 500, and a standard deviation of 100.\n\npnorm(q = 700, mean = 500, sd = 100, lower.tail = FALSE)\n\n[1] 0.02275013",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
     ]
@@ -713,18 +743,8 @@
     "objectID": "z_scores.html#z-scores-and-locations",
     "href": "z_scores.html#z-scores-and-locations",
     "title": "9  z scores",
-    "section": "9.5 Z-scores and Locations",
-    "text": "9.5 Z-scores and Locations\nAs descriptive statistics, describe exactly where an individual is located\nAs inferential statistics, determine whether a sample is representative of its population",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
-    ]
-  },
-  {
-    "objectID": "z_scores.html#z-scores-and-samples",
-    "href": "z_scores.html#z-scores-and-samples",
-    "title": "9  z scores",
-    "section": "9.6 Z-scores and Samples",
-    "text": "9.6 Z-scores and Samples\nZ-scores are standardized, so we can compare different distributions.",
+    "section": "9.8 Z-scores and Locations",
+    "text": "9.8 Z-scores and Locations\nAs descriptive statistics, z scores describe exactly where a score is located in a distribution.\nAs inferential statistics, determine whether a sample is representative of its population.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>z scores</span>"
     ]
@@ -774,7 +794,7 @@
     "href": "dist_sample_means.html",
     "title": "11  Distribution of Sample Means",
     "section": "",
-    "text": "11.1 Samples vs. Populations\nThough most behavioral science uses sample to test hypotheses, often times those hypotheses are about populations.\nA sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population.\nSampling Error\nThe difference between sample statistics and population parameters.",
+    "text": "11.1 Samples vs. Populations\nThough most behavioral science uses samples to test hypotheses, those hypotheses are almost always about populations.\nA sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population. They are approximations.\nSampling Error\nThe difference between sample statistics and population parameters.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
     ]
@@ -784,7 +804,7 @@
     "href": "dist_sample_means.html#sampling-distributions",
     "title": "11  Distribution of Sample Means",
     "section": "11.2 Sampling Distributions",
-    "text": "11.2 Sampling Distributions\nSampling Distribution\nA distribution of statistics of all possible samples of a given size from a population\nOne example of a sampling distribution is…..\nDistribution of Sample Means\nA collection of sample means for all possible random samples of a given size that could be obtained from a population.\nA distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.\nLarger sample are more representative of populations than smaller samples.\nThe mean of the distribution of sample means is the same as the population mean.",
+    "text": "11.2 Sampling Distributions\nSampling Distribution\nA distribution of statistics of all possible samples of a given size from a population\nOne example of a sampling distribution is…..\nDistribution of Sample Means\nA collection of sample means for all possible random samples of a given size that could be obtained from a population.\nA distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.\nLarger samples are more representative of populations than smaller samples.\nThe mean of the distribution of sample means is the always same as the population mean.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
     ]
@@ -804,7 +824,7 @@
     "href": "dist_sample_means.html#z-score-for-a-sample",
     "title": "11  Distribution of Sample Means",
     "section": "11.4 Z-score for a Sample",
-    "text": "11.4 Z-score for a Sample\nBy using a sampling distribution you can calculate the location of an entire sample within a population\nz = M - µ\nσM",
+    "text": "11.4 Z-score for a Sample\nBy using a sampling distribution you can calculate the location of an entire sample within a population\nz = M - µ\nσM\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 600\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_sidebar(\n  title = \"Sampling Distribution Explorer\",\n  sidebar = sidebar(\n    sliderInput(\"n\", \"Sample Size (n):\", min = 2, max = 100, value = 30),\n    sliderInput(\"sims\", \"Number of Simulations:\", min = 5, max = 150, value = 1000, step = 5),\n    actionButton(\"resample\", \"Generate New Samples\", class = \"btn-primary\")\n  ),\n  card(\n    card_header(\"Distribution of Sample Means\"),\n    plotOutput(\"distPlot\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  sample_means &lt;- reactive({\n    input$resample\n    # Simulate drawing random samples from a normal population\n    replicate(input$sims, mean(rnorm(input$n, mean = 50, sd = 10)))\n  })\n  \n  output$distPlot &lt;- renderPlot({\n    means &lt;- sample_means()\n    hist(means, breaks = 30, col = \"#007bc2\", border = \"white\",\n         main = paste(\"Distribution of\", input$sims, \"Means (n =\", input$n, \")\"),\n         xlab = \"Sample Mean Value\")\n    abline(v = 50, col = \"red\", lwd = 2, lty = 2) # Population Mean\n  })\n}\n\nshinyApp(ui, server)",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribution of Sample Means</span>"
     ]
@@ -814,7 +834,7 @@
     "href": "hyp_test.html",
     "title": "12  Hypothesis Testing",
     "section": "",
-    "text": "12.1 Purpose of Hypothesis Testing\nBehavioral scientists often can’t measure all individuals in a population.\nEx. Measuring the inhibition of all lawyers in the United States\nUse samples to test a hypothesis that is made about the population.\nExpose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.\nHypothesis testing takes several steps",
+    "text": "12.1 Purpose of Hypothesis Testing\nBehavioral scientists often can’t measure all individuals in a population.\nEx. Measuring the inhibition of all lawyers in the United States\nUse samples to test a hypothesis that is made about the population.\nExpose a sample to your IV, evaluate the results, and make an inference that the same effect would be seen in the population if you could actually measure everyone.",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Hypothesis Testing</span>"
     ]

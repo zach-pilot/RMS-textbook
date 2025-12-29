@@ -5,51 +5,255 @@ editor: visual
 toc: true
 ---
 
-## z-Scores and Location  
+## z-scores
 
-Raw scores provide very little information by themselves 
+Raw scores provide very little information by themselves
 
-Ex. Terrence got 34 points on the test. Did he do well?  
+*Ex. Terrence got 34 points on the test. Did he do well?*
 
-The mean and standard deviation provide a context with which to interpret the raw score.  
+We have no idea - how many points were there? How did his peers perform?
 
-Ex. Archibald’s class average was 75 points with a 2 point standard deviation. His score of 34 is not very good.  
+The mean and standard deviation provide a context with which to interpret the raw score.
 
-z-scores tell us where an x value is in relation to the mean and standard deviation with one number.  
+*Ex. Terrence's class average was 75 points with a 2 point standard deviation. His score of 34 is uniquely terrible.*
 
- 
+z-scores tell us where an x value is located in relation to the mean and standard 
+deviation with one number - the z score.
 
-## Z-scores  
+A z score is a signed (+ or -) number, like -1.5 or +2.
 
-Signed (+ or -) number  
+The sign tells you whether the x value is above the mean (positive) or below the 
+mean (negative).
 
-The sign tells you whether the x value is above the mean (positive) or below the mean (negative)  
+The number tells you the amount of standard deviations between the raw score and 
+the mean of the distribution.
 
-The number tells you the amount of standard deviations between the raw score and the mean of the distribution  
+## Z-scores as a Standardized Distribution
 
-Ex: What does a z-score of ________ mean:  -1?  +2?  -3?  
+z-scores do not change the shape of the original distribution or the location of 
+a score relative to others.
 
-## Z-score Formula  
+Because the scores are standardized we can compare scores from two completely 
+different scales. For example, if a biology exam was scored out of 100 points and
+a psychology exam was scored of 75 points we could compare our performance on them 
+via z scores. The first observation in the dataset below got 60 points on both 
+exams. However, the 60 on the psych exam is a "worse" score because everyone in 
+the class did better. 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+
+ex <- tibble( bio = c(60, 78, 88, 57, 98, 70, 90), 
+        psy = c(60, 75, 65, 70, 73, 70, 68))
+
+ex <- ex %>% 
+  mutate(z_bio = as.vector(scale(bio)), 
+         z_psy = as.vector(scale(psy))) %>% 
+  select(bio, z_bio, psy, z_psy)
+
+print(ex)
+```
 
 
-## Z-scores as a Standard Distribution  
+When raw scores are transformed into z-scores, the resulting distribution:
 
-z-scores do not change the shape of the original distribution or the location of a score relative to others 
+-   Always has a mean of 0
 
-When x values are transformed into z-scores, the resulting distribution: 
+-   Always has a standard deviation of 1
 
-The mean is always zero  
+-   Most z-scores are between z = -2.00 and z = +2.00
 
-The standard deviation is always one  
+## Z-score Formula
 
-Most z-scores are between z = -2.00 and z = +2.00 
+### Samples
 
-## Z-scores and Locations 
+(x - *M)* / *s*
 
-As descriptive statistics, describe exactly where an individual is located 
+### Populations
 
-As inferential statistics, determine whether a sample is representative of its population  
+(x - *M* )/ $\sigma$
 
-## Z-scores and Samples 
+## Calculating z-scores in R
 
-Z-scores are standardized, so we can compare different distributions.   
+To calculate a z score we will need to use the `scale()` function. First, we will create a vector of scores using the `sample()` function. When using the `sample()` function the first argument is the range of scores you are asking R to generate values from, then the `size` argument is how many observations you want, the final argument is `replace`. When `replace = TRUE` then the same number can appear twice. This is called sampling WITH replacement.
+
+```{r message=TRUE, warning=TRUE}
+library(pacman) 
+p_load(rio, tidyverse, skimr) 
+```
+
+```{r}
+#| eval: false
+sample(min value:max value, size = number of observations, replace = TRUE)
+```
+
+When combining `sample()` with the `tibble()` function to create a small dataframe our code looks like this.
+
+```{r}
+small <- tibble(raw_scores = sample(1:10, size = 25, replace = TRUE))
+small
+```
+
+Now that we have a set of raw scores, let's transform them into z scores.
+
+```{r}
+small <- small %>% 
+  mutate(z_scores = scale(raw_scores))
+
+small
+```
+
+Did it work? Let's check out a quick snapshot of our data with the `skim()` function. We can see that the mean for the z scores is incredibly close to zero. Good enough. We also see that the standard deviation is 1. That is what we'd expect.
+
+```{r}
+skim(small)
+
+options(scipen = 999)
+
+skim(small)
+```
+
+## Visualize
+
+-   What do you notice when you compare the two distributions to one another?
+
+-   Are the x axes the same?
+
+-   Are the distributions the same shape?
+
+::: panel-tabset
+### Raw score distribution
+
+```{r, warning=FALSE}
+small %>% 
+  ggplot(aes(x = raw_scores)) + 
+  geom_histogram(bins = 10) + 
+  theme_classic()
+```
+
+### Z score distribution
+
+```{r}
+small %>% 
+  ggplot(aes(x = z_scores)) + 
+  geom_histogram(bins = 10) + 
+  theme_classic()
+```
+:::
+
+## Larger Datasets
+
+Let's try with larger datasets, one where the data is randomly distributed and one where the data is normally distributed.
+
+```{r}
+random_dat <- tibble(raw_scores =sample(1:100, size = 1000, replace = TRUE)) 
+
+norm_dat <- tibble(raw_scores = rnorm(1000, mean = 100, sd = 10))
+```
+
+### find z for all scores in a dataset
+
+```{r}
+# create a column in the dataframe named "z-score" using scale function
+
+random_dat <- random_dat |> 
+  mutate(z_score = scale(raw_scores))
+         
+norm_dat <- norm_dat |> 
+  mutate(z_score = scale(raw_scores))
+```
+
+### compare
+
+Despite very different raw values the mean for the z scores is zero and the standard deviation is 1.
+
+```{r}
+#| echo: FALSE
+skim(random_dat)
+skim(norm_dat)
+```
+
+### Visualize raw scores
+
+::: panel-tabset
+#### randomly distributed
+
+```{r}
+# plot the raw score distribution
+
+random_dat %>% 
+  ggplot(aes(x = raw_scores)) + 
+  geom_histogram(bins = 25) + 
+  theme_classic()
+```
+
+#### normally distributed
+
+```{r}
+norm_dat %>% 
+  ggplot(aes(x = raw_scores)) + 
+  geom_histogram(bins = 25) + 
+  theme_classic()
+```
+:::
+
+### Visualize z scores
+
+::: panel-tabset
+What do you notice when you compare the raw score distributions to the z distributions? Are the x axes the same? Are the distributions the same shape?
+
+### randomly distributed
+
+```{r}
+random_dat %>% 
+  ggplot(aes(x = z_score)) +
+  geom_histogram(bins = 25) +
+  theme_classic()
+```
+
+### normally distributed
+
+```{r}
+norm_dat %>% 
+  ggplot(aes(x = z_score)) + 
+  geom_histogram(bins = 25) + 
+  theme_classic()
+```
+:::
+
+## z scores and probability
+
+We often need to know how likely it is to obtain a certain score. We can do this by using the `pnorm()` function. This function has four arguments we need to understand.
+
+-   `q` is the value that you want to calculate the probability of
+
+-   `mean` is the mean of the distribution
+
+-   `sd` is the standard deviation of the distribution
+
+-   `lower.tail` indicates whether we are looking at the lower tail or upper tail of the distribution. If it is FALSE, then we are looking at the upper tail.
+
+PsyTeachR - Data Skills Chapter 13 and 14 are great for this
+
+This code gives us the probability of obtaining a z score smaller than -1.96. We know this is a z distribution because the mean is 0 and the standard deviation is 1.
+
+```{r}
+pnorm(q = -1.96, mean = 0, sd = 1, lower.tail = TRUE)
+```
+
+The probability value, or p, is \< .25
+
+The code below gives us the probability of randomly selecting a score of 700 or above from a dataset with a mean of 500, and a standard deviation of 100.
+
+```{r}
+pnorm(q = 700, mean = 500, sd = 100, lower.tail = FALSE)
+```
+
+## Z-scores and Locations
+
+As descriptive statistics, z scores describe exactly where a score is located in a distribution.
+
+As inferential statistics, determine whether a sample is representative of its population.

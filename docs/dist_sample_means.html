@@ -42,6 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content=".">
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/shinylive.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -238,26 +243,26 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="samples-vs.-populations" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="samples-vs.-populations"><span class="header-section-number">11.1</span> Samples vs.&nbsp;Populations</h2>
-<p>Though most behavioral science uses sample to test hypotheses, often times those hypotheses are about populations.</p>
-<p>A sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population.</p>
-<p>Sampling Error</p>
+<p>Though most behavioral science uses samples to test hypotheses, those hypotheses are almost always about populations.</p>
+<p>A sample is not a perfect representation of a population, so any statistics you calculate for that sample are also not representative of the population. They are approximations.</p>
+<p><u><strong>Sampling Error</strong></u></p>
 <p>The difference between sample statistics and population parameters.</p>
 </section>
 <section id="sampling-distributions" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="sampling-distributions"><span class="header-section-number">11.2</span> Sampling Distributions</h2>
-<p>Sampling Distribution</p>
+<p><u><strong>Sampling Distribution</strong></u></p>
 <p>A distribution of statistics of all possible samples of a given size from a population</p>
 <p>One example of a sampling distribution is…..</p>
-<p>Distribution of Sample Means</p>
+<p><u><strong>Distribution of Sample Means</strong></u></p>
 <p>A collection of sample means for all possible random samples of a given size that could be obtained from a population.</p>
 <p>A distribution of sample means should form a normal distribution, with most of the sample means grouping around the population mean if the number of scores in each sample is more than 30.</p>
-<p>Larger sample are more representative of populations than smaller samples.</p>
-<p>The mean of the distribution of sample means is the same as the population mean.</p>
+<p>Larger samples are more representative of populations than smaller samples.</p>
+<p>The mean of the distribution of sample means is the always same as the population mean.</p>
 </section>
 <section id="standard-error-of-the-mean" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="standard-error-of-the-mean"><span class="header-section-number">11.3</span> Standard Error of the Mean</h2>
 <p>The standard deviation of the distribution of sample means is the</p>
-<p>Standard Error of the Mean</p>
+<p><u><strong>Standard Error of the Mean</strong></u></p>
 <p>𝜎𝑀= 𝜎𝑛√ 𝜎 M =</p>
 <p>𝜎 n</p>
 </section>
@@ -266,6 +271,44 @@ ul.task-list li input[type="checkbox"] {
 <p>By using a sampling distribution you can calculate the location of an entire sample within a population</p>
 <p>z = M - µ</p>
 <p>σM</p>
+<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 600
+library(shiny)
+library(bslib)
+
+ui &lt;- page_sidebar(
+  title = "Sampling Distribution Explorer",
+  sidebar = sidebar(
+    sliderInput("n", "Sample Size (n):", min = 2, max = 100, value = 30),
+    sliderInput("sims", "Number of Simulations:", min = 5, max = 150, value = 1000, step = 5),
+    actionButton("resample", "Generate New Samples", class = "btn-primary")
+  ),
+  card(
+    card_header("Distribution of Sample Means"),
+    plotOutput("distPlot")
+  )
+)
+
+server &lt;- function(input, output, session) {
+  sample_means &lt;- reactive({
+    input$resample
+    # Simulate drawing random samples from a normal population
+    replicate(input$sims, mean(rnorm(input$n, mean = 50, sd = 10)))
+  })
+  
+  output$distPlot &lt;- renderPlot({
+    means &lt;- sample_means()
+    hist(means, breaks = 30, col = "#007bc2", border = "white",
+         main = paste("Distribution of", input$sims, "Means (n =", input$n, ")"),
+         xlab = "Sample Mean Value")
+    abline(v = 50, col = "red", lwd = 2, lty = 2) # Population Mean
+  })
+}
+
+shinyApp(ui, server)</code></pre>
 
 
 </section>

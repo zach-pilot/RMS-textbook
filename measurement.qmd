@@ -7,11 +7,11 @@ toc: true
 
 ## Measurement
 
-**Measurement Error**
+[**Measurement Error**]{.underline}
 
 Variability in scores due to factors that distort the true score.
 
-**True Score**
+[**True Score**]{.underline}
 
 The score a participant would obtain if a measure were perfect and we could measure without error.
 
@@ -19,27 +19,27 @@ Measurement error + True Score = Observed score
 
 ## Sources of Measurement Error
 
-**Transient States**
+[**Transient States**]{.underline}
 
 Temporary state
 
 *Ex. mood*
 
-**Stable Attribute**
+[**Stable Attribute**]{.underline}
 
 A lasting state
 
 *Ex. Ambitious personality*
 
-**Situational factor**
+[**Situational factor**]{.underline}
 
 Research setting (Ex. Noise/temperature in the room)
 
-**Characteristics of the measure**
+[**Characteristics of the measure**]{.underline}
 
 The measure itself is ambiguous or too long
 
-**Mistakes in recording**
+[**Mistakes in recording**]{.underline}
 
 Incorrect data
 
@@ -53,7 +53,7 @@ If observed score is close to the true score, your measure has high reliability
 
 Can be assessed using several measurements of the same behavior and comparing to see if they resulted in similar scores (typically through a correlation)
 
-**Correlation Coefficient**
+[**Correlation Coefficient**]{.underline}
 
 Value that describes relationship between two measures
 
@@ -63,17 +63,17 @@ Correlation of .00 indicates no relationship
 
 ## Forms of Reliability
 
-**Inter-rater Reliability**
+[**Inter-rater Reliability**]{.underline}
 
 Consistency among two or more researchers who observe and record participants’ behavior
 
-**Test-Retest Reliability**
+[**Test-Retest Reliability**]{.underline}
 
 Consistency of responses on a measure over time, use the same measure twice and evaluate the correlation.
 
 The results of a reliable measure should not change over time.
 
-**Inter-Item Reliability**
+[**Inter-Item Reliability**]{.underline}
 
 Consistency between items on a scale.
 
@@ -83,15 +83,15 @@ If the items do not measure the same thing, measurement error increases and reli
 
 ## Indices of Inter-Item Reliability
 
-**Item-total correlation**
+[**Item-total correlation**]{.underline}
 
 The correlation between one item and the sum of all other items on a scale.
 
-**Split-half reliability**
+[**Split-half reliability**]{.underline}
 
 Divide items on a scale into two sections and examine the correlation between the sections.
 
-**Cronbach’s Alpha (α)**
+[**Cronbach’s Alpha (α)**]{.underline}
 
 The average of all possible split-half reliabilities
 
@@ -117,32 +117,32 @@ Do differences in scores truly reflect differences in what you are trying to mea
 
 ## Forms of Validity
 
-**Face Validity**
+[**Face Validity**]{.underline}
 
 The extent to which an assessment appears to describe what it is supposed to measure.
 
 Does not actually impact the “true” validity
 
-**Construct Validity**
+[**Construct Validity**]{.underline}
 
 How well does a measurement of a hypothetical construct relate to other measures.
 
--   **Hypothetical Construct**
+-   [**Hypothetical Construct**]{.underline}
 
     -   Something that cannot be directly observed, but is inferred based on observation or experience.
 
     -   *Ex. Personality, Confidence*
 
-**Convergent Validity**
+[**Convergent Validity**]{.underline}
 
 A measure correlates with other measures that it should correlate with
 
-**Discriminant Validity**
+[**Discriminant Validity**]{.underline}
 
 A measure does not correlate with other measures that it should not correlate with
 
 ## Bias
 
-**Test Bias**
+[**Test Bias**]{.underline}
 
 When the validity of a measure is lower for some groups than others.

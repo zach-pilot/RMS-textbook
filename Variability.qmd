@@ -69,7 +69,7 @@ max(x)
 min(x)
 ```
 
-Now we can use these functions to calculate the mean.
+Now we can use these functions to calculate the range.
 
 ```{r, eval=FALSE}
 max(x) - min(x)
@@ -99,9 +99,9 @@ standard deviation definition of standard deviation
 
 4.  Add all of the squared scores to get the Sum of Squared Deviations (SS).
 
-5.  Divide the SS by the size of your population (N) or sample (n-1) to get the variance (σ\^2 or s\^2).
+5.  Divide the SS by the size of your population (N) or sample (n-1) to get the variance (σ^2^ or s^2^).
 
-6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
+6.  Find the square root of σ^2^ to find the standard deviation(σ or s).
 
 #### Calculate in R (long)
 
@@ -141,12 +141,14 @@ SS <- sum(sq_score)
 ```{r}
 # variance for a population
 pop_var <- SS/length(y)
+pop_var
 
 # variance for a sample 
 sample_var <- SS/(length(y) - 1)
+sample_var
 ```
 
-6.  Find the square root of σ\^2 to find the standard deviation(σ or s).
+6.  Find the square root of σ^2^ to find the standard deviation(σ or s).
 
 ```{r}
 # population standard deviation
@@ -176,7 +178,7 @@ popvar(y)
 var(y)
 ```
 
-2.  Calculate stabdard deviation
+2.  Calculate standard deviation
 
 ```{r}
 # population stabdard deviation
@@ -190,25 +192,28 @@ sd(y)
 
 Population is EVERYONE.
 
-Variance (σ\^2) = SS/N
+Variance (σ^2^) = SS/N
 
 Standard Deviation (σ) = √(SS/N)
 
 Sample is a subset of everyone.
 
-Variance (s2) = SS/n-1.
+Variance (s^2^) = SS/n-1.
 
 Standard Deviation (s) = √(SS/(n-1)).
 
-We use a different formula for samples because we are using limited information from a small group (the sample) to draw inferences about a larger group (the population).
+We use a different formula for samples because we are using limited information 
+from a small group (the sample) to draw inferences about a larger group (the population).
 
-Samples have less variability than populations.
+Samples have less variability than populations, so statistics we run on them
+must be adjusted to account for this. 
 
 ## Biased and Unbiased Statistics
 
 **Biased Statistics**
 
-The average value overestimates or underestimates the population parameter
+The average value calculated for a sample overestimates or underestimates the 
+population parameter
 
 i.e. the sample before adjustment (n-1)
 
@@ -222,7 +227,9 @@ i.e. the sample after adjustment (n-1).
 
 ### Adding a constant
 
-When you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the example object.
+When you add a value to every score in the data set it does not change the 
+standard deviation. Try it out calculate the sample standard deviation of the 
+`example_1`. 
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -231,20 +238,21 @@ s <- sd(example_1)
 s
 ```
 
-Now, let's add a constant value of 2 to every score in the example object.
+Now, let's add a constant value of 2 to every score.
 
 ```{r}
 example_2 <- example_1 + 2
 example_2
 ```
 
-Let's see if the sample standard deviation has changed.
+Let's see if the sample standard deviation changed.
 
 ```{r}
 s <- sd(example_2)
 ```
 
-There is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.
+There is no difference because the distance between scores is unchanged. The 
+shape of the distribution is the same, just shifted to the right.
 
 ```{r}
 #| echo: false
@@ -277,7 +285,8 @@ knitr:: include_graphics("Variability_files/figure-html/unnamed-chunk-19-1.png")
 
 ### Multiplying by a constant
 
-When you multiply every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of the example object.
+Multiplying every score in the data set by a constant changes standard deviation. 
+Try it out. Calculate the sample standard deviation of `example_1`.
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -286,7 +295,7 @@ s <- sd(example_1)
 s
 ```
 
-Now, let's multiply every score in the dataset by a contant of 3.
+Now, let's multiply every score by a constant of 3.
 
 ```{r}
 example_2 <- example_1 * 3
@@ -300,7 +309,9 @@ s <- sd(example_2)
 s
 ```
 
-There distributions now look very different. The distance between scores in the `example_2` object has changed by a multiple of 3. The distance between scores is now greater, resulting in a wider distribution.
+There distributions now look very different. The distance between scores in
+`example_2` has changed by a multiple of 3. The distance between scores is now 
+greater, resulting in a wider distribution.
 
 ```{r}
 #| echo: false

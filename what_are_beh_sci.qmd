@@ -81,7 +81,7 @@ Describes relationships between ideas.
 
 *Ex. Theory of Multiple Intelligences- Gardner suggests that there are 8-10 distinct modalities of intelligence instead of one general factor.*
 
-Example: Theory of Evolution
+*Example: Theory of Evolution*
 
 [**Model**]{.underline}
 
@@ -91,15 +91,15 @@ A representation of a process.
 
 ## How to create a hypothesis
 
-Hypothesis
+[**Hypothesis**]{.underline}
 
 An idea suggested as a way to explain a phenomena.
 
-Post-hoc
+[**Post-hoc**]{.underline}
 
 Explanations made after the fact.
 
-A priori
+[**A priori**]{.underline}
 
 Predictions made before experimentation.
 
@@ -111,17 +111,17 @@ A variable is something that you measure.
 
 Two ways to define variables:
 
-Conceptual definition
+[**Conceptual definition**]{.underline}
 
 A dictionary definition.
 
-Ex: Drunk = affected by alcohol to the extent of losing control of one's faculties or behavior.
+*Ex: Drunk = affected by alcohol to the extent of losing control of one's faculties or behavior.*
 
-Operational definition
+[**Operational definition**]{.underline}
 
 Definition that specifies precisely how a concept is measured, think about behaviors you can see.
 
-Ex. Drunk = Blood Alcohol Content over .08.
+*Ex. Drunk = Blood Alcohol Content over .08.*
 
 ## Proof, Disproof, and Progress
 

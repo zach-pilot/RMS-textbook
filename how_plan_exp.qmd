@@ -41,11 +41,11 @@ Based off of a personal characteristic. Something you cannot manipulate in the l
 
 A bad independent variable can result in a failed experiment.
 
-**Pilot Study**
+[**Pilot Study**]{.underline}
 
 Test your experiment on a small group of people to ensure that it works.
 
-**Manipulation Check**
+[**Manipulation Check**]{.underline}
 
 Done to ensure that the level of your IV manipulation is strong enough.
 
@@ -61,13 +61,13 @@ Experiments must have AT LEAST one.
 
 ## Groups in an Experiment
 
-**Experimental**
+[**Experimental**]{.underline}
 
 The group that receives the independent variable manipulation.
 
 *Ex. In a study about sleep, this group is required to stay awake for 2 days.*
 
-**Control**
+[**Control**]{.underline}
 
 The group that is not exposed to any independent variable manipulation.
 
@@ -75,7 +75,7 @@ The group that is not exposed to any independent variable manipulation.
 
 ## Assigning Participants
 
-**Simple Random Assignment**
+[**Simple Random Assignment**]{.underline}
 
 Everyone has an equal chance of being assigned to any group/condition.
 
@@ -113,23 +113,23 @@ Requires fewer participants.
 
 ## Order Effects
 
-**Carryover effects**
+[**Carryover effects**]{.underline}
 
 One condition influences the following condition.
 
-**Practice effects**
+[**Practice effects**]{.underline}
 
 Participants have learned how to perform from previous experimental trials.
 
-**Fatigue effects**
+[**Fatigue effects**]{.underline}
 
 Participants are tired, bored, have no energy over time.
 
-**Sensitization**
+[**Sensitization**]{.underline}
 
 Participants realize the hypothesis being tested and do not perform naturally.
 
-**Counterbalancing**
+[**Counterbalancing**]{.underline}
 
 can be used to correct for order effects.
 
@@ -145,11 +145,11 @@ Typically requires random assignment.
 
 ## Experimental Control
 
-**Treatment effect**
+[**Treatment effect**]{.underline}
 
 Systematic differences due to the IV
 
-**Confounds**
+[**Confounds**]{.underline}
 
 Variable other than the IV that differs systematically between conditions.
 
@@ -157,7 +157,7 @@ Confounds invalidate your experiment because, if confounds are present, it is un
 
 Must be eliminated to draw accurate conclusions.
 
-**Error**
+[**Error**]{.underline}
 
 Unsystematic effects due to extraneous (uncontrolled) variables.
 
@@ -175,7 +175,7 @@ Measurement error
 
 ## Types of Validity
 
-**Internal Validity**
+[**Internal Validity**]{.underline}
 
 Degree to which we can draw accurate conclusions about the effects of the IV
 
@@ -183,13 +183,13 @@ Gain internal validity when all confounds are eliminated and you can conclude th
 
 Has experimental control.
 
-**External Validity**
+[**External Validity**]{.underline}
 
 Inverse relationship with internal validity
 
 The greater experimental control in your experiment, the less likely it will be externally valid or generalizable to the “real world”.
 
-Internal validity is more critical and desirable than external validity.
+Internal validity is more critical and desirable than external validity. If you are not confident in the outcome of your experiment what value does it have?
 
 ## Threats to internal validity
 
@@ -197,15 +197,15 @@ Internal validity is more critical and desirable than external validity.
 
 Occurs when random assignment isn’t possible or doesn’t produce equivalent groups.
 
-**Differential attrition**
+[**Differential attrition**]{.underline}
 
 Participants drop out of the experiment differently across levels of the IV.
 
-**Demand Characteristics**
+[**Demand Characteristics**]{.underline}
 
 Participants perform in the way they believe the experimenter wants them to.
 
-**Placebo Effects**
+[**Placebo Effects**]{.underline}
 
 Change as the result of the mere suggestion of change.
 
@@ -223,7 +223,7 @@ Experimenter with certain expectations interacts with participants differently
 
 ### Reducing threats to validity
 
-**Double Blind Procedure**
+[**Double Blind Procedure**]{.underline}
 
 The researcher administering the IV and the participant both do not know what level of the IV is being administered.
 
