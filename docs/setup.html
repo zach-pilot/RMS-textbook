@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Zachary Pilot">
 
-<title>6&nbsp; Measuring behavior – RMS textbook</title>
+<title>1&nbsp; Setup – RMS textbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./measurement.html" rel="next">
-<link href="./how_plan_exp.html" rel="prev">
+<link href="./fundamental_r_use.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measure_behav.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Measuring behavior</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setup</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+  <a href="./setup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setup</span></span></a>
   </div>
 </li>
@@ -180,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./measure_behav.html" class="sidebar-item-text sidebar-link active">
+  <a href="./measure_behav.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Measuring behavior</span></span></a>
   </div>
 </li>
@@ -254,19 +220,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types" id="toc-types" class="nav-link active" data-scroll-target="#types"><span class="header-section-number">6.1</span> Types</a></li>
-  <li><a href="#scales-of-measurement" id="toc-scales-of-measurement" class="nav-link" data-scroll-target="#scales-of-measurement"><span class="header-section-number">6.2</span> Scales of Measurement</a>
+  <li><a href="#download-r" id="toc-download-r" class="nav-link active" data-scroll-target="#download-r"><span class="header-section-number">1.1</span> Download R</a></li>
+  <li><a href="#download-r-studio" id="toc-download-r-studio" class="nav-link" data-scroll-target="#download-r-studio"><span class="header-section-number">1.2</span> Download R Studio</a></li>
+  <li><a href="#r-studio-overview" id="toc-r-studio-overview" class="nav-link" data-scroll-target="#r-studio-overview"><span class="header-section-number">1.3</span> R Studio Overview</a>
   <ul class="collapse">
-  <li><a href="#nominal-scales" id="toc-nominal-scales" class="nav-link" data-scroll-target="#nominal-scales"><span class="header-section-number">6.2.1</span> Nominal Scales</a></li>
-  <li><a href="#ordinal-scale" id="toc-ordinal-scale" class="nav-link" data-scroll-target="#ordinal-scale"><span class="header-section-number">6.2.2</span> Ordinal Scale</a></li>
-  <li><a href="#interval-scale" id="toc-interval-scale" class="nav-link" data-scroll-target="#interval-scale"><span class="header-section-number">6.2.3</span> Interval Scale</a></li>
-  <li><a href="#ratio-scale" id="toc-ratio-scale" class="nav-link" data-scroll-target="#ratio-scale"><span class="header-section-number">6.2.4</span> Ratio Scale</a></li>
+  <li><a href="#console-frame" id="toc-console-frame" class="nav-link" data-scroll-target="#console-frame"><span class="header-section-number">1.3.1</span> Console Frame</a></li>
+  <li><a href="#source-frame" id="toc-source-frame" class="nav-link" data-scroll-target="#source-frame"><span class="header-section-number">1.3.2</span> Source Frame</a></li>
+  <li><a href="#environmenthistory" id="toc-environmenthistory" class="nav-link" data-scroll-target="#environmenthistory"><span class="header-section-number">1.3.3</span> Environment/History</a></li>
+  <li><a href="#filespackages" id="toc-filespackages" class="nav-link" data-scroll-target="#filespackages"><span class="header-section-number">1.3.4</span> Files/Packages</a></li>
   </ul></li>
-  <li><a href="#central-tendency" id="toc-central-tendency" class="nav-link" data-scroll-target="#central-tendency"><span class="header-section-number">6.3</span> Central Tendency</a>
+  <li><a href="#saving" id="toc-saving" class="nav-link" data-scroll-target="#saving"><span class="header-section-number">1.4</span> Saving</a>
   <ul class="collapse">
-  <li><a href="#the-mean" id="toc-the-mean" class="nav-link" data-scroll-target="#the-mean"><span class="header-section-number">6.3.1</span> The Mean</a></li>
-  <li><a href="#the-median" id="toc-the-median" class="nav-link" data-scroll-target="#the-median"><span class="header-section-number">6.3.2</span> The Median</a></li>
-  <li><a href="#the-mode" id="toc-the-mode" class="nav-link" data-scroll-target="#the-mode"><span class="header-section-number">6.3.3</span> The Mode</a></li>
+  <li><a href="#r-studio-project" id="toc-r-studio-project" class="nav-link" data-scroll-target="#r-studio-project"><span class="header-section-number">1.4.1</span> R Studio Project</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -276,13 +241,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Measuring behavior</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setup</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Zachary Pilot </p>
+          </div>
+  </div>
     
   
     
@@ -293,147 +264,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="types" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="types"><span class="header-section-number">6.1</span> Types</h2>
+<p>We use R in this course for several reasons.</p>
 <ul>
-<li><p>Observational</p></li>
-<li><p>Physiological</p></li>
-<li><p>Self-report</p></li>
+<li><p>It is free, so people create things for it that we can use for free.</p></li>
+<li><p>You can have it any and all of your personal devices.</p></li>
+<li><p>It is widely used in research, industry, and elsewhere.</p></li>
+<li><p>It has great visualization tools.</p></li>
+<li><p>The understanding of data and how it is manipulated is fundamental to understanding statistics.</p></li>
 </ul>
+<p>Now that we are convinced, lets get R on all of our personal devices.</p>
+<p>When we say R, we are often referring to both R and R Studio. R studio is a program that makes R much easier to use, and that’s usually what we’re referring to…but we need R for R Studio to work.</p>
+<section id="download-r" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="download-r"><span class="header-section-number">1.1</span> Download R</h2>
+<p>R typically has a major update once a year and several smaller updates throughout the year. When these come out you have to download all of your packages again, but it’s good to keep it updated. <a href="https://cloud.r-project.org/">Link to download R</a>.</p>
 </section>
-<section id="scales-of-measurement" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="scales-of-measurement"><span class="header-section-number">6.2</span> Scales of Measurement</h2>
-<section id="nominal-scales" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="nominal-scales"><span class="header-section-number">6.2.1</span> Nominal Scales</h3>
-<p>Numbers are assigned as labels for characteristics or behaviors.</p>
-<p>Provides the least amount of information.</p>
-<p><em>Ex. Jersey Number</em></p>
+<section id="download-r-studio" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="download-r-studio"><span class="header-section-number">1.2</span> Download R Studio</h2>
+<p>We will do all of our work in R Studio, download it <a href="https://posit.co/download/rstudio-desktop/">here</a>, after you download base R. It also has several updates a year, but it doesn’t change anything about your packages so keep it updated.</p>
 </section>
-<section id="ordinal-scale" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="ordinal-scale"><span class="header-section-number">6.2.2</span> Ordinal Scale</h3>
-<p>Rank ordering of people’s behaviors or characteristics.</p>
-<p>Doesn’t specify the distance between participants on the variable being measured.</p>
-<p><em>Ex. Sizes at a fast food restaurant: baby, small, medium, large, ex large, super size, super duper size</em></p>
-</section>
-<section id="interval-scale" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="interval-scale"><span class="header-section-number">6.2.3</span> Interval Scale</h3>
-<p>Equal distance between the numbers reflect equal differences between participants</p>
-<p>Does not have a “true” zero point</p>
-<p><em>Ex. Temperature, IQ score</em></p>
-</section>
-<section id="ratio-scale" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="ratio-scale"><span class="header-section-number">6.2.4</span> Ratio Scale</h3>
-<p>Has a “true” zero point.</p>
-<p>Provides greatest amount of information.</p>
-<p>Should be used when possible.</p>
-<p><em>ex. duration, weight, accuracy</em></p>
-</section>
-</section>
-<section id="central-tendency" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">6.3</span> Central Tendency</h2>
-<p>A descriptive measure which represents the entire distribution of scores (mean, median, mode).</p>
-<p><strong>Goal:</strong> Find a single value that is representative of all the data.</p>
-<p>Can condense large data set into a single value.</p>
-<p>Allows comparison of 2 or more data sets using the central tendency.</p>
-<section id="the-mean" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="the-mean"><span class="header-section-number">6.3.1</span> The Mean</h3>
-<p>Most commonly used measure of central tendency.</p>
-<p>Used in interval or ratio scales.</p>
-<p>Is influenced by extreme scores (outliers)</p>
-<section id="how-to-compute" class="level4" data-number="6.3.1.1">
-<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="how-to-compute"><span class="header-section-number">6.3.1.1</span> How to compute:</h4>
-<p>Compute the sum of all scores (∑)</p>
-<p>Divide the sum by the number of scores.</p>
-<p>In manuscripts, the sample mean is identified as “<em>M</em>”</p>
-<p>The sum (∑) of all scores (X) = (∑X)</p>
-<p>4 + 5 + 3 = 12</p>
-<p>Divide the sum by the number of scores (N) = (∑X/N)</p>
-<p>12/3 = 4</p>
-</section>
-<section id="compute-in-r" class="level4" data-number="6.3.1.2">
-<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="compute-in-r"><span class="header-section-number">6.3.1.2</span> Compute in R</h4>
-<p>You can calculate the mean in R with the function <code>mean()</code></p>
+<section id="r-studio-overview" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="r-studio-overview"><span class="header-section-number">1.3</span> R Studio Overview</h2>
+<p>Once you open Rstudio you might notice that there are four different panes on your screen that each look different from the other. Although it might look overwhelming these panes are all important when operating in Rstudio and will all be used.</p>
+<section id="console-frame" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="console-frame"><span class="header-section-number">1.3.1</span> Console Frame</h3>
+<p>The console frame is the <strong>bottom left frame on your screen</strong>. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. You should make note that the console is like a scrap piece of paper or and etch an sketch its a great place to do some troubleshooting or viewing data through the <code>glimpse()</code> function but <strong>any work you do here will not be saved.</strong> This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be troubleshooting a s well. The console is also next to the terminal which is the tab right next to it. <strong>They both can run commands but are different in nature</strong>.The <em>console</em> is intended to run commands that work mainly inside Rstudio itself. The <em>terminal</em> however runs systems commands like something you do on your computer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the mean function on the object</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/R_console_screenshot.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<p>The mean is influenced by extreme scores. It gets pulled in the direction of the extreme score, making it less representative of the whole dataset and more reflective of the outlier (which isn’t what we want).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores with an outlier</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">46</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the mean function on the object</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 14.5</code></pre>
 </div>
-</div>
-<p>This score is not very reflective of our dataset, so we should use an alternative measure of central tendency, like the median.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the average high temperature in Chicago last winter?</p>
-<p>All distances below the mean are equal to all the distances above the mean.</p>
-<p>Changing any score (adding or subtracting) will influence the mean.</p>
 </section>
-<section id="when-you-shouldnt-use-the-mean" class="level4" data-number="6.3.1.3">
-<h4 data-number="6.3.1.3" class="anchored" data-anchor-id="when-you-shouldnt-use-the-mean"><span class="header-section-number">6.3.1.3</span> When you shouldn’t use the mean</h4>
-<p>The mean is not appropriate for nominal or ordinal scales.</p>
+<section id="source-frame" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="source-frame"><span class="header-section-number">1.3.2</span> Source Frame</h3>
+<p>The source frame or editor frame is <strong>the top left frame</strong> on your screen. This frame is the primary location of where you will be doing your work and typing all of your code. The source frame is used to open RMarkdown documents, scripts, and other ways to type code. You can also save and open new documents and files at the farthest top left corner of this frame.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/source_screenshot_example.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="environmenthistory" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="environmenthistory"><span class="header-section-number">1.3.3</span> Environment/History</h3>
+<p>The environment or history frame can be seen in <strong>the top right frame on your screen.</strong> This is where you can view current objects that you have created which we will discuss further in the chapter as well as data sets and where you can track your steps by viewing the command history that you have run.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/Environment_screenshot_example.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="filespackages" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="filespackages"><span class="header-section-number">1.3.4</span> Files/Packages</h3>
+<p>The last frame on <strong>the bottom right is your files and packages</strong> frame. This frame is more of a window into your computer in the sense that you are able to view the packages and files that you have on stored on it. You can also use it to check any plots you might have and to read any documents on your computer as well. You only need to download a package one time, then it is saved. However, every time you open Rstudio packages must be loaded into the R environment.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/files_screenshot_example.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Suggestion</strong>: If you wish to change the layout of your frames to customize it simply click <strong>tools</strong> at the top of your computer then <strong>global options</strong> then to pane layout to customize the layout to whatever is the best for you.</p>
+</section>
+</section>
+<section id="saving" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="saving"><span class="header-section-number">1.4</span> Saving</h2>
+<p>Science should be reproducible, so should your work. When you close R and start a new session you will be starting from a blank slate unless you save your work.</p>
+<p>By default, R will save your work in a working directory, The working directory is a location on your computer or the cloud. See where your things are being saved by typing <code>getwd()</code> in <strong>the source pane</strong> now. This is probably not a good place to save the <em>many</em> files we will be creating in this course. Instead, we will create an <strong>R Studio Project</strong>.</p>
+<section id="r-studio-project" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="r-studio-project"><span class="header-section-number">1.4.1</span> R Studio Project</h3>
+<p>Follow the steps below to create an R Studio project where all of your things will be saved.</p>
 <ul>
-<li>It is impossible to calculate.</li>
-</ul>
-<p>The mean is not appropriate when you have extreme scores (outliers).</p>
+<li><p>Above the console pane you will see several clickable buttons with green pluses on them. Click the second button from the left to create a new project.</p></li>
+<li><p>Click “New Directory”</p></li>
+<li><p>Click “New Project”</p></li>
+<li><p>Name your project something like “rms” or “psy303”</p></li>
+<li><p>Choose a sensible subdirectory by clicking the “Browse” button so you can find all of your files. I suggest your desktop on your device, not the cloud.</p></li>
+<li><p>Click “Create Project”</p>
 <ul>
-<li>The mean will be pulled towards the extreme score, rendering it no longer representative of the rest of the data.</li>
+<li>Now, you should notice in the top right of your screen the name of your project, indicating that you are working within that project.</li>
+</ul></li>
 </ul>
-<p>The mean is not appropriate when there is missing data</p>
-</section>
-</section>
-<section id="the-median" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="the-median"><span class="header-section-number">6.3.2</span> The Median</h3>
-<p>Scores are listed in order from smallest to largest</p>
-<p>The median is the midpoint, it equally divides the scores</p>
-<p>When you have an even number of scores you take the average of the two middle scores.</p>
-<p>The median can be used on ordinal, interval, or ratio scales.</p>
-<p>The median is unaffected by extreme scores (outliers).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of data </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate median of the data object x</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-<p>Remember the datset with an outlier from before? How does the median handle the outlier?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores with an outlier</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">46</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the median function on the object</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.5</code></pre>
-</div>
-</div>
-<p>That is a much more representative measure for the entire dataset.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the median temperature in Chicago last winter?</p>
-</section>
-<section id="the-mode" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="the-mode"><span class="header-section-number">6.3.3</span> The Mode</h3>
-<p>The most frequently occurring score.</p>
-<p>Can be used on ALL scales of measurement.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the mode temperature in Chicago last winter?</p>
+<p>Check your new working directory by typing <code>getwd()</code> in the source pane again, it should reflect your subdirectory and project name.</p>
+<p>As long as this project is open everything you save will be placed in that working directory and you will have easy access to anything in that directory from R.</p>
 
 
 </section>
@@ -841,13 +766,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./how_plan_exp.html" class="pagination-link" aria-label="How to plan an experiment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">How to plan an experiment</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./measurement.html" class="pagination-link" aria-label="Measurement">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Measurement</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./fundamental_r_use.html" class="pagination-link" aria-label="Fundamentals of R">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentals of R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

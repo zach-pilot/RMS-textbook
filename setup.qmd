@@ -1,0 +1,97 @@
+---
+title: "Setup"
+author: "Zachary Pilot"
+format: html
+editor: visual
+toc: true
+---
+
+We use R in this course for several reasons.
+
+-   It is free, so people create things for it that we can use for free.
+
+-   You can have it any and all of your personal devices.
+
+-   It is widely used in research, industry, and elsewhere.
+
+-   It has great visualization tools.
+
+-   The understanding of data and how it is manipulated is fundamental to understanding statistics.
+
+Now that we are convinced, lets get R on all of our personal devices.
+
+When we say R, we are often referring to both R and R Studio. R studio is a program that makes R much easier to use, and that's usually what we're referring to...but we need R for R Studio to work.
+
+## Download R
+
+R typically has a major update once a year and several smaller updates throughout the year. When these come out you have to download all of your packages again, but it's good to keep it updated. [Link to download R](https://cloud.r-project.org/).
+
+## Download R Studio
+
+We will do all of our work in R Studio, download it [here](https://posit.co/download/rstudio-desktop/), after you download base R. It also has several updates a year, but it doesn't change anything about your packages so keep it updated.
+
+## R Studio Overview
+
+Once you open Rstudio you might notice that there are four different panes on your screen that each look different from the other. Although it might look overwhelming these panes are all important when operating in Rstudio and will all be used.
+
+### Console Frame
+
+The console frame is the **bottom left frame on your screen**. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. You should make note that the console is like a scrap piece of paper or and etch an sketch its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be troubleshooting a s well. The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/R_console_screenshot.png")
+```
+
+### Source Frame
+
+The source frame or editor frame is **the top left frame** on your screen. This frame is the primary location of where you will be doing your work and typing all of your code. The source frame is used to open RMarkdown documents, scripts, and other ways to type code. You can also save and open new documents and files at the farthest top left corner of this frame.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/source_screenshot_example.png")
+```
+
+### Environment/History
+
+The environment or history frame can be seen in **the top right frame on your screen.** This is where you can view current objects that you have created which we will discuss further in the chapter as well as data sets and where you can track your steps by viewing the command history that you have run.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/Environment_screenshot_example.png")
+```
+
+### Files/Packages
+
+The last frame on **the bottom right is your files and packages** frame. This frame is more of a window into your computer in the sense that you are able to view the packages and files that you have on stored on it. You can also use it to check any plots you might have and to read any documents on your computer as well. You only need to download a package one time, then it is saved. However, every time you open Rstudio packages must be loaded into the R environment.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/files_screenshot_example.png")
+```
+
+**Suggestion**: If you wish to change the layout of your frames to customize it simply click **tools** at the top of your computer then **global options** then to pane layout to customize the layout to whatever is the best for you.
+
+## Saving
+
+Science should be reproducible, so should your work. When you close R and start a new session you will be starting from a blank slate unless you save your work.
+
+By default, R will save your work in a working directory, The working directory is a location on your computer or the cloud. See where your things are being saved by typing `getwd()` in **the source pane** now. This is probably not a good place to save the *many* files we will be creating in this course. Instead, we will create an **R Studio Project**.
+
+### R Studio Project
+
+Follow the steps below to create an R Studio project where all of your things will be saved.
+
+-   Above the console pane you will see several clickable buttons with green pluses on them. Click the second button from the left to create a new project.
+
+-   Click "New Directory"
+
+-   Click "New Project"
+
+-   Name your project something like "rms" or "psy303"
+
+-   Choose a sensible subdirectory by clicking the "Browse" button so you can find all of your files. I suggest your desktop on your device, not the cloud.
+
+-   Click "Create Project"
+
+    -   Now, you should notice in the top right of your screen the name of your project, indicating that you are working within that project.
+
+Check your new working directory by typing `getwd()` in the source pane again, it should reflect your subdirectory and project name.
+
+As long as this project is open everything you save will be placed in that working directory and you will have easy access to anything in that directory from R.
