@@ -5,17 +5,23 @@ editor: visual
 toc: true
 ---
 
+```{r}
+#| include: false
+library(webexercises)
+```
+
+
 ## Introduction
 
-This chapter will be teaching you about a T-test and the use we have for them in psychology and also the real life applications there are when we use them. T-tests are a very useful tool when it comes to inferential statistics and they allow us to compare means and to also determine if group differences that we observe are statistically significant. In this chapter you will learn how to:
+T-tests compare means and help us determine if group differences we observe are statistically significant. In this chapter you will learn how to:
 
--   Run one sample and independent sample t-tests and paired t-test.
+-   Run one sample, independent, and paired t-tests in R
 
--   perform t-tests using R and interpret them
+-   Interpret output from t tests
 
--   find different assumptions like normality and homogeneity of variance
+-   Test the assumptions of t tests
 
--   create apa style results using the `report` and `apaTables` packages
+-   Create APA style results using the `report` and `apaTables` packages
 
 ## Pre-requisites
 
@@ -32,19 +38,25 @@ library(apaTables)
 
 ## What is a t-test?
 
-Now before we get into working inside of R using t-tests first we have to understand what they are and some different ways we use them. A t-test is a inferential statistic that compares **means** while also making note of variability and sample sizes. There are different ways in psychology that we can use these tests.
+A t-test is an inferential statistic that compares **means** while also making note of variability and sample sizes. There are different ways in psychology that we can use these tests.
 
 ### One-sample t-test
 
 When we want to compare one group against a known value like for example the population average this is when we will use a one-sample t-test because we are only taking one group and applying it to a value that is already known.
 
-### Independent-sample t-test
+*Ex. Comparing USI college athletes' (our sample) body fat percentage to the national average college student (our population) body fat percentage.*
 
-Now when we want compare two completely different groups like say for example gender using males and females this is where we will use the independent sample t-test because the two are independent from each other and results will not rely on the other.
+### Independent samples t-test
+
+Comparing two completely different groups in a between subjects design.
+
+*Ex. Comparing a group that received aromatherapy and a group that received no therapy on sinus health.*
 
 ### Paired t-test
 
-We use a paired t-test when we want to examine one group that usually experiences a change so lets say for example we want to measure a groups stress levels before and after listening to music we would use a paired t-test
+Comparing one condition a group experiences to another condition that some group experiences.
+
+*Ex. Comparing relaxation scores before a massage and after a massage.*
 
 ### Now lets practice creating a small data-set that we could see in a real study that you might do for your project.
 

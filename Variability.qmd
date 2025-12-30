@@ -202,18 +202,15 @@ Variance (s^2^) = SS/n-1.
 
 Standard Deviation (s) = √(SS/(n-1)).
 
-We use a different formula for samples because we are using limited information 
-from a small group (the sample) to draw inferences about a larger group (the population).
+We use a different formula for samples because we are using limited information from a small group (the sample) to draw inferences about a larger group (the population).
 
-Samples have less variability than populations, so statistics we run on them
-must be adjusted to account for this. 
+Samples have less variability than populations, so statistics we run on them must be adjusted to account for this.
 
 ## Biased and Unbiased Statistics
 
 **Biased Statistics**
 
-The average value calculated for a sample overestimates or underestimates the 
-population parameter
+The average value calculated for a sample overestimates or underestimates the population parameter
 
 i.e. the sample before adjustment (n-1)
 
@@ -227,9 +224,7 @@ i.e. the sample after adjustment (n-1).
 
 ### Adding a constant
 
-When you add a value to every score in the data set it does not change the 
-standard deviation. Try it out calculate the sample standard deviation of the 
-`example_1`. 
+When you add a value to every score in the data set it does not change the standard deviation. Try it out calculate the sample standard deviation of the `example_1`.
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -251,13 +246,12 @@ Let's see if the sample standard deviation changed.
 s <- sd(example_2)
 ```
 
-There is no difference because the distance between scores is unchanged. The 
-shape of the distribution is the same, just shifted to the right.
+There is no difference because the distance between scores is unchanged. The shape of the distribution is the same, just shifted to the right.
 
 ```{r}
-#| echo: false
 #| message: false
 #| warning: false
+#| include: false
 
 dat <- tibble(
   example_1 = example_1,
@@ -285,8 +279,7 @@ knitr:: include_graphics("Variability_files/figure-html/unnamed-chunk-19-1.png")
 
 ### Multiplying by a constant
 
-Multiplying every score in the data set by a constant changes standard deviation. 
-Try it out. Calculate the sample standard deviation of `example_1`.
+Multiplying every score in the data set by a constant changes standard deviation. Try it out. Calculate the sample standard deviation of `example_1`.
 
 ```{r}
 example_1 <- c(1, 2, 3, 4, 5)
@@ -309,14 +302,12 @@ s <- sd(example_2)
 s
 ```
 
-There distributions now look very different. The distance between scores in
-`example_2` has changed by a multiple of 3. The distance between scores is now 
-greater, resulting in a wider distribution.
+There distributions now look very different. The distance between scores in `example_2` has changed by a multiple of 3. The distance between scores is now greater, resulting in a wider distribution.
 
 ```{r}
-#| echo: false
 #| message: false
 #| warning: false
+#| include: false
 dat <- tibble(example_1, example_2)
 dat <- dat %>% 
   pivot_longer(cols = c(example_1, example_2), names_to = "group", values_to = "score")

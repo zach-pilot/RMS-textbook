@@ -17,28 +17,19 @@ The mean and standard deviation provide a context with which to interpret the ra
 
 *Ex. Terrence's class average was 75 points with a 2 point standard deviation. His score of 34 is uniquely terrible.*
 
-z-scores tell us where an x value is located in relation to the mean and standard 
-deviation with one number - the z score.
+z-scores tell us where an x value is located in relation to the mean and standard deviation with one number - the z score.
 
 A z score is a signed (+ or -) number, like -1.5 or +2.
 
-The sign tells you whether the x value is above the mean (positive) or below the 
-mean (negative).
+The sign tells you whether the x value is above the mean (positive) or below the mean (negative).
 
-The number tells you the amount of standard deviations between the raw score and 
-the mean of the distribution.
+The number tells you the amount of standard deviations between the raw score and the mean of the distribution.
 
 ## Z-scores as a Standardized Distribution
 
-z-scores do not change the shape of the original distribution or the location of 
-a score relative to others.
+z-scores do not change the shape of the original distribution or the location of a score relative to others.
 
-Because the scores are standardized we can compare scores from two completely 
-different scales. For example, if a biology exam was scored out of 100 points and
-a psychology exam was scored of 75 points we could compare our performance on them 
-via z scores. The first observation in the dataset below got 60 points on both 
-exams. However, the 60 on the psych exam is a "worse" score because everyone in 
-the class did better. 
+Because the scores are standardized we can compare scores from two completely different scales. For example, if a biology exam was scored out of 100 points and a psychology exam was scored of 75 points we could compare our performance on them via z scores. The first observation in the dataset below got 60 points on both exams. However, the 60 on the psych exam is a "worse" score because everyone in the class did better.
 
 ```{r}
 #| echo: false
@@ -56,7 +47,6 @@ ex <- ex %>%
 
 print(ex)
 ```
-
 
 When raw scores are transformed into z-scores, the resulting distribution:
 
@@ -108,11 +98,7 @@ small
 
 Did it work? Let's check out a quick snapshot of our data with the `skim()` function. We can see that the mean for the z scores is incredibly close to zero. Good enough. We also see that the standard deviation is 1. That is what we'd expect.
 
-```{r}
-skim(small)
-
-options(scipen = 999)
-
+```{r, echo=TRUE, results='hide'}
 skim(small)
 ```
 
@@ -170,8 +156,7 @@ norm_dat <- norm_dat |>
 
 Despite very different raw values the mean for the z scores is zero and the standard deviation is 1.
 
-```{r}
-#| echo: FALSE
+```{r, echo=TRUE, results='hide'}
 skim(random_dat)
 skim(norm_dat)
 ```

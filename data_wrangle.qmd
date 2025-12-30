@@ -1,0 +1,238 @@
+---
+title: "Data Wrangling"
+format: html
+editor: visual
+toc: true
+---
+
+
+## Introduction
+
+The tidyverse is filled with functions that help us work with data. Most of the
+functions covered here come from the dplyr package. 
+
+Datasets in R have rows and columns. Rows are the participants, cases, or 
+observations andcolumns are the variables. Dplyr has certain functions, sometimes 
+referred to as verbs, to handle this information.
+
+In the grammar of dplyr, the first argument is always your data frame object. 
+The following arguments describe what to do with that data frame. 
+The result of a dplyr function is always a new data frame.
+
+There are two verbs used on columns: `select()` and `mutate()`
+
+There are two verbs used for rows: `filter()` and `arrange()`
+
+There are two verbs used for summary: `group_by()` and `summarise()`
+
+### Logical Operators
+
+We can use logical operators within dplyr to help manipulate our data.
+
+Below is a list of logical operators.
+
+| Operator  | Description             |
+|-----------|-------------------------|
+| \<        | less than               |
+| \<=       | less than or equal to   |
+| \>        | greater than            |
+| \>=       | grater than or equal to |
+| ==        | exactly equal to        |
+| !=        | not equal to            |
+| !x        | Not x                   |
+| x \| y    | x OR y                  |
+| x & y     | x and y                 |
+| isTRUE(x) | test if x is TRUE       |
+
+### Pipes
+
+Pipes are super useful, they may look like this %\>% or this \|\> . Both are fine.
+
+I recommend using the keyboard shortcut for pipes because they're annoying to type. 
+Shortcuts can be found in the Help menu.
+
+The pipe passes the object on its left to the first argument of the function to 
+the right of the pipe. In dplyr, the first argument of anything is a data frame, 
+so it's useful to know. It helps me ot think of the pipe as saying "and then". 
+So, in my head I read the code below as "load the package tidyverse, then 
+load the diamonds data frame object and then count the rows in that object."
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+library(tidyverse)
+
+diamonds |> 
+  count()
+```
+
+## Functions used on columns
+
+### select()
+
+The `select()` function chooses which columns we want to keep from a larger data 
+frame.
+
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
+# load psych package that contains sat.act data
+library(psych)
+
+# check out all the variables in the data frame
+glimpse(sat.act)
+
+# choose only gender and ACT
+sat.act |> 
+  select(gender, ACT)
+
+# choose everything but ACT
+sat.act |> 
+  select(!ACT)
+
+# choose everything from gender to age
+sat.act |> 
+  select(gender:age)
+
+# choose everything that starts with SA
+sat.act |> 
+  select(starts_with("SA"))
+
+# choose everything that ends with T
+sat.act |> 
+  select(ends_with("T"))
+
+# choose everything that has a t in it
+sat.act |> 
+  select(contains("T"))
+```
+
+### rename()
+
+[will do this later]
+
+### relocate()
+
+[will do this later]
+
+### mutate()
+
+`mutate()` is used to change existing columns or create new columns. Mutate is very 
+useful when making subscales, calculating totals, etc.
+
+```{r, eval=FALSE}
+# look at the data 
+
+glimpse(USArrests)
+
+# create a new variable for all violent crime 
+# by default the new column as added to the end of the data frame
+USArrests |> 
+  mutate(violent_crime = (Murder + Assault + Rape)) 
+```
+
+## Functions used on rows
+
+### case_when()
+
+[ will do this later]
+
+### case\_ match()
+
+[ will do this later]
+
+### if_else()
+
+### filter()
+
+`filter()` is used at the ROW level, so it will not change the columns we see.
+`filter()` tells us which kind of participant data to include and exclude. 
+This is especially useful if we want to exclude certain observations from our
+analyses (like outliers) or only look at as a subset of our data.
+
+Let's stick with the arrests data and only keep the data from states that are 
+more than 50% urban population.
+
+```{r, eval=FALSE}
+# 42 states with over 50% urban population
+USArrests |> 
+  filter(UrbanPop >50)
+```
+
+Let's do a little more with the diamonds data set.
+
+```{r , eval=FALSE}
+# only diamonds over 1 carat in size
+# still 17k
+diamonds |> 
+  filter(carat > 1)
+
+# typing ?diamonds allows me to see what is the best diamond qualities
+# I only want THE BEST
+diamonds |> 
+  filter(carat >1 & cut == "Ideal" & color == "D" & clarity == "IF")
+
+# I'll compromise a little - by using %in% I get all very good and ideal cuts
+diamonds |> 
+  filter(carat >1 & (cut %in% c("Ideal", "Very Good")) & color == "D" & clarity == "IF")
+```
+
+### arrange()
+
+This one is pretty straightforward, it arranges the order of data in a column 
+based on the values in the rows.
+
+```{r, eval=FALSE}
+# arrange the data in descend order by carat size
+diamonds |> 
+  arrange(desc(carat))
+
+# I can resolve ties by including a second statement, 3.01 has lots of ties
+diamonds |> 
+  filter(carat  < 3.02) |> 
+  arrange(desc(carat), desc(cut))
+```
+
+## Functions for Summarizing
+
+### group_by()
+
+`group_by()` creates a "grouped table where all operations you perform are now 
+done by the group you indicate.
+
+I wonder how many diamonds of each cut there are.
+
+```{r, eval=FALSE}
+diamonds |> 
+  group_by(cut) |> 
+  count()
+
+# when count is used outside of a grouped table it just tells me the number of cases
+diamonds |> 
+  count()
+```
+
+### summarise()
+
+`summarise()` is used in conjunction with group_by() and we can use it to compare 
+groups - super handy for t tests and ANOVAs. It collapses each group into a single 
+row and treats each row as a case. Notice the new dataframe produced after 
+summarize, it is much smaller. 
+
+I've heard it's tough to have big diamonds that are of high quality. So let's 
+find out.
+
+```{r, eval=FALSE}
+diamonds |>
+  group_by(cut) |> 
+  summarise(avg_carat = mean(carat)) # create new variable to compare groups
+
+# super useful for making graphs
+diamonds |>
+  group_by(cut) |> 
+  summarise(avg_carat = mean(carat)) |> 
+  ggplot(aes(x = cut, y = avg_carat)) + # ggplot only uses + 
+  geom_col()
+
+# multiple calculations
+diamonds |>
+  group_by(cut) |> 
+  summarise(avg_carat = mean(carat), 
+            n = n()) # can do multiple summarise arguments
+```

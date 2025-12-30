@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Measuring behavior – RMS textbook</title>
+<title>2&nbsp; Data Wrangling – RMS textbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./measurement.html" rel="next">
-<link href="./how_plan_exp.html" rel="prev">
+<link href="./what_are_beh_sci.html" rel="next">
+<link href="./fundamental_r_use.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measure_behav.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring behavior</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_wrangle.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Wrangling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -156,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_wrangle.html" class="sidebar-item-text sidebar-link">
+  <a href="./data_wrangle.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
   </div>
 </li>
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./measure_behav.html" class="sidebar-item-text sidebar-link active">
+  <a href="./measure_behav.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring behavior</span></span></a>
   </div>
 </li>
@@ -248,19 +248,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types" id="toc-types" class="nav-link active" data-scroll-target="#types"><span class="header-section-number">5.1</span> Types</a></li>
-  <li><a href="#scales-of-measurement" id="toc-scales-of-measurement" class="nav-link" data-scroll-target="#scales-of-measurement"><span class="header-section-number">5.2</span> Scales of Measurement</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#nominal-scales" id="toc-nominal-scales" class="nav-link" data-scroll-target="#nominal-scales"><span class="header-section-number">5.2.1</span> Nominal Scales</a></li>
-  <li><a href="#ordinal-scale" id="toc-ordinal-scale" class="nav-link" data-scroll-target="#ordinal-scale"><span class="header-section-number">5.2.2</span> Ordinal Scale</a></li>
-  <li><a href="#interval-scale" id="toc-interval-scale" class="nav-link" data-scroll-target="#interval-scale"><span class="header-section-number">5.2.3</span> Interval Scale</a></li>
-  <li><a href="#ratio-scale" id="toc-ratio-scale" class="nav-link" data-scroll-target="#ratio-scale"><span class="header-section-number">5.2.4</span> Ratio Scale</a></li>
+  <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators"><span class="header-section-number">2.1.1</span> Logical Operators</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes"><span class="header-section-number">2.1.2</span> Pipes</a></li>
   </ul></li>
-  <li><a href="#central-tendency" id="toc-central-tendency" class="nav-link" data-scroll-target="#central-tendency"><span class="header-section-number">5.3</span> Central Tendency</a>
+  <li><a href="#functions-used-on-columns" id="toc-functions-used-on-columns" class="nav-link" data-scroll-target="#functions-used-on-columns"><span class="header-section-number">2.2</span> Functions used on columns</a>
   <ul class="collapse">
-  <li><a href="#the-mean" id="toc-the-mean" class="nav-link" data-scroll-target="#the-mean"><span class="header-section-number">5.3.1</span> The Mean</a></li>
-  <li><a href="#the-median" id="toc-the-median" class="nav-link" data-scroll-target="#the-median"><span class="header-section-number">5.3.2</span> The Median</a></li>
-  <li><a href="#the-mode" id="toc-the-mode" class="nav-link" data-scroll-target="#the-mode"><span class="header-section-number">5.3.3</span> The Mode</a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">2.2.1</span> select()</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">2.2.2</span> rename()</a></li>
+  <li><a href="#relocate" id="toc-relocate" class="nav-link" data-scroll-target="#relocate"><span class="header-section-number">2.2.3</span> relocate()</a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">2.2.4</span> mutate()</a></li>
+  </ul></li>
+  <li><a href="#functions-used-on-rows" id="toc-functions-used-on-rows" class="nav-link" data-scroll-target="#functions-used-on-rows"><span class="header-section-number">2.3</span> Functions used on rows</a>
+  <ul class="collapse">
+  <li><a href="#case_when" id="toc-case_when" class="nav-link" data-scroll-target="#case_when"><span class="header-section-number">2.3.1</span> case_when()</a></li>
+  <li><a href="#case_-match" id="toc-case_-match" class="nav-link" data-scroll-target="#case_-match"><span class="header-section-number">2.3.2</span> case_ match()</a></li>
+  <li><a href="#if_else" id="toc-if_else" class="nav-link" data-scroll-target="#if_else"><span class="header-section-number">2.3.3</span> if_else()</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">2.3.4</span> filter()</a></li>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="header-section-number">2.3.5</span> arrange()</a></li>
+  </ul></li>
+  <li><a href="#functions-for-summarizing" id="toc-functions-for-summarizing" class="nav-link" data-scroll-target="#functions-for-summarizing"><span class="header-section-number">2.4</span> Functions for Summarizing</a>
+  <ul class="collapse">
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="header-section-number">2.4.1</span> group_by()</a></li>
+  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="header-section-number">2.4.2</span> summarise()</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -270,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measuring behavior</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Wrangling</span></h1>
 </div>
 
 
@@ -287,147 +298,234 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="types" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="types"><span class="header-section-number">5.1</span> Types</h2>
-<ul>
-<li><p>Observational</p></li>
-<li><p>Physiological</p></li>
-<li><p>Self-report</p></li>
-</ul>
+<section id="introduction" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
+<p>The tidyverse is filled with functions that help us work with data. Most of the functions covered here come from the dplyr package.</p>
+<p>Datasets in R have rows and columns. Rows are the participants, cases, or observations andcolumns are the variables. Dplyr has certain functions, sometimes referred to as verbs, to handle this information.</p>
+<p>In the grammar of dplyr, the first argument is always your data frame object. The following arguments describe what to do with that data frame. The result of a dplyr function is always a new data frame.</p>
+<p>There are two verbs used on columns: <code>select()</code> and <code>mutate()</code></p>
+<p>There are two verbs used for rows: <code>filter()</code> and <code>arrange()</code></p>
+<p>There are two verbs used for summary: <code>group_by()</code> and <code>summarise()</code></p>
+<section id="logical-operators" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="logical-operators"><span class="header-section-number">2.1.1</span> Logical Operators</h3>
+<p>We can use logical operators within dplyr to help manipulate our data.</p>
+<p>Below is a list of logical operators.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>grater than or equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>exactly equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>not equal to</td>
+</tr>
+<tr class="odd">
+<td>!x</td>
+<td>Not x</td>
+</tr>
+<tr class="even">
+<td>x | y</td>
+<td>x OR y</td>
+</tr>
+<tr class="odd">
+<td>x &amp; y</td>
+<td>x and y</td>
+</tr>
+<tr class="even">
+<td>isTRUE(x)</td>
+<td>test if x is TRUE</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="scales-of-measurement" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="scales-of-measurement"><span class="header-section-number">5.2</span> Scales of Measurement</h2>
-<section id="nominal-scales" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="nominal-scales"><span class="header-section-number">5.2.1</span> Nominal Scales</h3>
-<p>Numbers are assigned as labels for characteristics or behaviors.</p>
-<p>Provides the least amount of information.</p>
-<p><em>Ex. Jersey Number</em></p>
-</section>
-<section id="ordinal-scale" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="ordinal-scale"><span class="header-section-number">5.2.2</span> Ordinal Scale</h3>
-<p>Rank ordering of people’s behaviors or characteristics.</p>
-<p>Doesn’t specify the distance between participants on the variable being measured.</p>
-<p><em>Ex. Sizes at a fast food restaurant: baby, small, medium, large, ex large, super size, super duper size</em></p>
-</section>
-<section id="interval-scale" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="interval-scale"><span class="header-section-number">5.2.3</span> Interval Scale</h3>
-<p>Equal distance between the numbers reflect equal differences between participants</p>
-<p>Does not have a “true” zero point</p>
-<p><em>Ex. Temperature, IQ score</em></p>
-</section>
-<section id="ratio-scale" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="ratio-scale"><span class="header-section-number">5.2.4</span> Ratio Scale</h3>
-<p>Has a “true” zero point.</p>
-<p>Provides greatest amount of information.</p>
-<p>Should be used when possible.</p>
-<p><em>ex. duration, weight, accuracy</em></p>
-</section>
-</section>
-<section id="central-tendency" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">5.3</span> Central Tendency</h2>
-<p>A descriptive measure which represents the entire distribution of scores (mean, median, mode).</p>
-<p><strong>Goal:</strong> Find a single value that is representative of all the data.</p>
-<p>Can condense large data set into a single value.</p>
-<p>Allows comparison of 2 or more data sets using the central tendency.</p>
-<section id="the-mean" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="the-mean"><span class="header-section-number">5.3.1</span> The Mean</h3>
-<p>Most commonly used measure of central tendency.</p>
-<p>Used in interval or ratio scales.</p>
-<p>Is influenced by extreme scores (outliers)</p>
-<section id="how-to-compute" class="level4" data-number="5.3.1.1">
-<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="how-to-compute"><span class="header-section-number">5.3.1.1</span> How to compute:</h4>
-<p>Compute the sum of all scores (∑)</p>
-<p>Divide the sum by the number of scores.</p>
-<p>In manuscripts, the sample mean is identified as “<em>M</em>”</p>
-<p>The sum (∑) of all scores (X) = (∑X)</p>
-<p>4 + 5 + 3 = 12</p>
-<p>Divide the sum by the number of scores (N) = (∑X/N)</p>
-<p>12/3 = 4</p>
-</section>
-<section id="compute-in-r" class="level4" data-number="5.3.1.2">
-<h4 data-number="5.3.1.2" class="anchored" data-anchor-id="compute-in-r"><span class="header-section-number">5.3.1.2</span> Compute in R</h4>
-<p>You can calculate the mean in R with the function <code>mean()</code></p>
+<section id="pipes" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="pipes"><span class="header-section-number">2.1.2</span> Pipes</h3>
+<p>Pipes are super useful, they may look like this %&gt;% or this |&gt; . Both are fine.</p>
+<p>I recommend using the keyboard shortcut for pipes because they’re annoying to type. Shortcuts can be found in the Help menu.</p>
+<p>The pipe passes the object on its left to the first argument of the function to the right of the pipe. In dplyr, the first argument of anything is a data frame, so it’s useful to know. It helps me ot think of the pipe as saying “and then”. So, in my head I read the code below as “load the package tidyverse, then load the diamonds data frame object and then count the rows in that object.”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the mean function on the object</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>The mean is influenced by extreme scores. It gets pulled in the direction of the extreme score, making it less representative of the whole dataset and more reflective of the outlier (which isn’t what we want).</p>
+</section>
+</section>
+<section id="functions-used-on-columns" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="functions-used-on-columns"><span class="header-section-number">2.2</span> Functions used on columns</h2>
+<section id="select" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="select"><span class="header-section-number">2.2.1</span> select()</h3>
+<p>The <code>select()</code> function chooses which columns we want to keep from a larger data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores with an outlier</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">46</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the mean function on the object</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 14.5</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load psych package that contains sat.act data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># check out all the variables in the data frame</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(sat.act)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># choose only gender and ACT</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender, ACT)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># choose everything but ACT</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">!</span>ACT)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># choose everything from gender to age</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gender<span class="sc">:</span>age)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># choose everything that starts with SA</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"SA"</span>))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># choose everything that ends with T</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"T"</span>))</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># choose everything that has a t in it</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>sat.act <span class="sc">|&gt;</span> </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"T"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>This score is not very reflective of our dataset, so we should use an alternative measure of central tendency, like the median.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the average high temperature in Chicago last winter?</p>
-<p>All distances below the mean are equal to all the distances above the mean.</p>
-<p>Changing any score (adding or subtracting) will influence the mean.</p>
 </section>
-<section id="when-you-shouldnt-use-the-mean" class="level4" data-number="5.3.1.3">
-<h4 data-number="5.3.1.3" class="anchored" data-anchor-id="when-you-shouldnt-use-the-mean"><span class="header-section-number">5.3.1.3</span> When you shouldn’t use the mean</h4>
-<p>The mean is not appropriate for nominal or ordinal scales.</p>
-<ul>
-<li>It is impossible to calculate.</li>
-</ul>
-<p>The mean is not appropriate when you have extreme scores (outliers).</p>
-<ul>
-<li>The mean will be pulled towards the extreme score, rendering it no longer representative of the rest of the data.</li>
-</ul>
-<p>The mean is not appropriate when there is missing data</p>
+<section id="rename" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="rename"><span class="header-section-number">2.2.2</span> rename()</h3>
+<p>[will do this later]</p>
 </section>
+<section id="relocate" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="relocate"><span class="header-section-number">2.2.3</span> relocate()</h3>
+<p>[will do this later]</p>
 </section>
-<section id="the-median" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="the-median"><span class="header-section-number">5.3.2</span> The Median</h3>
-<p>Scores are listed in order from smallest to largest</p>
-<p>The median is the midpoint, it equally divides the scores</p>
-<p>When you have an even number of scores you take the average of the two middle scores.</p>
-<p>The median can be used on ordinal, interval, or ratio scales.</p>
-<p>The median is unaffected by extreme scores (outliers).</p>
+<section id="mutate" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="mutate"><span class="header-section-number">2.2.4</span> mutate()</h3>
+<p><code>mutate()</code> is used to change existing columns or create new columns. Mutate is very useful when making subscales, calculating totals, etc.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of data </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate median of the data object x</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(USArrests)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new variable for all violent crime </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># by default the new column as added to the end of the data frame</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>USArrests <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">violent_crime =</span> (Murder <span class="sc">+</span> Assault <span class="sc">+</span> Rape)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Remember the datset with an outlier from before? How does the median handle the outlier?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector of scores with an outlier</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">46</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use the median function on the object</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.5</code></pre>
-</div>
-</div>
-<p>That is a much more representative measure for the entire dataset.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the median temperature in Chicago last winter?</p>
 </section>
-<section id="the-mode" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="the-mode"><span class="header-section-number">5.3.3</span> The Mode</h3>
-<p>The most frequently occurring score.</p>
-<p>Can be used on ALL scales of measurement.</p>
-<p>Weekly high temperatures in Chicago last winter:</p>
-<p>29, 31, 28, 32, 29, 27, 55</p>
-<p>What was the mode temperature in Chicago last winter?</p>
+</section>
+<section id="functions-used-on-rows" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="functions-used-on-rows"><span class="header-section-number">2.3</span> Functions used on rows</h2>
+<section id="case_when" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="case_when"><span class="header-section-number">2.3.1</span> case_when()</h3>
+<p>[ will do this later]</p>
+</section>
+<section id="case_-match" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="case_-match"><span class="header-section-number">2.3.2</span> case_ match()</h3>
+<p>[ will do this later]</p>
+</section>
+<section id="if_else" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="if_else"><span class="header-section-number">2.3.3</span> if_else()</h3>
+</section>
+<section id="filter" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="filter"><span class="header-section-number">2.3.4</span> filter()</h3>
+<p><code>filter()</code> is used at the ROW level, so it will not change the columns we see. <code>filter()</code> tells us which kind of participant data to include and exclude. This is especially useful if we want to exclude certain observations from our analyses (like outliers) or only look at as a subset of our data.</p>
+<p>Let’s stick with the arrests data and only keep the data from states that are more than 50% urban population.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 42 states with over 50% urban population</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>USArrests <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(UrbanPop <span class="sc">&gt;</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s do a little more with the diamonds data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># only diamonds over 1 carat in size</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># still 17k</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carat <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># typing ?diamonds allows me to see what is the best diamond qualities</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># I only want THE BEST</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carat <span class="sc">&gt;</span><span class="dv">1</span> <span class="sc">&amp;</span> cut <span class="sc">==</span> <span class="st">"Ideal"</span> <span class="sc">&amp;</span> color <span class="sc">==</span> <span class="st">"D"</span> <span class="sc">&amp;</span> clarity <span class="sc">==</span> <span class="st">"IF"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># I'll compromise a little - by using %in% I get all very good and ideal cuts</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carat <span class="sc">&gt;</span><span class="dv">1</span> <span class="sc">&amp;</span> (cut <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Ideal"</span>, <span class="st">"Very Good"</span>)) <span class="sc">&amp;</span> color <span class="sc">==</span> <span class="st">"D"</span> <span class="sc">&amp;</span> clarity <span class="sc">==</span> <span class="st">"IF"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arrange" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="arrange"><span class="header-section-number">2.3.5</span> arrange()</h3>
+<p>This one is pretty straightforward, it arranges the order of data in a column based on the values in the rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange the data in descend order by carat size</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(carat))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># I can resolve ties by including a second statement, 3.01 has lots of ties</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carat  <span class="sc">&lt;</span> <span class="fl">3.02</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(carat), <span class="fu">desc</span>(cut))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="functions-for-summarizing" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="functions-for-summarizing"><span class="header-section-number">2.4</span> Functions for Summarizing</h2>
+<section id="group_by" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="group_by"><span class="header-section-number">2.4.1</span> group_by()</h3>
+<p><code>group_by()</code> creates a “grouped table where all operations you perform are now done by the group you indicate.</p>
+<p>I wonder how many diamonds of each cut there are.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cut) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># when count is used outside of a grouped table it just tells me the number of cases</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summarise" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="summarise"><span class="header-section-number">2.4.2</span> summarise()</h3>
+<p><code>summarise()</code> is used in conjunction with group_by() and we can use it to compare groups - super handy for t tests and ANOVAs. It collapses each group into a single row and treats each row as a case. Notice the new dataframe produced after summarize, it is much smaller.</p>
+<p>I’ve heard it’s tough to have big diamonds that are of high quality. So let’s find out.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cut) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_carat =</span> <span class="fu">mean</span>(carat)) <span class="co"># create new variable to compare groups</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># super useful for making graphs</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cut) <span class="sc">|&gt;</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_carat =</span> <span class="fu">mean</span>(carat)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> avg_carat)) <span class="sc">+</span> <span class="co"># ggplot only uses + </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># multiple calculations</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">|&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cut) <span class="sc">|&gt;</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_carat =</span> <span class="fu">mean</span>(carat), </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>()) <span class="co"># can do multiple summarise arguments</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
@@ -835,13 +933,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./how_plan_exp.html" class="pagination-link" aria-label="How to plan an experiment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to plan an experiment</span></span>
+      <a href="./fundamental_r_use.html" class="pagination-link" aria-label="Fundamentals of R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentals of R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./measurement.html" class="pagination-link" aria-label="Measurement">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Measurement</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./what_are_beh_sci.html" class="pagination-link" aria-label="What are Behavioral Sciences">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What are Behavioral Sciences</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
