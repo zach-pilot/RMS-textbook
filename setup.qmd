@@ -6,11 +6,11 @@ editor: visual
 toc: true
 ---
 
-We use R in this course for several reasons.
+R is used in this course for several reasons.
 
 -   It is free, so people create things for it that we can use for free.
 
--   You can have it any and all of your personal devices.
+-   Students can have it on any and all personal devices.
 
 -   It is widely used in research, industry, and elsewhere.
 
@@ -28,7 +28,7 @@ R typically has a major update once a year and several smaller updates throughou
 
 ## Download R Studio
 
-We will do all of our work in R Studio, download it [here](https://posit.co/download/rstudio-desktop/), after you download base R. It also has several updates a year, but it doesn't change anything about your packages so keep it updated.
+We will do all of our work in R Studio, download it [here](https://posit.co/download/rstudio-desktop/), after base R has been downloaded. It also has several updates a year, but it doesn't change anything about the packages so keep it updated.
 
 ## R Studio Overview
 
@@ -72,7 +72,7 @@ knitr::include_graphics("images/files_screenshot_example.png")
 
 Science should be reproducible, so should your work. When you close R and start a new session you will be starting from a blank slate unless you save your work.
 
-By default, R will save your work in a working directory, The working directory is a location on your computer or the cloud. See where your things are being saved by typing `getwd()` in **the source pane** now. This is probably not a good place to save the *many* files we will be creating in this course. Instead, we will create an **R Studio Project**.
+By default, R will save your work in a **working directory**, The **working directory** is a location on your computer or the cloud. See where your things are being saved by typing `getwd()` in **the source pane** now. This is probably not a good place to save the *many* files we will be creating in this course. Instead, we will create an **R Studio Project**.
 
 ### R Studio Project
 
@@ -94,4 +94,128 @@ Follow the steps below to create an R Studio project where all of your things wi
 
 Check your new working directory by typing `getwd()` in the source pane again, it should reflect your subdirectory and project name.
 
-As long as this project is open everything you save will be placed in that working directory and you will have easy access to anything in that directory from R.
+As long as this project is open everything you save, which we will get to in the sections below, will be placed in that working directory and you will have easy access to anything in that directory from R. We will be creating code documents in this class from a package called RMarkdown. But to get there we need to understand what packages are.
+
+## Packages
+
+Now that you are familiar with the R interface we will get into the things that make R run, packages.
+
+### What is a package?
+
+A package is where R gets its main power. Packages are compilations of data, functions, etc. that we must download from CRAN - the Comprehensive R Archive Network. Packages can contain lots of different things. They are most useful because they allow us to perform actions we can do with base R alone- which is just R without any packages downloaded.
+
+### Installing and finding packages
+
+There are two ways to install packages. Install both of these packages because we will be using them a lot.
+
+1.  Via your files and packages pane.
+
+    -   Click the packages tab in the Files/Packages pane
+
+    -   Click the install button on the top left of that pane
+
+    -   type "rmarkdown"
+
+    -   click install
+
+2.  Via code.
+
+    -   click to the right of the `>` symbol in your bottom left console pane
+
+    -   use the `install.packages()` function to install the desired package
+
+    -   Once you are there you will type the following code. Do not be afraid if you see a warning in yellow that is perfectly normal.
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+```
+
+### R Markdown
+
+Now that we have R Markdown downloaded we are going to open a markdown document.
+
+1.  Look to the upper left of the console pane, you should see a white page with a green plus arrow over top of it. Click it.
+
+2.  In the dropdown menu click "R Markdown".
+
+3.  You will be prompted to name your document - usually you want this to be obvious and helpful. For now, call it "fundamentals"
+
+Your document should open and it will be automatically filled with some stuff. Do not be alarmed, you can do many things in R Markdown, but we will start out slow.
+
+#### Source/Visual Editor
+
+Above the document itself, just under the save icon, you should see the words "Source" and "Visual". These are buttons that change your view from the source code view and a rendered view that works more like Microsoft Word.
+
+Click back and forth.You should notice some differences. What is most important for us is the use of `##`. These tell Markdown to make a header. It's super useful when organizing your code.
+
+We will be staying in the Source editor.
+
+#### YAML Header
+
+At the very top of the document you see a YAML header, this formats your document. For now, we will leave it be.
+
+ ---  
+
+title: "Untitled"  
+
+author: "zp"  
+
+date: "`r Sys.Date()`"  
+
+output: html_document
+
+ ---
+
+#### Code Chunks
+
+Immediately below the header is the first code chunk. Code chunks are placed within a Markdown document where code can be executed. Text outside of a code chunk is interpreted just like a word processor - so code doesn't work.
+
+Code chunks always begin with \`\`\`{r}
+
+and end with \`\`\`
+
+You can name code chunks for organization, the first chunk in this markdown document is named "setup". The next thing, "include = false" tells markdown to do something specific with that code chunk. In this case, it's saying run this code in the background, but don't show the viewer.
+
+Code chunks can be customized in various ways. For example, in this textbook I make lots of code visible, but I choose to hide the output.
+
+In this class you should never have one incredibly long code chunk. They should be used to complete one specific task that is explained via the word processing and then moving on to the next task and repeating the process.
+
+To create a code chunk you can click the green C with button to the top right of the Source frame or you can use the keyboard shortcut `option` + `command` + `i`.
+
+#### Text
+
+Just below the code chunk we see \## R Markdown. This tells markdown to make a second level header named R markdown. We can see this if we switch to the Visual editor.
+
+Just below that is normal text.
+
+That's all we need to understand for now. When you open these documents you can delete everything but the YAML header. So let's do that now and use the Markdown file you created for the remainder of this chapter and the fundamentals chapter.
+
+### Loading packages
+
+When you download a package it is on your computer until you delete it or until you update R. However, when you start a new session you will not have access to that function, the package will need to be loaded. In order to use the functions within a package you must load it into the R environment every single time. For us, that means the first code chunk of our R Markdown files is just loading in the packages we will need for that document.
+
+Packages are loaded into the environment by using the the `library()` function. It will not work if you do not have the package installed.
+
+```{r, eval=FALSE}
+library(tidyverse)
+```
+
+Once you have successfully loaded the tidyverse into your current session you should get the following result in your console:
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/Tidyverse_load_example.png")
+```
+
+**THIS IS OK IT MEANS YOU HAVE SUCCESFULLY LOADED YOUR PACKAGE**
+
+Sometimes you will need to update your packages. You can do this by executing the code below in your console or within a markdown document or you can click the green update button in the packages pane.
+
+```{r, eval=FALSE}
+update.packages()
+```
+
+To see what packages you have installed you can either go to the bottom right pane and find the packages tab to find a list of all packages and which are installed. Or you could also run this code.
+
+```{r, eval=FALSE}
+installed.packages()
+```

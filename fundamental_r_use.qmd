@@ -9,8 +9,6 @@ toc: true
 
 This chapter will go over the fundamental tools you will need in order to work in R and to create projects and to experiment with the building blocks of Rstudio. If you have not already gone to chapter one that teaches you how to set up Rstudio do that now.
 
--   How to use packages and what you will need to do in order to update them.
-
 -   How to create and manipulate data.
 
 -   How to use functions, objects, and pipes.
@@ -19,122 +17,6 @@ This chapter will go over the fundamental tools you will need in order to work i
 
 -   And the main types of data that you will be running into in Rstudio.
 
-## Rstudio Overview
-
-Once you open Rstudio you might notice that there are four different panes on your screen that each look different from the other. Although it might look overwhelming these panes are all important when operating in Rstudio and will all be used.
-
-### Console Frame
-
-The console frame is the **bottom left frame on your screen**. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. You should make note that the console is like a scrap piece of paper or and etch an sketch its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be troubleshooting as well. The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/R_console_screenshot.png")
-```
-
-### Source Frame
-
-The source frame or editor frame is **the top left frame** on your screen. This frame is the primary location of where you will be doing your work and typing all of your code. The source frame is used to open RMarkdown documents, scripts, and other ways to type code. You can also save and open new documents and files at the farthest top left corner of this frame.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/source_screenshot_example.png")
-```
-
-### Environment/History
-
-The environment or history frame can be seen in **the top right frame on your screen.** This is where you can view current objects that you have created which we will discuss further in the chapter as well as data sets and where you can track your steps by viewing the command history that you have run.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/Environment_screenshot_example.png")
-```
-
-### Files/Packages
-
-The last frame on **the bottom right is your files and packages** frame. This frame is more of a window into your computer in the sense that you are able to view the packages and files that you have on stored on it. You can also use it to check any plots you might have and to read any documents on your computer as well. You only need to download a package one time, then it is saved. However, every time you open Rstudio packages must be loaded into the R environment.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/files_screenshot_example.png")
-```
-
-**Suggestion**: If you wish to change the layout of your frames to customize it simply click **tools** at the top of your computer then **global options** then to pane layout to customize the layout to whatever is the best for you.
-
-## Packages and the tidyverse
-
-Now that you are familiar with where you can view and access your packages we will take a closer look as to what they are and different tips for them as well as introducing you to the most useful package for working with data, the `tidyverse` .
-
-### What is a package?
-
-A package is where R gets its main power. We have packages because just like in real life they contain something. In R, packages can contain lots of different things. They are most useful because they provide us with functions that don't exist in base R - which is just R without any packages downloaded.
-
-### Installing and finding packages
-
-There are two ways to install packages.
-
-1.  Via your files and packages pane.
-
-    -   Click the packages tab in the Files/Packages pane
-
-    -   Click the install button on the top left of that pane
-
-    -   type "tidyverse"
-
-    -   click install
-
-2.  Via code.
-
-    -   click to the right of the `>` symbol in your bottmo left console pane
-
-    -   use the `install.packages()` function to install the desired package
-
-    -   Once you are there you will type the following code. Do not be afraid if you see a warning in yellow that is perfectly normal.
-
-```{r, eval=FALSE}
-install.packages("psych")
-```
-
-### Loading packages
-
-In order to access all the awesome functions within a package you must load it into the environment every single time.
-
-You will want to do this by running the following in your source frame or the top left. We do this by using the the **library** function which calls up any package that you have installed it will not work if you do not have the package installed.
-
-```{r, eval=FALSE}
-library(tidyverse)
-library(dplyr)
-```
-
-Once you have successfully loaded the tidyverse into your current session you should get the following result in your console:
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/Tidyverse_load_example.png")
-```
-
-**THIS IS OK IT MEANS YOU HAVE SUCCESFULLY LOADED YOUR PACKAGE**
-
-Now sometimes you will need to update your packages because if you don't it can cause them to not load and your code will not run. If this happens all you will have to do is run this code.
-
-```{r, eval=FALSE}
-update.packages()
-```
-
-To see what packages you have installed you can either go to the bottom right pane and find the packages tab to find a list of all packages and which are installed. Or you could also run this code.
-
-```{r, eval=FALSE}
-installed.packages()
-```
-
-### The Tidyverse
-
-Now that you have successfully installed the **tidyverse** we can examine it and what it does. When thinking about the tidyverse the best way to explain it is think of it like a universe. A universe is a space that contains different things like planets which contain different things like people. Well just like a universe the tidyverse contains a large amount of packages inside of it that are meant to make using R easier and work more efficiently. All the packages inside the tidyverse all share a common philosophy and syntax. Think of it like the world having america and how we all share a common philosophy and syntax. The packages in the tidyverse work the same way. Because all of these functions use the same grammar it makes it easier for us to read R code. Take a look at this example
-
-```{r, eval=FALSE}
-library(tidyverse)
-
-# Example of data transformation
-starwars %>% 
-  select(name, height, mass, species) %>% 
-  filter(species == "human") %>% 
-  arrange(desc(mass))
-```
 
 ## Objects
 
@@ -154,7 +36,7 @@ x + 3 # add three to get 70
 
 x # x is still 67
 
-x <-  x + 3 # make a new obejct named x using the old x object plus 3
+x <-  x + 3 # make a new object named x using the old x object plus 3
 
 x # the x object is 70 now
 ```
@@ -256,6 +138,8 @@ Notice we have three columns and two observations. All information in a row is p
 A tribble is short for transposed tibble and it is a different way to create small data frames that looks more like a spreadsheet. It requires the `tibble` package to work, but that's part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.
 
 ```{r}
+#| message: false
+#| warning: true
 library(tidyverse)
 
 people <- tribble(
@@ -267,9 +151,9 @@ people <- tribble(
 people
 ```
 
-Now you can see our tribble fully completed with both rows and columns where you can see in the bottom of the output that the tribble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later in the chapter.
+Now you can see our tibble fully completed with both rows and columns where you can see in the bottom of the output that the tibble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later in the chapter.
 
-### Glimpse
+### Glimpse()
 
 When you want to examine the characteristics of your data you can use glimpse to get more information about it. It provides the full data for your set and gives all the details you could need.
 
@@ -281,7 +165,7 @@ Look at the output above you can see next to name the `<chr>` that means the col
 
 ## Types of data
 
-There are different types of data. In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is epresenting a third category or the result of 1 + 2.
+There are different types of data. In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is representing a third category or the result of 1 + 2.
 
 ### Numeric and Double data
 
@@ -350,7 +234,7 @@ factor(data)
 
 ## The pipe
 
-Now we will be working with the pipe or `|>`. The pipe is a very important tool because it works kind of like a river with bridges. Usually in R when we run multiple functions we would have to think of the output like a boat going through a river. Normally we would have to manually open each bridge in order for it to pass through to the next part of the river. The pipe makes it easier for us by doing that automatically. So whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the next function without having to do the work ourselves. In the tidyverse the pipe is represented as `%>%` which can be easily created with the shortcut ***command + shift + m.*** Now lets look at an example of how the pipe works.
+Now we will be working with the pipe which is symbolized by `%>%` or `|>`. Whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the first argument of the next function without having to do the work ourselves. The pipe is can be easily created within a code chunk by using the shortcut ***command + shift + m.*** Now lets look at an example of how the pipe works.
 
 ```{r, eval=FALSE}
 mtcars %>% 
