@@ -1,0 +1,136 @@
+---
+title: "Data Visualization"
+format: html
+editor: visual
+toc: true
+---
+
+Data visualization is a critical component of research and data science. It is used for many things like data exploration, testing assumptions, and communicating findings. There are many packages that visualize data in R (and base R), but we will focus on the most common `ggplot`
+
+## ggplot
+
+`ggplot` is part of the tidyverse, it is widely used and highly customizable. However, it has it's own rules and conventions that must be learned before making any graphs.
+
+### syntax
+
+First, load in the tidyverse package and create a data object to work with.
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+
+dat <- tibble(score = rnorm(100, mean = 5, sd = 1))
+```
+
+When making a graph the first function will always be `ggplot()`. The first argument of ggplot, similar to the `dplyr` functions, is the data frame object we are working with. If we utilize the pipe we can write the code this way.
+
+```{r}
+#| eval: false
+dat %>% 
+  ggplot(arg_1 = whatever, 
+         arg2 = whatever)
+```
+
+The second argument is `aes()` or aesthetics. This is where we assign values to various characteristics of the graph, like the x and y axes, fill, color, shape, linewidth, size, and linetype. Refer to the cheat sheet in the help menu for more information.
+
+You do not have to choose values for all of these characteristics, only the ones necessary for the type of visualization you are creating. For example, when making a simple histogram we only need to assign a value to the x axis. So, the argument would look like this.
+
+```{r}
+#| eval: false
+ggplot(dat, aes( x = score))
+```
+
+The part of ggplot most different from other code is how it handles moving from one function to the next. Normally, if we are working within the same data object we string together functions with the **pipe**. However, the pipe doesn't work within ggplot, instead we have to use the plus sign `+`.
+
+After we set the aesthetic options we add our first layer to the visualization using a `geom` function. There are many geoms to work with, if you type geom R will suggest many for you. Let's make a histogram.
+
+```{r}
+#| warning: false
+dat %>% 
+  ggplot(aes(x = score)) + 
+  geom_histogram()
+```
+
+Gorgeous, let's customize it a little.
+
+### Title, subtitles, themes
+
+A simple way to add titles and subtitles to your graph is with the `labs()` function. It is added to your code with another plus sign like below. All text strings must be in quotations or else R will interpret them as objects.
+
+```{r}
+#| warning: false
+dat %>% 
+  ggplot(aes(x = score)) + 
+  geom_histogram() + 
+  labs(x = "Psychology Score", 
+       title = "Histogram of Psychology Scores", 
+       subtitle = "A gorgeous visual", 
+       caption = "Warning: there may be too much majesty in this frequency distribution")
+```
+
+As we can see, these graphs are highly customizeable, but the caption at the bottom is probably overkill.
+
+Another easy way to improve these graphs is by using themes. by using the `theme()` function. Again, there are many options to choose from.
+
+```{r}
+#| warning: false
+dat %>% 
+  ggplot(aes(x = score)) + 
+  geom_histogram() + 
+  labs(x = "Psychology Score", 
+       title = "Histogram of Psychology Scores", 
+       subtitle = "A gorgeous visual", 
+       caption = "Warning: there may be too much majesty in this frequency distribution") + 
+  theme_classic()
+```
+
+We can save this plot to an object using the assignment operator which allows us to manipulate it a little more. For example, with the help of the `patchwork` package we can easily manipulate the arrangement of multiple graphs.
+
+```{r}
+#| message: false
+#| warning: false
+ x <- dat %>% 
+  ggplot(aes(x = score)) + 
+  geom_histogram() + 
+  labs(x = "Psychology Score", 
+       title = "Histogram of Psychology Scores", 
+       subtitle = "A gorgeous visual", 
+       caption = "Warning: there may be too much majesty in this frequency distribution") + 
+  theme_classic() 
+ 
+ y <- dat %>% 
+  ggplot(aes(y = score)) + 
+  geom_histogram(fill = "lightblue", color = "darkblue") + 
+  labs(y = "Psychology Score", 
+       title = "Histogram of Psychology Scores", 
+       subtitle = "A gorgeous visual", 
+       caption = "Warning: there may be too much majesty in this frequency distribution") + 
+  theme_classic()
+ 
+ library(patchwork)
+ x + y
+ x/y
+```
+
+\### adding layers
+
+Ggplot creates graphs by adding a series of layers on top of one another. So, we can add a density curve to this histogram to make it look cool. MAY AS WELL ADD A VERTICAL LINE FOR THE MEAN WHILE WE'RE T IT.
+
+You'll notice I changed a lot of things, that's ok, play around of check out the ggplot cheat sheet for things to change. The `alpha` value changes the transparency of the layer. We had to lower it because the curve is placed on top of the histogram.
+
+```{r}
+ dat %>% 
+  ggplot(aes(x = score)) + 
+  geom_histogram(aes(y = after_stat(density)), fill = "white", color = "black") + 
+   geom_density(color = "red", fill = "pink", alpha = .3) + 
+   geom_vline(xintercept = mean(dat$score), 
+             color = "black", 
+             linetype = "dashed", 
+             linewidth = .75) + 
+  labs(x = "Psychology Score", 
+       title = "Histogram of Psychology Scores", 
+       subtitle = "A gorgeous visual", 
+       caption = "Warning: there may be too much majesty in this frequency distribution") + 
+  theme_classic() 
+```

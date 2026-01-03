@@ -11,6 +11,7 @@ book:
     - setup.qmd
     - fundamental_r_use.qmd
     - data_wrangle.qmd
+    - data_viz.qmd
     - what_are_beh_sci.qmd
     - how_plan_exp.qmd
     - measure_behav.qmd

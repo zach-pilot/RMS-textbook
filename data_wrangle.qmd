@@ -42,9 +42,9 @@ Below is a list of logical operators.
 
 Pipes are super useful, they may look like this %\>% or this \|\> . Both are fine.
 
-I recommend using the keyboard shortcut for pipes because they're annoying to type. Shortcuts can be found in the Help menu.
+I recommend using the keyboard shortcut for pipes because they're annoying to type. Shortcuts can be found in the Help menu at the top of the screen.
 
-The pipe passes the object on its left to the first argument of the function to the right of the pipe. In dplyr, the first argument of anything is a data frame, so it's useful to know. It helps me ot think of the pipe as saying "and then". So, in my head I read the code below as "load the package tidyverse, then load the diamonds data frame object and then count the rows in that object."
+The pipe passes the object on its left to the first argument of the function to the right of the pipe. In dplyr, the first argument of anything is a data frame, so it's useful to know. It helps me to think of the pipe as saying "and then". So, in my head I read the code below as "load the package tidyverse, then load the diamonds data frame object and then count the rows in that object."
 
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 library(tidyverse)

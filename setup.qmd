@@ -36,7 +36,9 @@ Once you open Rstudio you might notice that there are four different panes on yo
 
 ### Console Frame
 
-The console frame is the **bottom left frame on your screen**. Think of this frame as a chat box in R in order to see behind the scenes of what you will be running. You should make note that the console is like a scrap piece of paper or and etch an sketch its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** This is where you will be viewing some of your code. You can also see outputs from your code directly in this frame and is one location of where you will be troubleshooting a s well. The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
+The console frame is the **bottom left frame on your screen**. The console is like a scrap piece of paper or and etch an sketch, its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** To run your code in the console frame you type the code and press the `enter` or `return` key. You can also see output from your code directly in this frame. T
+
+he console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/R_console_screenshot.png")
@@ -181,6 +183,11 @@ Code chunks can be customized in various ways. For example, in this textbook I m
 In this class you should never have one incredibly long code chunk. They should be used to complete one specific task that is explained via the word processing and then moving on to the next task and repeating the process.
 
 To create a code chunk you can click the green C with button to the top right of the Source frame or you can use the keyboard shortcut `option` + `command` + `i`.
+
+When code is typed into a code chunk it doesn't run when you press `enter` like in the console. In RMarkdown you are writing a kind of script - code that is meant to be executed all at once at the end. However, that's not how people work. Often, you will need to run the current chunk you are working on. When working in Markdown the code chunks you create have acccess to any object you have saved in the environment and any package you have loaded that session. There are two ways run code in R markdown.
+
+1.  Press the little green play button in the top right corner of the code chunk.
+2.  Click anywhere in the code you want to run and use the keyboard shortcut `shift` + `command` + `return`
 
 #### Text
 
