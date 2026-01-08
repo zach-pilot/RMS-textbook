@@ -9,22 +9,28 @@ book:
   chapters:
     - index.qmd
     - setup.qmd
-    - fundamental_r_use.qmd
-    - data_wrangle.qmd
-    - data_viz.qmd
-    - what_are_beh_sci.qmd
-    - how_plan_exp.qmd
-    - measure_behav.qmd
-    - measurement.qmd
-    - variability.qmd
-    - select_participants.qmd
-    - ethics.qmd
-    - z_scores.qmd
-    - probability.qmd
-    - dist_sample_means.qmd
-    - hyp_test.qmd
-    - t_tests.qmd
-    - references.qmd
+    - part: intro_r.qmd
+      chapters:
+        - fundamental_r_use.qmd
+        - data_wrangle.qmd
+        - data_viz.qmd
+    - part: research_method.qmd
+      chapters: 
+        - what_are_beh_sci.qmd
+        - how_plan_exp.qmd
+        - measure_behav.qmd
+        - measurement.qmd
+        - variability.qmd
+        - select_participants.qmd
+        - ethics.qmd
+    - part: stats.qmd
+      chapters: 
+        - z_scores.qmd
+        - probability.qmd
+        - dist_sample_means.qmd
+        - hyp_test.qmd
+        - t_tests.qmd
+        - references.qmd
 
 bibliography: references.bib
 

@@ -1,0 +1,9 @@
+---
+title: "Research Methods"
+format: html
+editor: visual
+toc: true
+---
+
+
+This section is about understanding research methodology and measurement. 

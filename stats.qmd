@@ -1,0 +1,9 @@
+---
+title: "Statistics"
+author: "Zachary Pilot"
+format: html
+editor: visual
+toc: true
+---
+
+This section includes statistics necessary for the behavioral sciences. 
