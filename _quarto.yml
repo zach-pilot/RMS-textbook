@@ -9,12 +9,12 @@ book:
   chapters:
     - index.qmd
     - setup.qmd
-    - part: intro_r.qmd
+    - part: "Introduction to R"
       chapters:
         - fundamental_r_use.qmd
         - data_wrangle.qmd
         - data_viz.qmd
-    - part: research_method.qmd
+    - part: "Research Methods"
       chapters: 
         - what_are_beh_sci.qmd
         - how_plan_exp.qmd
@@ -23,7 +23,7 @@ book:
         - variability.qmd
         - select_participants.qmd
         - ethics.qmd
-    - part: stats.qmd
+    - part: "Statstics"
       chapters: 
         - z_scores.qmd
         - probability.qmd
