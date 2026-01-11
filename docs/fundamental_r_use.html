@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">2.4.1</span> Vectors</a></li>
   <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">2.4.2</span> Data Frames</a></li>
   <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="header-section-number">2.4.3</span> Tibbles</a></li>
-  <li><a href="#glimpse" id="toc-glimpse" class="nav-link" data-scroll-target="#glimpse"><span class="header-section-number">2.4.4</span> Glimpse()</a></li>
+  <li><a href="#glimpse" id="toc-glimpse" class="nav-link" data-scroll-target="#glimpse"><span class="header-section-number">2.4.4</span> glimpse()</a></li>
   </ul></li>
   <li><a href="#types-of-data" id="toc-types-of-data" class="nav-link" data-scroll-target="#types-of-data"><span class="header-section-number">2.5</span> Types of data</a>
   <ul class="collapse">
@@ -360,13 +360,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Common errors and different ways to deal with them.</p></li>
 <li><p>And the main types of data that you will be running into in Rstudio.</p></li>
 </ul>
+<p>Open up an R markdown file, name it appropriately, and follow a long with the exercises below.</p>
 </section>
 <section id="objects" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="objects"><span class="header-section-number">2.2</span> Objects</h2>
-<p>In R, we will primarily be working with object. An object is a container that you label. It can bea single number, a giant dataset, a graph, a function or even models that we need. In order to create an object we use the <code>assignment operator</code>, it looks like an arrow pointing to the left <code>&lt;-</code>. The <code>assignment operator</code> creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.</p>
+<p>In R, we will primarily be working with objects. An object is a container that you label. It can be a single number, a giant dataset, a graph, a function or even models that we need. In order to create an object we use the <code>assignment operator</code>, it looks like an arrow pointing to the left <code>&lt;-</code>. The <code>assignment operator</code> creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">67</span> <span class="co"># object named x </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Good Morning"</span> <span class="co"># object named y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">67</span> <span class="co"># object named x that contains the number 67</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Good Morning"</span> <span class="co"># object named y that contains the string "Good Morning"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If i make changes to an object that I want to keep, I must rewrite the original object or create a new one. If not, then my changes are not saved.</p>
 <div class="cell">
@@ -374,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 67</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> <span class="dv">3</span> <span class="co"># add three to get 70</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> <span class="dv">3</span> <span class="co"># add three to get 70, but don't assign to new object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 70</code></pre>
 </div>
@@ -391,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="listing-objects" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="listing-objects"><span class="header-section-number">2.2.1</span> Listing objects</h3>
-<p>If you ever want to see what your current objects are you can always look in your environment frame to see it. You can also use the list function <code>ls()</code> to see this as well.</p>
+<p>If you ever want to see what your current objects are you can always look in your environment frame. You can also use the list function <code>ls()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -399,58 +400,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="functions" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="functions"><span class="header-section-number">2.3</span> Functions</h2>
-<p>Now that we are able to successfully load up packages we can start looking at some functions. A <strong>function</strong> is a command that begins an action. This is a basic example of a function. The function is made up of two arguments that we give values to.</p>
+<p>Now that we are able to successfully load packages we can start looking at some functions. A <strong>function</strong> is a command that begins an action. This is a basic example of a function. The function is made up of two arguments that we give values to.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">function_name</span>(<span class="at">argument1 =</span> value1, <span class="at">argument2 =</span> value2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="applied-functions" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="applied-functions"><span class="header-section-number">2.3.1</span> Applied Functions</h3>
-<p>Next we can look at a basic function called the <strong>combine</strong> function or it can be viewed as this <code>c()</code>. It takes every value we have in the function and applies it to all of them. This can be used for mathematical purposes when using Rstudio like a calculator. Lets take a look at an example.</p>
+<p>Next we can look at a basic function called <strong>combine</strong> or <code>c()</code>. It takes every value in the function and groups them in what is called a vector, more on that later. This can be used for mathematical purposes when using Rstudio like a calculator. Lets take a look at an example.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object x that is a list of numbers</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object x that is a vector (a list) of numbers</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
 </div>
 </section>
 <section id="arguments" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="arguments"><span class="header-section-number">2.3.2</span> Arguments</h3>
-<p>Functions require certain information to carry out their actions. Arguments are where we provide that information. Many functions have default values automatically used for arguments. However, we often have to supply information for arguments, even if it’s just the name of the object we want to use the function on. Arguments are separated by a comma. Let’s look at the <code>sum</code> function. It has two arguments, the first is the data itself or the vector object containing the data and the second is <code>na.rm =</code> which has a default value of <code>FALSE</code>. <code>na.rm</code> is a logical argument asking if we want to remove data coded as NA, which could be missing data or incompatible data. Default arguments don’t need to be typed out, they are implied, unless we want to give a value to the argment other than the default.</p>
+<p>Functions require certain information to carry out their actions. Arguments are where we provide that information. Many functions have default values automatically used for arguments. However, we often have to supply information for arguments, even if it’s just the name of the object we want to use the function on. Arguments are separated by a comma. Let’s look at the <code>sum</code> function. It has two arguments, the first is the data itself or the vector object containing the data and the second is <code>na.rm =</code> which has a default value of <code>FALSE</code>. <code>na.rm</code> is a logical argument asking if we want to remove data coded as NA, which could be missing data or incompatible data. Default arguments don’t need to be typed out, they are implied, unless we want to give a value to the argument other than the default.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x) <span class="co"># no need to specify na.rm here but what when we give it an NA value</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="cn">NA</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y) <span class="co"># R can't calculate the sum if it doesn't know the value of NA</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># fixed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x) <span class="co"># no need to specify na.rm here</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="cn">NA</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y) <span class="co"># R can't calculate the sum if it doesn't know the value of NA</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># fixed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-functions" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="creating-functions"><span class="header-section-number">2.3.3</span> Creating Functions</h3>
-<p>Creating your own function is a very useful skill because it allows you to easily apply values to data without you having to type it out over and over again. In order to create a function you must name it then assign it a value by using the <code>&lt;-</code> symbol. This assigns whatever you write to that name which then should appear in the top right frame or your environment frame.</p>
+<p>Creating your own function is a very useful skill because it allows you to easily apply values to data without having to type it out over and over again. In order to create a function you must name it then assign it a value by using the <code>&lt;-</code> symbol. This assigns whatever you write to that name which then should appear in the top right frame or your environment frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plus_two <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plus_two</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plus_two <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plus_two</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
-<p>We created the function <code>plus_two</code>, which will take whatever is in our function and add 2 to it so when we use the function and put 5 in there it takes 5 and already adds the two to it.</p>
+<p>We created the function <code>plus_two</code>, which will take whatever is in our function (x) and add 2 to it so when we use the function and put 5 in there it takes 5 and adds two.</p>
 </section>
 </section>
 <section id="creating-data" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="creating-data"><span class="header-section-number">2.4</span> Creating Data</h2>
 <section id="vectors" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">2.4.1</span> Vectors</h3>
-<p>A <strong>vector</strong> is a simple data structure that holds elements of the same kind. So if we want to combine a bunch of names we can use a vector to do so but they need to all be the same type of data. We will go over the different types of data later in the chapter. Here are some simple basic examples of vectors.</p>
+<p>A <strong>vector</strong> is a simple data structure that holds elements of the same kind. So if we want to combine a bunch of names we can use a vector to do so. We will go over the different types of data later in the chapter. Here are some simple basic examples of vectors.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Adam"</span>, <span class="st">"Steven"</span>, <span class="st">"James"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Adam"</span>, <span class="st">"Steven"</span>, <span class="st">"James"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now once we have these saved as objects we can use them again if we want since we have combined them all into one vector.</p>
+<p>Now once we have these saved as objects we can use them again since we have combined them all into one vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 28</code></pre>
 </div>
@@ -460,26 +465,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">2.4.2</span> Data Frames</h3>
 <p>A <strong>data frame</strong> is arranged into a rectangular shape and uses rows and columns. The columns in a data frame are called <strong>variables</strong> and the rows in our data frame are called <strong>observations</strong>. Now we can use data frames to combine two different types of data into one object. The <code>data.frame()</code> function creates this framework for us. We create columns and observations in this format:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_1 =</span> <span class="fu">c</span>(obs_1, obs_2, obs_3), </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_2 =</span> <span class="fu">c</span>(obs_1, obs_2, obs_3)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_1 =</span> <span class="fu">c</span>(obs_1, obs_2, obs_3), </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_2 =</span> <span class="fu">c</span>(obs_1, obs_2, obs_3)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s put some data in there.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"James"</span>, <span class="st">"Henry"</span>),</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">21</span>,<span class="dv">67</span>),</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sport =</span> <span class="fu">c</span>(<span class="st">"Baseball"</span>, <span class="st">"Soccer"</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"James"</span>, <span class="st">"Henry"</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">21</span>,<span class="dv">67</span>),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sport =</span> <span class="fu">c</span>(<span class="st">"Baseball"</span>, <span class="st">"Soccer"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Notice we have three columns and two observations. All information in a row is part of one observation. So, James is 21 and his sport is Baseball.</p>
 </section>
 <section id="tibbles" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">2.4.3</span> Tibbles</h3>
-<p>A tribble is short for transposed tibble and it is a different way to create small data frames that looks more like a spreadsheet. It requires the <code>tibble</code> package to work, but that’s part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.</p>
+<p>Tibble is short for transposed table and it is a different way to create small data frames that looks more like a spreadsheet. It requires the <code>tibble</code> package to work, but that’s part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.6
@@ -492,13 +497,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name,   <span class="sc">~</span>age, <span class="sc">~</span>city,</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"James"</span>,  <span class="dv">21</span>,   <span class="st">"Evansville"</span>,</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hunter"</span>, <span class="dv">38</span>,   <span class="st">"Toledo"</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>people</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name,   <span class="sc">~</span>age, <span class="sc">~</span>city,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"James"</span>,  <span class="dv">21</span>,   <span class="st">"Evansville"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hunter"</span>, <span class="dv">38</span>,   <span class="st">"Toledo"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>people</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   name     age city      
@@ -507,13 +512,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 2 Hunter    38 Toledo    </code></pre>
 </div>
 </div>
-<p>Now you can see our tibble fully completed with both rows and columns where you can see in the bottom of the output that the tibble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later in the chapter.</p>
+<p>Now you can see our tibble fully completed with both rows and columns where you can see in the bottom of the output that the tibble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later.</p>
 </section>
 <section id="glimpse" class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" data-anchor-id="glimpse"><span class="header-section-number">2.4.4</span> Glimpse()</h3>
-<p>When you want to examine the characteristics of your data you can use glimpse to get more information about it. It provides the full data for your set and gives all the details you could need.</p>
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="glimpse"><span class="header-section-number">2.4.4</span> glimpse()</h3>
+<p><code>glimpse()</code> is used to examine the characteristics of your data, it provides a summary for your data object that includes the column names, the type of data in that column, and several of the first observations in that column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(people)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(people)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 2
 Columns: 3
@@ -522,34 +527,34 @@ $ age  &lt;dbl&gt; 21, 38
 $ city &lt;chr&gt; "Evansville", "Toledo"</code></pre>
 </div>
 </div>
-<p>Look at the output above you can see next to name the <code>&lt;chr&gt;</code> that means the column contains data that is characters. The one below that is the <code>&lt;dbl&gt;</code> so you can see that is double data. This shows us that vectors simple a column of names and values that are the same type.</p>
+<p>Look at the output above you can see next to name the <code>&lt;chr&gt;</code> that means the column contains data that is characters. The one below that is the <code>&lt;dbl&gt;</code> so you can see that is double data. Lets talk about what these different data types are.</p>
 </section>
 </section>
 <section id="types-of-data" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="types-of-data"><span class="header-section-number">2.5</span> Types of data</h2>
-<p>There are different types of data. In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is representing a third category or the result of 1 + 2.</p>
+<p>In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is representing a third category or the result of 1 + 2.</p>
 <section id="numeric-and-double-data" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="numeric-and-double-data"><span class="header-section-number">2.5.1</span> Numeric and Double data</h3>
-<p>Numeric data is the type of data that we see that represents integers and “double precision floating point” numbers….or decimals. These are pretty common and are just regular numbers as you are familiar with them. They exist on a number line, can be multiplied and divided, and so on. Data formatted as numeric or double are on interval or ratio scales of measurement.</p>
+<p>Numeric data is a type of data that represents integers and “double precision floating point” numbers….or decimals. These are pretty common and are just regular numbers as you are familiar with them. They exist on a number line, can be multiplied and divided, and so on. Data formatted as numeric or double are on interval or ratio scales of measurement.</p>
 <p>We can see if the data we are looking at is numeric/double by looking for how it is abbreviated. You can use the <code>typeof()</code> function in R to see exactly what type of data you are dealing with when you have a question about single objects, like below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "double"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"jack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"jack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
-<p>If we use the <code>glimipse</code> function, which tells us the format of an object and the first few observations in the object, we can see how we will more commonly interact with data formats.</p>
+<p>If we use the <code>glimipse()</code> function we can see how we will more commonly interact with data formats.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> , <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> , <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> num [1:5] 1 2 3 4 5</code></pre>
 </div>
@@ -557,97 +562,79 @@ $ city &lt;chr&gt; "Evansville", "Toledo"</code></pre>
 </section>
 <section id="character-data" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="character-data"><span class="header-section-number">2.5.2</span> Character data</h3>
-<p>Character data is words that are not functions. Character data may also be referred to as “string” data. As behavioral scientists we may ask participants to write a response, this would be stored as character data. We can tell if the data is a character because it must always be in <code>"".</code> This shows that it is just text we are dealing with and not some function. The abbreviation for character data in R is <code>chr</code>.</p>
+<p>Character data is words that are not functions. Character data may also be referred to as “string” data. As behavioral scientists we may ask participants to write a response, this would be stored as character data. We can tell if the data is a character because it must always be in <code>""</code> . This shows that it is just text we are dealing with and not a function. The abbreviation for character data in R is <code>chr</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"apple"</span>)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"apple"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="logical-data" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="logical-data"><span class="header-section-number">2.5.3</span> Logical data</h3>
-<p>Logical data can only represent one of two values, <code>TRUE</code> or <code>FALSE</code>. Logical data will be represented in R as either <code>TRUE</code> or <code>FALSE</code>. It is important that they are all capitalized so they cannot be confused for something else. The abbreviations in R are simple because it will either be <code>T</code> or <code>F</code>.</p>
+<p>Logical data can only represent one of two values, <code>TRUE</code> or <code>FALSE</code>. This is referred to as Boolean data. It is important that they are all capitalized so they cannot be confused for something else. The abbreviations in R are simple because it will either be <code>T</code> or <code>F</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning logical values using full names</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>bool1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>bool2 <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(bool1)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning logical values using abbreviations</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>bool3 <span class="ot">&lt;-</span> T</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>bool4 <span class="ot">&lt;-</span> F</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(bool4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning logical values using full names</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>bool1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>bool2 <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(bool1)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning logical values using abbreviations</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>bool3 <span class="ot">&lt;-</span> T</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>bool4 <span class="ot">&lt;-</span> F</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(bool4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="factor-data" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="factor-data"><span class="header-section-number">2.5.4</span> Factor data</h3>
 <p>Data are formatted as factors when we are referring to categories. It works with variables that have a fixed and already known set of possible values. We use factor data differently depending on the data we have. Data formatted as a factor can be on an ordinal scale or a nominal scale. We use <code>factor()</code> to create a new factor from a vector. We use <code>as.factor()</code> to move an object like a character list into a vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>college <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college) <span class="co"># notice that R formats this as a character vector</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>college_fct <span class="ot">&lt;-</span> <span class="fu">factor</span>(college)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college_fct) <span class="co"># now it is a factor, but the order of the levels is wrong</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>college_fct <span class="ot">&lt;-</span> <span class="fu">factor</span>(college, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>))</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college_fct) <span class="co"># now the order is right</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="co"># factors can also be numbers</span></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>college <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college) <span class="co"># notice that R formats this as a character vector</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>college_fct <span class="ot">&lt;-</span> <span class="fu">factor</span>(college)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college_fct) <span class="co"># now it is a factor, but the order of the levels is wrong</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>college_fct <span class="ot">&lt;-</span> <span class="fu">factor</span>(college, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"freshman"</span>, <span class="st">"sophomore"</span>, <span class="st">"junior"</span>, <span class="st">"senior"</span>))</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college_fct) <span class="co"># now the order is right</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># factors can also be numbers</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="the-pipe" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="the-pipe"><span class="header-section-number">2.6</span> The pipe</h2>
-<p>Now we will be working with the pipe which is symbolized by <code>%&gt;%</code> or <code>|&gt;</code>. Whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the first argument of the next function without having to do the work ourselves. The pipe is can be easily created within a code chunk by using the shortcut <strong><em>command + shift + m.</em></strong> Now lets look at an example of how the pipe works.</p>
+<p>The pipe is an incredibly important part of writing useful code in R. It is symbolized by <code>%&gt;%</code> or <code>|&gt;</code>. Whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the first argument of the next function without having to do the work ourselves. The pipe is easily created within a code chunk by using the shortcut <strong><em>command + shift + m.</em></strong> Click the help tab above to see more keyboard shortcuts. Now lets look at an example of how the pipe works.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="co"># a dataset about car characteristics</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> <span class="co"># group the dataset by how many cylinders the cars have</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg)) <span class="co"># create a new column for average miles per gallon by group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/car_output.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>You can see in the output now that in our pipe we took the car data set then funneled in the function of grouping cars by their cylinders then taking that output and funneling it into finding the average miles per gallon which creates our final output.</p>
+<p>You can see in the output that by using the pipe we loaded the car data set then used it as the first argument of the <code>group_by()</code> function, then took that output and used it as the first argument for the <code>summarize()</code> function. We will go into more detail about these functions in the Data Wrangling chapter.</p>
 <p>Now try running the same code without the use of the pipe and see if it still works.</p>
 </section>
 <section id="tips-and-trouble-shooting" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="tips-and-trouble-shooting"><span class="header-section-number">2.7</span> Tips and trouble shooting</h2>
-<p>When working with R there is always going to be something that will end up needing fixing or something will go wrong and you have no idea what to do. That is OK because there are a few different ways to figure things out when you need help.</p>
+<p>When working with R there is always going to be something that will end up needing fixing or something will go wrong and you don’t know what to do. That is OK because there are a few different ways to figure things out when you need help.</p>
 <section id="tool" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="tool"><span class="header-section-number">2.7.1</span> ? Tool</h3>
-<p>The question mark tool is a great too that can help explain anything you need. Lets say for example you don’t know what a mean is. You can type in <code>?mean</code> and the help tab in your bottom right frame will open with whatever you need. It provides arguments and explanations as it is a great tool to help you figure things out.</p>
+<p>The question mark tool can help explain anything you need. Lets say for example you don’t know what a mean is. You can type in <code>?mean</code> and the help tab in your bottom right frame will open with whatever you need.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/help_info_sc.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="help" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="help"><span class="header-section-number">2.7.2</span> Help</h3>
-<p>The help function is another way to get info on objects you might be struggling with. It works the same as the question and can give you more information on it.</p>
+<p>The help function is another way to get info on objects you might be struggling with. It works the same as <code>?</code> and can give you more information on it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="traceback" class="level3" data-number="2.7.3">
 <h3 data-number="2.7.3" class="anchored" data-anchor-id="traceback"><span class="header-section-number">2.7.3</span> Traceback</h3>
-<p>Whenever we are working in R sometimes we might get an error. This can be confusing because R doesn’t always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the <code>traceback()</code> function to find exactly where your code stopped working.</p>
+<p>Whenever we are working in R sometimes we will get errors. This can be confusing because R doesn’t always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the <code>traceback()</code> function to find exactly where your code stopped working.</p>
 </section>
 </section>
 <section id="practice" class="level2" data-number="2.8">

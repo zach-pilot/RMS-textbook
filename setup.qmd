@@ -36,9 +36,7 @@ Once you open Rstudio you might notice that there are four different panes on yo
 
 ### Console Frame
 
-The console frame is the **bottom left frame on your screen**. The console is like a scrap piece of paper or and etch an sketch, its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** To run your code in the console frame you type the code and press the `enter` or `return` key. You can also see output from your code directly in this frame. T
-
-he console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
+The console frame is the **bottom left frame on your screen**. The console is like a scrap piece of paper or and etch an sketch, its a great place to do some troubleshooting or viewing data through the `glimpse()` function but **any work you do here will not be saved.** To run your code in the console frame you type the code and press the `enter` or `return` key. You can also see output from your code directly in this frame. The console is also next to the terminal which is the tab right next to it. **They both can run commands but are different in nature**.The *console* is intended to run commands that work mainly inside Rstudio itself. The *terminal* however runs systems commands like something you do on your computer.
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/R_console_screenshot.png")
@@ -68,7 +66,11 @@ The last frame on **the bottom right is your files and packages** frame. This fr
 knitr::include_graphics("images/files_screenshot_example.png")
 ```
 
-**Suggestion**: If you wish to change the layout of your frames to customize it simply click **tools** at the top of your computer then **global options** then to pane layout to customize the layout to whatever is the best for you.
+### Customization
+
+**R is more fun when it looks the way you want it to. By default R doesn't emphasize the different between fucnitons and arguments and the text within them, but some fonts do. I suggest you change your font to somethign that helps readability. Click Tools \> Global Options \> Appearance then click through some fonts.**
+
+**Suggestion:** Some fonts like "Dawn" do not use a lot of contrast between types of information, so I would avoid those.
 
 ## Saving
 

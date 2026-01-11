@@ -9,7 +9,7 @@ toc: true
 
 The tidyverse is filled with functions that help us work with data. Most of the functions covered here come from the dplyr package.
 
-Datasets in R have rows and columns. Rows are the participants, cases, or observations andcolumns are the variables. Dplyr has certain functions, sometimes referred to as verbs, to handle this information.
+Datasets in R have rows and columns. Rows are the participants, cases, or observations and columns are the variables. Dplyr has certain functions, sometimes referred to as verbs, to handle this information.
 
 In the grammar of dplyr, the first argument is always your data frame object. The following arguments describe what to do with that data frame. The result of a dplyr function is always a new data frame.
 

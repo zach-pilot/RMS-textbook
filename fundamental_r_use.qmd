@@ -17,14 +17,15 @@ This chapter will go over the fundamental tools you will need in order to work i
 
 -   And the main types of data that you will be running into in Rstudio.
 
+Open up an R markdown file, name it appropriately, and follow a long with the exercises below.
 
 ## Objects
 
-In R, we will primarily be working with object. An object is a container that you label. It can bea single number, a giant dataset, a graph, a function or even models that we need. In order to create an object we use the `assignment operator`, it looks like an arrow pointing to the left `<-`. The `assignment operator` creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.
+In R, we will primarily be working with objects. An object is a container that you label. It can be a single number, a giant dataset, a graph, a function or even models that we need. In order to create an object we use the `assignment operator`, it looks like an arrow pointing to the left `<-`. The `assignment operator` creates an object with the name of whatever is to the left of the operator and it will contain whatever is to the right of the operator.
 
 ```{r}
-x <- 67 # object named x 
-y <- "Good Morning" # object named y
+x <- 67 # object named x that contains the number 67
+y <- "Good Morning" # object named y that contains the string "Good Morning"
 ```
 
 If i make changes to an object that I want to keep, I must rewrite the original object or create a new one. If not, then my changes are not saved.
@@ -32,7 +33,7 @@ If i make changes to an object that I want to keep, I must rewrite the original 
 ```{r}
 x # open the x object
 
-x + 3 # add three to get 70
+x + 3 # add three to get 70, but don't assign to new object
 
 x # x is still 67
 
@@ -43,7 +44,7 @@ x # the x object is 70 now
 
 ### Listing objects
 
-If you ever want to see what your current objects are you can always look in your environment frame to see it. You can also use the list function `ls()` to see this as well.
+If you ever want to see what your current objects are you can always look in your environment frame. You can also use the list function `ls()`.
 
 ```{r, eval=FALSE}
 ls()
@@ -51,7 +52,7 @@ ls()
 
 ## Functions
 
-Now that we are able to successfully load up packages we can start looking at some functions. A **function** is a command that begins an action. This is a basic example of a function. The function is made up of two arguments that we give values to.
+Now that we are able to successfully load packages we can start looking at some functions. A **function** is a command that begins an action. This is a basic example of a function. The function is made up of two arguments that we give values to.
 
 ```{r, eval=FALSE}
 function_name(argument1 = value1, argument2 = value2)
@@ -59,20 +60,21 @@ function_name(argument1 = value1, argument2 = value2)
 
 ### Applied Functions
 
-Next we can look at a basic function called the **combine** function or it can be viewed as this `c()`. It takes every value we have in the function and applies it to all of them. This can be used for mathematical purposes when using Rstudio like a calculator. Lets take a look at an example.
+Next we can look at a basic function called **combine** or `c()`. It takes every value in the function and groups them in what is called a vector, more on that later. This can be used for mathematical purposes when using Rstudio like a calculator. Lets take a look at an example.
 
 ```{r}
-# Create object x that is a list of numbers
-x <- (c(1, 2, 3, 4, 5)) 
+# Create object x that is a vector (a list) of numbers
+x <- c(1, 2, 3, 4, 5)
+x
 ```
 
 ### Arguments
 
-Functions require certain information to carry out their actions. Arguments are where we provide that information. Many functions have default values automatically used for arguments. However, we often have to supply information for arguments, even if it's just the name of the object we want to use the function on. Arguments are separated by a comma. Let's look at the `sum` function. It has two arguments, the first is the data itself or the vector object containing the data and the second is `na.rm =` which has a default value of `FALSE`. `na.rm` is a logical argument asking if we want to remove data coded as NA, which could be missing data or incompatible data. Default arguments don't need to be typed out, they are implied, unless we want to give a value to the argment other than the default.
+Functions require certain information to carry out their actions. Arguments are where we provide that information. Many functions have default values automatically used for arguments. However, we often have to supply information for arguments, even if it's just the name of the object we want to use the function on. Arguments are separated by a comma. Let's look at the `sum` function. It has two arguments, the first is the data itself or the vector object containing the data and the second is `na.rm =` which has a default value of `FALSE`. `na.rm` is a logical argument asking if we want to remove data coded as NA, which could be missing data or incompatible data. Default arguments don't need to be typed out, they are implied, unless we want to give a value to the argument other than the default.
 
 ```{r, eval=FALSE}
 x <- c( 1, 2, 3, 4, 5)
-sum(x) # no need to specify na.rm here but what when we give it an NA value
+sum(x) # no need to specify na.rm here
 
 y <- c(1, 2, 3, 4, 5, NA)
 sum(y) # R can't calculate the sum if it doesn't know the value of NA
@@ -81,7 +83,7 @@ sum(y, na.rm = TRUE) # fixed
 
 ### Creating Functions
 
-Creating your own function is a very useful skill because it allows you to easily apply values to data without you having to type it out over and over again. In order to create a function you must name it then assign it a value by using the `<-` symbol. This assigns whatever you write to that name which then should appear in the top right frame or your environment frame.
+Creating your own function is a very useful skill because it allows you to easily apply values to data without having to type it out over and over again. In order to create a function you must name it then assign it a value by using the `<-` symbol. This assigns whatever you write to that name which then should appear in the top right frame or your environment frame.
 
 ```{r}
 plus_two <- function(x) {
@@ -91,20 +93,20 @@ plus_two <- function(x) {
 plus_two(5)
 ```
 
-We created the function `plus_two`, which will take whatever is in our function and add 2 to it so when we use the function and put 5 in there it takes 5 and already adds the two to it.
+We created the function `plus_two`, which will take whatever is in our function (x) and add 2 to it so when we use the function and put 5 in there it takes 5 and adds two.
 
 ## Creating Data
 
 ### Vectors
 
-A **vector** is a simple data structure that holds elements of the same kind. So if we want to combine a bunch of names we can use a vector to do so but they need to all be the same type of data. We will go over the different types of data later in the chapter. Here are some simple basic examples of vectors.
+A **vector** is a simple data structure that holds elements of the same kind. So if we want to combine a bunch of names we can use a vector to do so. We will go over the different types of data later in the chapter. Here are some simple basic examples of vectors.
 
 ```{r}
 numbers <- c(1, 2, 3, 4, 5, 6, 7)
 names <- c("Adam", "Steven", "James")
 ```
 
-Now once we have these saved as objects we can use them again if we want since we have combined them all into one vector.
+Now once we have these saved as objects we can use them again since we have combined them all into one vector.
 
 ```{r}
 sum(numbers)
@@ -135,7 +137,7 @@ Notice we have three columns and two observations. All information in a row is p
 
 ### Tibbles
 
-A tribble is short for transposed tibble and it is a different way to create small data frames that looks more like a spreadsheet. It requires the `tibble` package to work, but that's part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.
+Tibble is short for transposed table and it is a different way to create small data frames that looks more like a spreadsheet. It requires the `tibble` package to work, but that's part of the tidyverse so we should be ok. Some functions will only take data formatted as tibbles.
 
 ```{r}
 #| message: false
@@ -151,25 +153,25 @@ people <- tribble(
 people
 ```
 
-Now you can see our tibble fully completed with both rows and columns where you can see in the bottom of the output that the tibble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later in the chapter.
+Now you can see our tibble fully completed with both rows and columns where you can see in the bottom of the output that the tibble shows the rows. It also tells us the type of data that we are seeing in the output which you will learn more about later.
 
-### Glimpse()
+### glimpse()
 
-When you want to examine the characteristics of your data you can use glimpse to get more information about it. It provides the full data for your set and gives all the details you could need.
+`glimpse()` is used to examine the characteristics of your data, it provides a summary for your data object that includes the column names, the type of data in that column, and several of the first observations in that column.
 
 ```{r}
 glimpse(people)
 ```
 
-Look at the output above you can see next to name the `<chr>` that means the column contains data that is characters. The one below that is the `<dbl>` so you can see that is double data. This shows us that vectors simple a column of names and values that are the same type.
+Look at the output above you can see next to name the `<chr>` that means the column contains data that is characters. The one below that is the `<dbl>` so you can see that is double data. Lets talk about what these different data types are.
 
 ## Types of data
 
-There are different types of data. In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is representing a third category or the result of 1 + 2.
+In statistics we use numbers to represent all kinds of different things. We must differentiate between when a number 3 is representing a third category or the result of 1 + 2.
 
 ### Numeric and Double data
 
-Numeric data is the type of data that we see that represents integers and "double precision floating point" numbers....or decimals. These are pretty common and are just regular numbers as you are familiar with them. They exist on a number line, can be multiplied and divided, and so on. Data formatted as numeric or double are on interval or ratio scales of measurement.
+Numeric data is a type of data that represents integers and "double precision floating point" numbers....or decimals. These are pretty common and are just regular numbers as you are familiar with them. They exist on a number line, can be multiplied and divided, and so on. Data formatted as numeric or double are on interval or ratio scales of measurement.
 
 We can see if the data we are looking at is numeric/double by looking for how it is abbreviated. You can use the `typeof()` function in R to see exactly what type of data you are dealing with when you have a question about single objects, like below.
 
@@ -179,7 +181,7 @@ typeof(FALSE)
 typeof("jack")
 ```
 
-If we use the `glimipse` function, which tells us the format of an object and the first few observations in the object, we can see how we will more commonly interact with data formats.
+If we use the `glimipse()` function we can see how we will more commonly interact with data formats.
 
 ```{r}
 x <- c(1 , 2, 3, 4, 5)
@@ -188,7 +190,7 @@ glimpse(x)
 
 ### Character data
 
-Character data is words that are not functions. Character data may also be referred to as "string" data. As behavioral scientists we may ask participants to write a response, this would be stored as character data. We can tell if the data is a character because it must always be in `"".` This shows that it is just text we are dealing with and not some function. The abbreviation for character data in R is `chr`.
+Character data is words that are not functions. Character data may also be referred to as "string" data. As behavioral scientists we may ask participants to write a response, this would be stored as character data. We can tell if the data is a character because it must always be in `""` . This shows that it is just text we are dealing with and not a function. The abbreviation for character data in R is `chr`.
 
 ```{r, eval=FALSE}
 my_vector <- c("apple", "banana", "cherry")
@@ -198,7 +200,7 @@ glimpse(my_vector)
 
 ### Logical data
 
-Logical data can only represent one of two values, `TRUE` or `FALSE`. Logical data will be represented in R as either `TRUE` or `FALSE`. It is important that they are all capitalized so they cannot be confused for something else. The abbreviations in R are simple because it will either be `T` or `F`.
+Logical data can only represent one of two values, `TRUE` or `FALSE`. This is referred to as Boolean data. It is important that they are all capitalized so they cannot be confused for something else. The abbreviations in R are simple because it will either be `T` or `F`.
 
 ```{r, eval=FALSE}
 # Assigning logical values using full names
@@ -234,41 +236,33 @@ factor(data)
 
 ## The pipe
 
-Now we will be working with the pipe which is symbolized by `%>%` or `|>`. Whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the first argument of the next function without having to do the work ourselves. The pipe is can be easily created within a code chunk by using the shortcut ***command + shift + m.*** Now lets look at an example of how the pipe works.
+The pipe is an incredibly important part of writing useful code in R. It is symbolized by `%>%` or `|>`. Whenever we are running multiple functions in a code chunk we use the pipe to channel the output right into the first argument of the next function without having to do the work ourselves. The pipe is easily created within a code chunk by using the shortcut ***command + shift + m.*** Click the help tab above to see more keyboard shortcuts. Now lets look at an example of how the pipe works.
 
 ```{r, eval=FALSE}
-mtcars %>% 
-  group_by(cyl) %>% 
-  summarize(mean_mpg = mean(mpg))
+mtcars %>% # a dataset about car characteristics
+  group_by(cyl) %>% # group the dataset by how many cylinders the cars have
+  summarize(mean_mpg = mean(mpg)) # create a new column for average miles per gallon by group
 ```
 
-```{r, echo=FALSE}
-knitr::include_graphics("images/car_output.png")
-```
-
-You can see in the output now that in our pipe we took the car data set then funneled in the function of grouping cars by their cylinders then taking that output and funneling it into finding the average miles per gallon which creates our final output.
+You can see in the output that by using the pipe we loaded the car data set then used it as the first argument of the `group_by()` function, then took that output and used it as the first argument for the `summarize()` function. We will go into more detail about these functions in the Data Wrangling chapter.
 
 Now try running the same code without the use of the pipe and see if it still works.
 
 ## Tips and trouble shooting
 
-When working with R there is always going to be something that will end up needing fixing or something will go wrong and you have no idea what to do. That is OK because there are a few different ways to figure things out when you need help.
+When working with R there is always going to be something that will end up needing fixing or something will go wrong and you don't know what to do. That is OK because there are a few different ways to figure things out when you need help.
 
 ### ? Tool
 
-The question mark tool is a great too that can help explain anything you need. Lets say for example you don't know what a mean is. You can type in `?mean` and the help tab in your bottom right frame will open with whatever you need. It provides arguments and explanations as it is a great tool to help you figure things out.
+The question mark tool can help explain anything you need. Lets say for example you don't know what a mean is. You can type in `?mean` and the help tab in your bottom right frame will open with whatever you need.
 
 ```{r, eval=FALSE}
 ?mean
 ```
 
-```{r, echo=FALSE}
-knitr::include_graphics("images/help_info_sc.png")
-```
-
 ### Help
 
-The help function is another way to get info on objects you might be struggling with. It works the same as the question and can give you more information on it.
+The help function is another way to get info on objects you might be struggling with. It works the same as `?` and can give you more information on it.
 
 ```{r, eval=FALSE}
 help("mean")
@@ -276,7 +270,7 @@ help("mean")
 
 ### Traceback
 
-Whenever we are working in R sometimes we might get an error. This can be confusing because R doesn't always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the `traceback()` function to find exactly where your code stopped working.
+Whenever we are working in R sometimes we will get errors. This can be confusing because R doesn't always tell you where you made this error it usually tells you what is wrong and when you are writing lots of code it can be difficult to find where you went wrong. Well you can use the `traceback()` function to find exactly where your code stopped working.
 
 ## Practice
 

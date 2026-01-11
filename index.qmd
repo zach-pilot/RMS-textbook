@@ -1,5 +1,27 @@
 # Preface {.unnumbered}
 
-This is a book intended to be used for Dr. Pilot's PSY 303 course at the University of Southern Indiana, home of the screaming eagles.
+Hello and welcome to Dr. Pilot's Research Methods and Statistics courses. This online textbook is a companion to the in class experience. It was created as a tool you can use when you're at home to practice R, review terms, and prepare for upcoming evaluations.
 
-This book was a collaboration between Dr. Pilot, Liam Murray, and Jacob Lucas.
+This text will cover the following topics and more:
+
+-   Installing and setting up R on your device
+
+-   Basic R vocabulary and use
+
+-   Manipulating data
+
+-   Visualizing data
+
+-   Research design
+
+-   Research methods
+
+-   Measurement
+
+-   Univariate analysis
+
+-   (some) Multivariate analysis
+
+Finally, this is a living text, it is incomplete. There will be typos, inelegant language, and sometimes things may not appear the way I intend. Just let me know so I can improve it.
+
+*This book began as a collaboration between Dr. Pilot, Liam Murray, and Jacob Lucas.*
